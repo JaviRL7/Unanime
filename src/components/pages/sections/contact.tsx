@@ -11,9 +11,7 @@ export default function Contact() {
     >
       <div className="flex items-center justify-center h-full">
         <div className="relative z-10 mx-auto max-w-3xl text-center">
-          <h2 className="font-incognito text-2xl font-semibold md:text-5xl lg:text-4xl">
-            Sección Contacto
-          </h2>
+          {/* Contacto content here */}
         </div>
       </div>
     </SectionHeading>

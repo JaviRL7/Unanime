@@ -19,6 +19,7 @@ const env = createEnv({
     NEXT_PUBLIC_APP_URL: z.url().default("http://localhost:3000"),
     NEXT_PUBLIC_GITHUB_USERNAME: z.string().min(1),
     NEXT_PUBLIC_AVAILABLE_STATUS: z.coerce.boolean(),
+    NEXT_PUBLIC_UMAMI_WEBSITE_ID: z.string().optional(),
   },
 
   /*
@@ -33,6 +34,7 @@ const env = createEnv({
     NEXT_RUNTIME: process.env.NEXT_RUNTIME,
     NEXT_PUBLIC_GITHUB_USERNAME: process.env.NEXT_PUBLIC_GITHUB_USERNAME,
     NEXT_PUBLIC_AVAILABLE_STATUS: process.env.NEXT_PUBLIC_AVAILABLE_STATUS,
+    NEXT_PUBLIC_UMAMI_WEBSITE_ID: process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
   },
 
   emptyStringAsUndefined: true,

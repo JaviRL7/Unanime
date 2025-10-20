@@ -690,7 +690,7 @@ export default function ProjectHero({
                 {/* Quote final */}
                 <div className="text-center pt-3 md:pt-6 border-t-2 border-primary/30">
                   <p className="text-xs md:text-base lg:text-lg font-mono italic text-muted-foreground">
-                    "Portfolio como experiencia visual: del arte Pokémon al impacto digital"
+                    &quot;Portfolio como experiencia visual: del arte Pokémon al impacto digital&quot;
                   </p>
                 </div>
               </div>

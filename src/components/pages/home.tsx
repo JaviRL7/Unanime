@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 import useScreenSize from "@/hooks/use-screen-size";
 import type {  Song } from "@/types";
 import { useIsClient } from "@uidotdev/usehooks";
-import { Mail, Twitter, Linkedin } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import { AnimatePresence, motion, Variants } from "motion/react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
@@ -118,7 +118,6 @@ const slideInBottom: Variants = {
 
 const socialLinks = [
   { icon: Mail, label: "Email", link: `mailto:${siteConfig.email}` },
-  { icon: Twitter, label: "Twitter", link: siteConfig.twitter },
   { icon: Linkedin, label: "LinkedIn", link: siteConfig.linkedin },
 ];
 

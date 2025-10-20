@@ -8,25 +8,39 @@ import ProjectDetailRow from "@/components/projects/ProjectDetailRow";
 import { projects } from "@/data/projects";
 
 const Projects = () => {
+  // Mapeo manual de projectId a número de proyecto
+  const projectNumberMap: Record<string, number> = {
+    "dona-arana": 1,
+    "contabilidad-web": 2,
+    "linkedin-stats": 2,
+    "more-features": 2,
+    "inanilux-portfolio": 3,
+    "color-palette": 3,
+    "design-process": 3,
+  };
+  
   return (
     <>
       {/* Render all projects */}
-      {projects.map((project, projectIndex) => (
-        <div key={project.id} id={`proyecto-${projectIndex + 1}`}>
-          {/* Hero Section (Full Screen) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <ProjectHero
-              hero={project.hero}
-              showLogo={projectIndex === 0}
-              projectNumber={projectIndex + 1}
-              projectId={project.id}
-            />
-          </motion.div>
+      {projects.map((project, projectIndex) => {
+        const projectNumber = projectNumberMap[project.id];
+        
+        return (
+          <div key={project.id} id={`proyecto-${projectIndex + 1}`}>
+            {/* Hero Section (Full Screen) */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <ProjectHero
+                hero={project.hero}
+                showLogo={projectIndex === 0}
+                projectNumber={projectNumber}
+                projectId={project.id}
+              />
+            </motion.div>
 
           {/* Detail Rows (50vh each) */}
           {project.details.map((detail, detailIndex) => (
@@ -45,7 +59,8 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
-      ))}
+      )})}
+
 
       {/* Contact Section */}
       <div id="contacto" className="relative h-screen snap-start snap-always border-b">

@@ -62,15 +62,15 @@ export default function ProjectDetailRow({
       case "contabilidad-web":
         return "Proyecto 2";
       case "linkedin-stats":
-        return "Proyecto 3";
+        return "Proyecto 2";
       case "more-features":
-        return "Proyecto 1";
+        return "Proyecto 2";
       case "inanilux-portfolio":
-        return "Proyecto 5";
+        return "Proyecto 3";
       case "color-palette":
-        return "Proyecto 6";
+        return "Proyecto 3";
       case "design-process":
-        return "Proyecto 7";
+        return "Proyecto 3";
       default:
         return "";
     }

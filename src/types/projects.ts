@@ -133,7 +133,7 @@ export interface ProjectHeroProps {
   /** Optional logo SVG to display (for first project) */
   showLogo?: boolean;
   /** Project number (1, 2, 3, etc.) */
-  projectNumber: number;
+  projectNumber?: number;
   /** Project ID for conditional rendering */
   projectId: string;
 }

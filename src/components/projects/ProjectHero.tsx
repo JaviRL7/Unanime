@@ -24,6 +24,27 @@ import DecorativeCorners from "./shared/DecorativeCorners";
 import GridBackground from "./shared/GridBackground";
 import { LOGO_SVG } from "@/data/projects";
 import type { ProjectHeroProps } from "@/types/projects";
+import CountUp from "react-countup";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
+/**
+ * AnimatedCounter - Counter that animates when it comes into view
+ */
+function AnimatedCounter({ end, className, separator = ".", decimals = 0 }: { end: number; className?: string; separator?: string; decimals?: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <span ref={ref}>
+      {isInView ? (
+        <CountUp end={end} duration={2.5} separator={separator} decimals={decimals} className={className} />
+      ) : (
+        <span className={className}>0</span>
+      )}
+    </span>
+  );
+}
 
 export default function ProjectHero({
   hero,
@@ -55,6 +76,36 @@ export default function ProjectHero({
 
     return (
       <section className="group relative h-screen w-full overflow-hidden border-b snap-start snap-always bg-background">
+        {/* Logo SVG - Shown in grid blocks */}
+        <div className="absolute left-8 top-16 z-30 hidden lg:block">
+          <div
+            className="w-32 text-foreground"
+            dangerouslySetInnerHTML={{ __html: LOGO_SVG }}
+            aria-label="JaviRL Logo"
+          />
+        </div>
+
+        {/* Project Label - Top right corner */}
+        {projectNumber && (
+          <div className="absolute right-4 top-4 z-30 hidden lg:block">
+            <div className="bg-primary/10 border border-primary/20 px-4 py-2 backdrop-blur-sm">
+              <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider">
+                Proyecto {projectNumber}
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* Scroll Indicator - Centered bottom */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
+          DESPLÁZATE
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+            <path d="M12 8v8"></path>
+            <path d="m8 12 4 4 4-4"></path>
+          </svg>
+        </div>
+
         {/* Grid de líneas equidistantes */}
         <div className="h-full w-full relative">
           {/* 4 Líneas horizontales */}
@@ -91,19 +142,27 @@ export default function ProjectHero({
               {/* Métricas principales destacadas */}
               <div className="grid grid-cols-2 gap-6 mb-10">
                 <div className="border border-border p-6 bg-background/50">
-                  <div className="text-4xl lg:text-5xl font-bold text-primary font-mono">50.174</div>
+                  <div className="text-4xl lg:text-5xl font-bold text-primary font-mono">
+                    <AnimatedCounter end={50174} separator="." decimals={0} />
+                  </div>
                   <div className="text-sm lg:text-base text-muted-foreground uppercase tracking-wider mt-2">Impresiones</div>
                 </div>
                 <div className="border border-border p-6 bg-background/50">
-                  <div className="text-4xl lg:text-5xl font-bold text-primary font-mono">29.081</div>
+                  <div className="text-4xl lg:text-5xl font-bold text-primary font-mono">
+                    <AnimatedCounter end={29081} separator="." decimals={0} />
+                  </div>
                   <div className="text-sm lg:text-base text-muted-foreground uppercase tracking-wider mt-2">Alcance</div>
                 </div>
                 <div className="border border-border p-6 bg-background/50">
-                  <div className="text-4xl lg:text-5xl font-bold text-primary font-mono">725</div>
+                  <div className="text-4xl lg:text-5xl font-bold text-primary font-mono">
+                    <AnimatedCounter end={725} separator="." decimals={0} />
+                  </div>
                   <div className="text-sm lg:text-base text-muted-foreground uppercase tracking-wider mt-2">Reacciones</div>
                 </div>
                 <div className="border border-border p-6 bg-background/50">
-                  <div className="text-4xl lg:text-5xl font-bold text-primary font-mono">332</div>
+                  <div className="text-4xl lg:text-5xl font-bold text-primary font-mono">
+                    <AnimatedCounter end={332} separator="." decimals={0} />
+                  </div>
                   <div className="text-sm lg:text-base text-muted-foreground uppercase tracking-wider mt-2">Visitas Perfil</div>
                 </div>
               </div>
@@ -112,19 +171,27 @@ export default function ProjectHero({
               <div className="space-y-4 text-base lg:text-lg">
                 <div className="flex justify-between text-muted-foreground border-b border-border/50 pb-3">
                   <span>Visitas al enlace</span>
-                  <span className="font-mono font-semibold">130</span>
+                  <span className="font-mono font-semibold">
+                    <AnimatedCounter end={130} separator="" decimals={0} />
+                  </span>
                 </div>
                 <div className="flex justify-between text-muted-foreground border-b border-border/50 pb-3">
                   <span>Comentarios</span>
-                  <span className="font-mono font-semibold">7</span>
+                  <span className="font-mono font-semibold">
+                    <AnimatedCounter end={7} separator="" decimals={0} />
+                  </span>
                 </div>
                 <div className="flex justify-between text-muted-foreground border-b border-border/50 pb-3">
                   <span>Veces compartido</span>
-                  <span className="font-mono font-semibold">9</span>
+                  <span className="font-mono font-semibold">
+                    <AnimatedCounter end={9} separator="" decimals={0} />
+                  </span>
                 </div>
                 <div className="flex justify-between text-muted-foreground border-b border-border/50 pb-3">
                   <span>Veces guardado</span>
-                  <span className="font-mono font-semibold">24</span>
+                  <span className="font-mono font-semibold">
+                    <AnimatedCounter end={24} separator="" decimals={0} />
+                  </span>
                 </div>
               </div>
             </div>
@@ -151,8 +218,8 @@ export default function ProjectHero({
               </div>
 
               {/* Enlaces a LinkedIn con estilo de botón */}
-              <div className="flex flex-col gap-3 max-w-2xl mx-auto w-full">
-                <Button asChild variant="outline" size="lg" className="group/btn border-2 font-medium">
+              <div className="flex flex-col gap-3 max-w-md mx-auto w-full">
+                <Button asChild variant="outline" size="default" className="group/btn border-2 font-medium">
                   <a
                     href="https://www.linkedin.com/feed/update/urn:li:activity:7381240641197887488/"
                     target="_blank"
@@ -164,7 +231,7 @@ export default function ProjectHero({
                     <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" aria-hidden="true" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="group/btn border-2 font-medium">
+                <Button asChild variant="outline" size="default" className="group/btn border-2 font-medium">
                   <a
                     href="https://www.linkedin.com/feed/update/urn:li:activity:7373256816685727744/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7373256816685727744%29"
                     target="_blank"
@@ -636,16 +703,35 @@ export default function ProjectHero({
 
   return (
     <section className="group relative h-screen w-full overflow-hidden border-b snap-start snap-always">
-      {/* Logo SVG - Only shown for first project */}
-      {showLogo && (
-        <div className="absolute left-8 top-16 z-20 hidden lg:block">
-          <div
-            className="w-32 text-foreground"
-            dangerouslySetInnerHTML={{ __html: LOGO_SVG }}
-            aria-label="JaviRL Logo"
-          />
+      {/* Logo SVG - Shown in all projects */}
+      <div className="absolute left-8 top-16 z-20 hidden lg:block">
+        <div
+          className="w-32 text-foreground"
+          dangerouslySetInnerHTML={{ __html: LOGO_SVG }}
+          aria-label="JaviRL Logo"
+        />
+      </div>
+
+      {/* Project Label - Top right corner */}
+      {projectNumber && (
+        <div className="absolute right-4 top-4 z-20 hidden lg:block">
+          <div className="bg-primary/10 border border-primary/20 px-4 py-2 backdrop-blur-sm">
+            <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider">
+              Proyecto {projectNumber}
+            </span>
+          </div>
         </div>
       )}
+
+      {/* Scroll Indicator - Centered bottom */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
+        DESPLÁZATE
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
+          <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+          <path d="M12 8v8"></path>
+          <path d="m8 12 4 4 4-4"></path>
+        </svg>
+      </div>
 
       {/* Mobile: Full screen layout (stacked) */}
       <div className="h-full lg:hidden">

@@ -24,6 +24,7 @@
 import { Github, ArrowUpRight, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ProjectDetailRowProps } from "@/types/projects";
+import { LOGO_SVG } from "@/data/projects";
 
 export default function ProjectDetailRow({
   detail,
@@ -53,8 +54,64 @@ export default function ProjectDetailRow({
   // Use structured layout for more-features project
   const isStructuredLayout = projectId === "more-features";
 
+  // Get project label
+  const getProjectLabel = () => {
+    switch (projectId) {
+      case "dona-arana":
+        return "Proyecto 1";
+      case "contabilidad-web":
+        return "Proyecto 2";
+      case "linkedin-stats":
+        return "Proyecto 3";
+      case "more-features":
+        return "Proyecto 1";
+      case "inanilux-portfolio":
+        return "Proyecto 5";
+      case "color-palette":
+        return "Proyecto 6";
+      case "design-process":
+        return "Proyecto 7";
+      default:
+        return "";
+    }
+  };
+
   return (
     <section className={cn("group relative h-screen lg:h-[50vh] max-h-screen lg:max-h-[50vh] w-full snap-start snap-always lg:snap-align-none", index > 0 && "border-t")}>
+      {/* Logo SVG - Only shown in first detail row */}
+      {index === 0 && (
+        <div className="absolute left-8 top-8 z-20 hidden lg:block">
+          <div
+            className="w-32 text-foreground"
+            dangerouslySetInnerHTML={{ __html: LOGO_SVG }}
+            aria-label="JaviRL Logo"
+          />
+        </div>
+      )}
+
+      {/* Project Label - Only shown in first detail row */}
+      {index === 0 && getProjectLabel() && (
+        <div className="absolute right-4 top-4 z-20 hidden lg:block">
+          <div className="bg-primary/10 border border-primary/20 px-4 py-2 backdrop-blur-sm">
+            <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider">
+              {getProjectLabel()}
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* Scroll Indicator - Only shown in second row onwards */}
+      {index > 0 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
+          DESPLÁZATE
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+            <path d="M12 8v8"></path>
+            <path d="m8 12 4 4 4-4"></path>
+          </svg>
+        </div>
+      )}
+
       <div className="grid h-full grid-rows-2 lg:grid-rows-1 lg:grid-cols-2">
         {/* LEFT COLUMN - Image Side */}
         <div className="bg-muted/20 relative h-full overflow-hidden border-b lg:border-r lg:border-b-0">

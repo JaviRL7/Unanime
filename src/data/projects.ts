@@ -122,45 +122,48 @@ export const projects: Project[] = [
       badges: [],
     },
     details: [
-      // Primera fila - Panel de Administración
+      // Primera fila - Panel de Administración y Contabilidad
       {
-        date: "Ene, 2025",
+        date: "Jun, 2025",
         status: "in-progress",
-        title: "Panel de Administración",
-        subtitle: "Control · Gestión · Dashboard",
+        title: "Panel de Administración y Contabilidad",
+        subtitle: "Gestión · CRUD · Control · Finanzas",
         mediaType: "video",
         mediaSrc: "/video/u5.mkv",
         description:
-          "Panel administrativo completo para gestionar todos los aspectos de la tienda. Permite control total sobre productos, inventario, pedidos y usuarios desde una interfaz intuitiva.",
-        systemTitle: "Sistema Administrativo",
+          "Desarrollé un panel pensado para llevar el control diario de ingresos y gastos de manera sencilla. Cada entrada puede asignarse a una etiqueta o categoría, lo que permite organizar y entender mejor cómo se mueve el dinero. El sistema incluye un CRUD completo para crear, editar o eliminar registros de manera rápida y segura, haciendo que la contabilidad diaria sea accesible incluso para quienes no tienen experiencia previa en finanzas.",
+        systemTitle: "Contabilidad simple y práctica",
         systemDescription:
-          "Dashboard completo con métricas en tiempo real, gestión de productos y stock, control de pedidos y administración de usuarios. Incluye gráficos interactivos y exportación de reportes.",
+          "Desarrollé un panel pensado para llevar el control diario de ingresos y gastos de manera sencilla. Cada entrada puede asignarse a una etiqueta o categoría, lo que permite organizar y entender mejor cómo se mueve el dinero.",
         features: [
-          "Control total de inventario y stock",
-          "Gestión de pedidos y usuarios",
-          "Métricas y reportes en tiempo real",
+          "Facilitar el registro diario de ingresos y gastos",
+          "Organizar la información mediante etiquetas y categorías",
+          "Mantener la interfaz clara, intuitiva y fácil de usar",
+          "Simplificar la gestión de la contabilidad sin complicaciones técnicas",
+          "Permitir un seguimiento rápido y ordenado del flujo de dinero",
         ],
-        quote: "Panel de control intuitivo para gestión eficiente",
+        quote: "Contabilidad diaria simple, clara y sin complicaciones",
       },
-      // Segunda fila - Sistema de Apartados
+      // Segunda fila - Sistema de Gestión de Pagos
       {
-        date: "Ene, 2025",
+        date: "Jun, 2025",
         status: "in-progress",
-        title: "Sistema de Apartados",
-        subtitle: "Reservas · Gestión · Pagos",
+        title: "Sistema de Gestión de Pagos",
+        subtitle: "Gestión · Análisis · Visualización · Calendario",
         mediaType: "video",
         mediaSrc: "/video/u6.mkv",
         description:
-          "Funcionalidad única que permite a los clientes apartar productos con un sistema de pagos parciales. Ideal para artículos de alto valor que requieren planificación de compra.",
-        systemTitle: "Gestión de Apartados",
+          "Desarrollé un sistema para gestionar pagos de forma clara y sencilla. Ofrece paneles visuales con estadísticas fáciles de interpretar, permitiendo conocer el estado de los pagos de un vistazo. Además, integra un calendario para programar vencimientos y recibir notificaciones, facilitando la organización y el control diario.",
+        systemTitle: "Control visual y seguimiento eficiente",
         systemDescription:
-          "Sistema completo de reservas y apartados con seguimiento de pagos parciales, notificaciones automáticas y gestión de plazos. Los clientes pueden ver el estado de sus apartados en tiempo real.",
+          "Desarrollé un sistema para gestionar pagos de forma clara y sencilla. Ofrece paneles visuales con estadísticas fáciles de interpretar, permitiendo conocer el estado de los pagos de un vistazo.",
         features: [
-          "Pagos parciales y seguimiento de saldos",
-          "Notificaciones automáticas de vencimientos",
-          "Historial completo de transacciones",
+          "Simplificar la gestión y el seguimiento de pagos",
+          "Visualizar datos y estadísticas de manera comprensible",
+          "Integrar calendario y notificaciones automáticas",
+          "Mantener un equilibrio entre funcionalidad y claridad visual",
         ],
-        quote: "Facilita compras planificadas con pagos flexibles",
+        quote: "Pagos organizados, análisis visual y control total",
       },
     ],
   },
@@ -193,6 +196,21 @@ export const projects: Project[] = [
       description: "Análisis de paleta cromática del diseño",
       mediaType: "image",
       mediaSrc: "/projects/i1.png",
+      badges: [],
+    },
+    details: [],
+  },
+
+  // Proyecto 7 - Proceso de Diseño
+  {
+    id: "design-process",
+    hero: {
+      title: "Proceso de Diseño",
+      date: "Creativo",
+      status: "in-progress",
+      description: "Metodología y flujo de trabajo en proyectos",
+      mediaType: "image",
+      mediaSrc: undefined,
       badges: [],
     },
     details: [],

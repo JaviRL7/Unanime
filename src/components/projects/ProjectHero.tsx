@@ -19,7 +19,7 @@
 
 import { Button } from "@/components/ui/button";
 import HeadingLine from "@/components/ui/heading-line";
-import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
+import { Github, ArrowUpRight, ExternalLink, Sun, Moon, ArrowRight } from "lucide-react";
 import DecorativeCorners from "./shared/DecorativeCorners";
 import GridBackground from "./shared/GridBackground";
 import { LOGO_SVG } from "@/data/projects";
@@ -42,7 +42,7 @@ export default function ProjectHero({
   } = hero;
 
   // Proyectos que muestran el bloque con grid de líneas
-  const isGridBlock = projectId === "linkedin-stats" || projectId === "inanilux-portfolio" || projectId === "color-palette";
+  const isGridBlock = projectId === "linkedin-stats" || projectId === "inanilux-portfolio" || projectId === "color-palette" || projectId === "design-process";
 
   // Si no hay título y no es un bloque con grid, no renderizar hero
   if (!title && !isGridBlock) {
@@ -306,87 +306,325 @@ export default function ProjectHero({
 
           {/* Contenido para Paleta de Colores */}
           {projectId === "color-palette" && (
-            <div className="relative z-10 h-full flex items-center justify-start p-6 lg:p-12">
-              <div className="w-full max-h-full flex flex-col">
+            <div className="relative z-10 h-full flex flex-col p-8 lg:p-16 overflow-hidden">
+              {/* Título superior */}
+              <div className="mb-16 flex-shrink-0 pt-8">
+                <h2 className="font-incognito text-3xl lg:text-4xl font-bold mb-2">
+                  Paleta Cromática
+                </h2>
+                <p className="text-base lg:text-lg text-muted-foreground">
+                  Análisis de colores principales del diseño
+                </p>
+              </div>
+
+              {/* Contenedor principal: Grid de 2 columnas */}
+              <div className="flex-1 flex items-center justify-center min-h-0">
+                <div className="grid grid-cols-[1fr_auto] gap-8 items-center">
+                  {/* Columna izquierda: Filas de contenido */}
+                  <div className="flex flex-col gap-10">
+                    {/* Fila 1: Pokémon Sol */}
+                    <div className="grid grid-cols-[auto_auto_1fr] gap-4 items-center min-w-0">
+                      {/* Imagen i3 */}
+                      <div className="w-48 h-auto flex-shrink-0">
+                        <img
+                          src="/projects/i3.png"
+                          alt="Paleta modo claro"
+                          className="w-full h-auto object-contain rounded-lg shadow-xl border-2 border-border"
+                        />
+                      </div>
+
+                      {/* Códigos de color */}
+                      <div className="flex flex-col gap-3 flex-shrink-0">
+                        <div className="flex items-center gap-2">
+                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#F7D1D5' }} />
+                          <div className="flex flex-col min-w-0">
+                            <span className="font-mono text-sm font-bold">#F7D1D5</span>
+                            <span className="text-xs text-muted-foreground font-semibold">Rosa pastel</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#816D5A' }} />
+                          <div className="flex flex-col min-w-0">
+                            <span className="font-mono text-sm font-bold">#816D5A</span>
+                            <span className="text-xs text-muted-foreground font-semibold">Marrón cálido</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#FAFAFA' }} />
+                          <div className="flex flex-col min-w-0">
+                            <span className="font-mono text-sm font-bold">#FAFAFA</span>
+                            <span className="text-xs text-muted-foreground font-semibold">Blanco suave</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Flujo de diseño */}
+                      <div className="flex items-center gap-3 min-w-0 overflow-x-auto">
+                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
+                        <p className="text-xs italic text-foreground/90 max-w-[140px] leading-tight flex-shrink-0">Iconografía temática de Pokémon Sol</p>
+                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
+                        <Button variant="outline" size="sm" className="px-3 py-4 flex-shrink-0">
+                          <Sun className="h-4 w-4 mr-1" />
+                          <Moon className="h-4 w-4" />
+                        </Button>
+                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
+                        <Button variant="outline" size="sm" className="px-6 py-4 border-orange-500/50 flex-shrink-0">
+                          <Sun className="h-5 w-5 text-orange-500 mr-2" />
+                          <span className="text-sm font-semibold">Pokémon Sol</span>
+                        </Button>
+                        <p className="text-xs italic text-foreground/90 max-w-[140px] leading-tight flex-shrink-0">Detalles que refuerzan identidad</p>
+                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
+                        <div className="w-24 h-24 rounded-xl overflow-hidden border-2 border-border shadow-lg flex-shrink-0">
+                          <img src="/projects/i5.jpg" alt="Icono Sol" className="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Fila 2: Pokémon Luna */}
+                    <div className="grid grid-cols-[auto_auto_1fr] gap-4 items-center min-w-0">
+                      {/* Imagen i4 */}
+                      <div className="w-48 h-auto flex-shrink-0">
+                        <img
+                          src="/projects/i4.png"
+                          alt="Paleta modo oscuro"
+                          className="w-full h-auto object-contain rounded-lg shadow-xl border-2 border-border"
+                        />
+                      </div>
+
+                      {/* Códigos de color */}
+                      <div className="flex flex-col gap-3 flex-shrink-0">
+                        <div className="flex items-center gap-2">
+                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#746899' }} />
+                          <div className="flex flex-col min-w-0">
+                            <span className="font-mono text-sm font-bold">#746899</span>
+                            <span className="text-xs text-muted-foreground font-semibold">Morado lavanda</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#EE8778' }} />
+                          <div className="flex flex-col min-w-0">
+                            <span className="font-mono text-sm font-bold">#EE8778</span>
+                            <span className="text-xs text-muted-foreground font-semibold">Coral suave</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#413350' }} />
+                          <div className="flex flex-col min-w-0">
+                            <span className="font-mono text-sm font-bold">#413350</span>
+                            <span className="text-xs text-muted-foreground font-semibold">Púrpura oscuro</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Flujo de diseño */}
+                      <div className="flex items-center gap-3 min-w-0 overflow-x-auto">
+                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
+                        <p className="text-xs italic text-foreground/90 max-w-[140px] leading-tight flex-shrink-0">Iconografía temática de Pokémon Luna</p>
+                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
+                        <Button variant="outline" size="sm" className="px-3 py-4 flex-shrink-0">
+                          <Sun className="h-4 w-4 mr-1" />
+                          <Moon className="h-4 w-4" />
+                        </Button>
+                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
+                        <Button variant="outline" size="sm" className="px-6 py-4 border-purple-500/50 flex-shrink-0">
+                          <Moon className="h-5 w-5 text-purple-500 mr-2" />
+                          <span className="text-sm font-semibold">Pokémon Luna</span>
+                        </Button>
+                        <p className="text-xs italic text-foreground/90 max-w-[140px] leading-tight flex-shrink-0">Coherencia temática en la experiencia</p>
+                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
+                        <div className="w-24 h-24 rounded-xl overflow-hidden border-2 border-border shadow-lg flex-shrink-0">
+                          <img src="/projects/i6.jpg" alt="Icono Luna" className="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Columna derecha: Bloque de Objetivos (altura doble) */}
+                  <div className="flex-shrink-0 pl-12 border-l-2 border-border/50 self-stretch flex items-center">
+                    <div className="space-y-6">
+                      {/* Título con subrayado */}
+                      <div>
+                        <h3 className="text-3xl font-bold uppercase tracking-wider mb-3">Objetivos</h3>
+                        <div className="flex items-center gap-2">
+                          <div className="h-2 bg-primary" style={{ width: '80px' }}></div>
+                          <div className="h-2 bg-primary/60" style={{ width: '40px' }}></div>
+                          <div className="h-2 bg-primary/30" style={{ width: '20px' }}></div>
+                        </div>
+                      </div>
+
+                      {/* Lista de objetivos */}
+                      <ul className="space-y-6">
+                        <li>
+                          <div className="text-lg font-bold text-foreground">Conexión emocional</div>
+                          <div className="text-xs text-muted-foreground italic">Crear vínculos con el público</div>
+                        </li>
+                        <li>
+                          <div className="text-lg font-bold text-foreground">Estudio del público</div>
+                          <div className="text-xs text-muted-foreground italic">Conocer gustos y necesidades</div>
+                        </li>
+                        <li>
+                          <div className="text-lg font-bold text-foreground">Atención a los detalles</div>
+                          <div className="text-xs text-muted-foreground italic">Cuidar cada elemento</div>
+                        </li>
+                        <li>
+                          <div className="text-lg font-bold text-foreground">Diseños originales</div>
+                          <div className="text-xs text-muted-foreground italic">Identidad única</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Contenido para Proceso de Diseño - Portfolio Inanilux */}
+          {projectId === "design-process" && (
+            <div className="relative z-10 h-full flex items-center justify-center px-24 py-8 lg:px-40 overflow-hidden">
+              <div className="w-full max-w-7xl space-y-8">
                 {/* Título superior */}
-                <div className="mb-6 flex-shrink-0">
-                  <h2 className="font-incognito text-3xl lg:text-4xl font-bold mb-2">
-                    Paleta Cromática
+                <div className="text-center">
+                  <h2 className="font-incognito text-4xl lg:text-5xl font-bold mb-2">
+                    Proceso de Diseño: Portfolio Inanilux
                   </h2>
-                  <p className="text-base lg:text-lg text-muted-foreground">
-                    Análisis de colores principales del diseño
+                  <p className="text-lg lg:text-xl text-muted-foreground">
+                    Guía visual de identidad, contenido y experiencia de usuario
                   </p>
                 </div>
 
-                {/* Imágenes con hexadecimales */}
-                <div className="flex-1 flex flex-col justify-center space-y-8 min-h-0">
-                  {/* Imagen i3 con colores del modo claro */}
-                  <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
-                    <div className="flex-1 min-w-0 max-w-2xl">
-                      <img
-                        src="/projects/i3.png"
-                        alt="Análisis de paleta de colores - Modo claro"
-                        className="w-full h-auto max-h-[25vh] object-contain rounded-lg shadow-xl border-2 border-border"
-                      />
+                {/* Grid de bloques informativos */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 lg:gap-x-40 gap-y-14">
+
+                  {/* Bloque 1: Identidad Visual */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-lg font-bold text-primary-foreground">1</span>
+                      </div>
+                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Identidad Visual</h3>
                     </div>
-                    <div className="flex flex-col justify-center gap-6 lg:min-w-[280px] flex-shrink-0">
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#F7D1D5' }} />
-                        <div className="flex flex-col">
-                          <span className="font-mono text-lg font-bold">#F7D1D5</span>
-                          <span className="text-xs text-muted-foreground">Rosa pastel</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#816D5A' }} />
-                        <div className="flex flex-col">
-                          <span className="font-mono text-lg font-bold">#816D5A</span>
-                          <span className="text-xs text-muted-foreground">Marrón cálido</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#FAFAFA' }} />
-                        <div className="flex flex-col">
-                          <span className="font-mono text-lg font-bold">#FAFAFA</span>
-                          <span className="text-xs text-muted-foreground">Blanco suave</span>
-                        </div>
+                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                      <p className="font-mono text-muted-foreground text-xs lg:text-sm">
+                        <span className="font-bold text-foreground">Estilo:</span> Anime · Colorido · Infantil · Cálido
+                      </p>
+                      <p className="text-foreground">
+                        Diseño amable evocando Pokémon con tonos pastel y creatividad.
+                      </p>
+                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                        <p>• Paleta cromática viva</p>
+                        <p>• Tipografía redondeada</p>
+                        <p>• Ilustraciones acompañantes</p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Imagen i4 con colores del modo oscuro */}
-                  <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
-                    <div className="flex-1 min-w-0 max-w-2xl">
-                      <img
-                        src="/projects/i4.png"
-                        alt="Análisis de paleta de colores - Modo oscuro"
-                        className="w-full h-auto max-h-[25vh] object-contain rounded-lg shadow-xl border-2 border-border"
-                      />
+                  {/* Bloque 2: Enfoque de Contenido */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-lg font-bold text-primary-foreground">2</span>
+                      </div>
+                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Enfoque de Contenido</h3>
                     </div>
-                    <div className="flex flex-col justify-center gap-6 lg:min-w-[280px] flex-shrink-0">
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#746899' }} />
-                        <div className="flex flex-col">
-                          <span className="font-mono text-lg font-bold">#746899</span>
-                          <span className="text-xs text-muted-foreground">Morado lavanda</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#EE8778' }} />
-                        <div className="flex flex-col">
-                          <span className="font-mono text-lg font-bold">#EE8778</span>
-                          <span className="text-xs text-muted-foreground">Coral suave</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#413350' }} />
-                        <div className="flex flex-col">
-                          <span className="font-mono text-lg font-bold">#413350</span>
-                          <span className="text-xs text-muted-foreground">Púrpura oscuro</span>
-                        </div>
+                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                      <p className="text-foreground">
+                        Contenido accesible para audiencia joven/familiar con comunicación natural.
+                      </p>
+                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                        <p>• Galería con mejores obras</p>
+                        <p>• Clips destacados de streams</p>
+                        <p>• Descripción de estilo artístico</p>
                       </div>
                     </div>
                   </div>
+
+                  {/* Bloque 3: Métricas y Alcance */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-lg font-bold text-primary-foreground">3</span>
+                      </div>
+                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Métricas y Alcance</h3>
+                    </div>
+                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                      <p className="text-foreground">
+                        Análisis de redes con datos de seguidores y engagement visual.
+                      </p>
+                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                        <p>• Seguidores y crecimiento</p>
+                        <p>• Alcance promedio</p>
+                        <p>• Valor para colaboraciones</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bloque 4: Panel de Publicaciones */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-lg font-bold text-primary-foreground">4</span>
+                      </div>
+                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Panel de Publicaciones</h3>
+                    </div>
+                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                      <p className="text-foreground">
+                        Calendario de contenido con acceso directo a plataformas.
+                      </p>
+                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                        <p>• Módulo de actualizaciones</p>
+                        <p>• Enlaces directos a redes</p>
+                        <p>• Opción de notificaciones</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bloque 5: Experiencia de Usuario */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-lg font-bold text-primary-foreground">5</span>
+                      </div>
+                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Experiencia de Usuario</h3>
+                    </div>
+                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                      <p className="text-foreground">
+                        Flujo natural y emocional transmitiendo su mundo visual.
+                      </p>
+                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                        <p>• Transmitir alegría y arte</p>
+                        <p>• Balance infantil-profesional</p>
+                        <p>• Conexión emocional inmediata</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bloque 6: Propósito Final */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-lg font-bold text-primary-foreground">6</span>
+                      </div>
+                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Propósito Final</h3>
+                    </div>
+                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                      <p className="text-foreground">
+                        Carta de presentación visual para empresas y colaboradores.
+                      </p>
+                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                        <p>• Quién es Inanilux</p>
+                        <p>• Qué hace y cómo se expresa</p>
+                        <p>• Valor de su presencia digital</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Quote final */}
+                <div className="text-center pt-6 border-t-2 border-primary/30">
+                  <p className="text-base lg:text-lg font-mono italic text-muted-foreground">
+                    "Portfolio como experiencia visual: del arte Pokémon al impacto digital"
+                  </p>
                 </div>
               </div>
             </div>

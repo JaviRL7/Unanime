@@ -50,6 +50,8 @@ export default function ProjectDetailRow({
   // Determine if this is a special layout row
   const isGalleryLayout = index === 0 && projectId === "dona-arana";
   const isCartLayout = index === 1 && projectId === "dona-arana";
+  // Use structured layout for more-features project
+  const isStructuredLayout = projectId === "more-features";
 
   return (
     <section className={cn("group relative h-[50vh] max-h-[50vh] w-full", index > 0 && "border-t")}>
@@ -129,7 +131,7 @@ export default function ProjectDetailRow({
         {/* RIGHT COLUMN - Content Side */}
         <div className="relative h-full overflow-hidden">
           <div className="h-full overflow-y-auto p-6 md:p-8 lg:p-10 pt-12 md:pt-16 lg:pt-20">
-            {isGalleryLayout ? (
+            {isGalleryLayout || isStructuredLayout ? (
               /* Sección de Galería para Doña Araña */
               <div className="space-y-10">
                 {/* Date & Status */}

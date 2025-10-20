@@ -20,7 +20,7 @@ const Hero = () => {
       {/* Integrated Navigation */}
       <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-12">
         {/* Logo - Top Left Corner */}
-        <a href="#home" className="group relative inline-flex items-center ml-4 mt-2">
+        <a href="#home" className="group relative inline-flex items-center ml-8 mt-2">
           <div className="w-28 text-foreground transition-all duration-300 group-hover:scale-110">
             <AnimatedLogo animate={false} />
           </div>
@@ -28,13 +28,16 @@ const Hero = () => {
 
         {/* Navigation Links - Center */}
         <div className="font-incognito hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 rounded-full border px-4 py-1.5 bg-background/50 backdrop-blur-sm">
-          <a href="#home" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 hover:opacity-100">
-            Inicio
+          <a href="#proyecto-1" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
+            Proyecto 1
           </a>
-          <a href="#projects" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
-            Proyectos
+          <a href="#proyecto-2" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
+            Proyecto 2
           </a>
-          <a href="#contact" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
+          <a href="#proyecto-3" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
+            Proyecto 3
+          </a>
+          <a href="#contacto" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
             Contacto
           </a>
         </div>
@@ -87,7 +90,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="space-y-12 px-4 md:space-y-16 md:px-8 lg:px-12 lg:space-y-20">
+      <div className="space-y-3 px-4 md:space-y-12 md:px-8 lg:px-12 lg:space-y-16">
         {/* Top Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -95,8 +98,8 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="flex justify-center"
         >
-          <div className="bg-background inline-flex items-center gap-2 rounded-full border-2 px-4 py-2">
-            <span className="text-foreground/60 font-mono text-xs md:text-sm">
+          <div className="bg-background inline-flex items-center gap-2 rounded-full border-2 px-3 py-1.5 md:px-4 md:py-2">
+            <span className="text-foreground/60 font-mono text-[10px] md:text-sm">
               {"<"} Hola Unanime {"/>"}
             </span>
           </div>
@@ -113,7 +116,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-incognito mb-10 text-3xl font-semibold leading-tight md:mb-12 md:text-4xl lg:mb-16 lg:text-6xl"
+            className="font-incognito mb-3 text-xl font-semibold leading-tight md:mb-10 md:text-4xl lg:mb-16 lg:text-6xl"
           >
             <span className="text-foreground">Hola de nuevo, </span>
             <span className="relative italic text-[#8cc2ff]">
@@ -133,22 +136,27 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-12 max-w-5xl text-2xl font-bold leading-relaxed md:mb-16 md:text-3xl lg:mb-20 lg:text-4xl xl:text-5xl tracking-wider scale-x-110"
-            style={{ letterSpacing: '0.05em' }}
+            className="mb-3 max-w-4xl text-base font-bold leading-tight md:leading-relaxed md:mb-12 md:text-2xl lg:mb-16 lg:text-4xl xl:text-5xl"
           >
-            <span className="text-foreground/90">
-              En vez de explicar mis{" "}
-              <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.3em]">Proyectos</span>{" "}
-              con palabras, prefiero enseñároslos con{" "}
-              <span className="relative inline-block">
-                <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.3em]">Diseño</span>
-                <div className="mt-2 flex items-center justify-center gap-2">
-                  <div className="bg-primary h-1" style={{ width: '32px' }} aria-hidden="true"></div>
-                  <div className="bg-primary/60 h-1" style={{ width: '16px' }} aria-hidden="true"></div>
-                  <div className="bg-primary/30 h-1" style={{ width: '8px' }} aria-hidden="true"></div>
-                </div>
-              </span>
-            </span>
+            <div className="text-foreground/90 text-center space-y-1 md:space-y-2">
+              <div>
+                En vez de explicar mis{" "}
+                <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.3em]">Proyectos</span>
+              </div>
+              <div className="whitespace-nowrap">
+                con palabras, prefiero enseñároslos con
+              </div>
+              <div className="mt-2 md:mt-4 flex justify-center">
+                <span className="relative inline-block">
+                  <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.3em]">Diseño</span>
+                  <div className="mt-1 md:mt-2 flex items-center justify-center gap-2">
+                    <div className="bg-primary h-1" style={{ width: '32px' }} aria-hidden="true"></div>
+                    <div className="bg-primary/60 h-1" style={{ width: '16px' }} aria-hidden="true"></div>
+                    <div className="bg-primary/30 h-1" style={{ width: '8px' }} aria-hidden="true"></div>
+                  </div>
+                </span>
+              </div>
+            </div>
           </motion.div>
 
           {/* Image Placeholders */}
@@ -156,98 +164,120 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="grid w-full grid-cols-1 gap-6 md:grid-cols-3 md:gap-8"
+            className="grid w-full mx-auto grid-cols-1 gap-2 px-8 max-w-md md:max-w-none md:px-8 md:grid-cols-3 md:gap-8 lg:gap-10 lg:px-12 xl:gap-12 xl:px-16"
           >
             {[
               { id: 1, src: "/projects/a1.jfif", alt: "Proyecto 1", title: "Proyecto 1", subtitle: "Lo estético" },
               { id: 2, src: "/projects/b1.jpeg", alt: "Proyecto 2", title: "Proyecto 2", subtitle: "Lo funcional" },
               { id: 3, src: "/projects/c1.png", alt: "Proyecto 3", title: "Proyecto 3", subtitle: "Lo planeado" },
             ].map((item) => (
-              <div key={item.id} className="flex flex-col gap-3">
-                <div className="bg-muted/20 group relative aspect-[16/10] overflow-hidden rounded-lg border-2 border-dashed transition-all duration-300 hover:border-primary/50 hover:shadow-lg">
-                  {/* Decorative corners on hover */}
-                  <div className="absolute top-2 left-2 z-10 h-4 w-4 border-t-2 border-l-2 border-primary/0 transition-all duration-300 group-hover:border-primary/80" />
-                  <div className="absolute top-2 right-2 z-10 h-4 w-4 border-t-2 border-r-2 border-primary/0 transition-all duration-300 group-hover:border-primary/80" />
-                  <div className="absolute bottom-2 left-2 z-10 h-4 w-4 border-b-2 border-l-2 border-primary/0 transition-all duration-300 group-hover:border-primary/80" />
-                  <div className="absolute bottom-2 right-2 z-10 h-4 w-4 border-b-2 border-r-2 border-primary/0 transition-all duration-300 group-hover:border-primary/80" />
+              <div key={item.id} className="flex flex-col gap-1 md:gap-3">
+                <div className="relative flex items-center justify-center p-1 md:p-4">
+                  <div className="group/image relative w-full">
+                    {/* Frame corners */}
+                    <div className="border-foreground/20 absolute -top-1 -left-1 h-6 w-6 md:h-8 md:w-8 md:-top-2 md:-left-2 border-t-2 border-l-2 transition-all group-hover/image:-top-3 group-hover/image:-left-3" />
+                    <div className="border-foreground/20 absolute -top-1 -right-1 h-6 w-6 md:h-8 md:w-8 md:-top-2 md:-right-2 border-t-2 border-r-2 transition-all group-hover/image:-top-3 group-hover/image:-right-3" />
+                    <div className="border-foreground/20 absolute -bottom-1 -left-1 h-6 w-6 md:h-8 md:w-8 md:-bottom-2 md:-left-2 border-b-2 border-l-2 transition-all group-hover/image:-bottom-3 group-hover/image:-left-3" />
+                    <div className="border-foreground/20 absolute -right-1 -bottom-1 h-6 w-6 md:h-8 md:w-8 md:-right-2 md:-bottom-2 border-r-2 border-b-2 transition-all group-hover/image:-right-3 group-hover/image:-bottom-3" />
 
-                  {/* Glitch effect for project 3 */}
-                  {item.id === 3 && (
-                    <div className="absolute inset-0 z-30 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {/* Static noise/grain overlay */}
-                      <div className="absolute inset-0 opacity-30" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`
-                      }} />
+                    <div className="bg-background relative overflow-hidden border-2">
+                      <div className="relative aspect-[2/1] md:aspect-[16/10] overflow-hidden">
+                        {/* Glitch effect for project 3 */}
+                        {item.id === 3 && (
+                          <div className="absolute inset-0 z-30 pointer-events-none opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
+                            {/* Static noise/grain overlay - más sutil */}
+                            <div className="absolute inset-0 opacity-10" style={{
+                              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`
+                            }} />
 
-                      {/* Backdrop blur */}
-                      <div className="absolute inset-0 backdrop-blur-[2px] bg-black/40" />
+                            {/* Backdrop blur - más sutil */}
+                            <div className="absolute inset-0 backdrop-blur-[1px] bg-black/60" />
 
-                      {/* Horizontal scanlines (TV style) */}
-                      <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(255,255,255,0.05)_2px,rgba(255,255,255,0.05)_4px)]" />
+                            {/* Horizontal scanlines (TV style) - más sutiles */}
+                            <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(255,255,255,0.02)_2px,rgba(255,255,255,0.02)_4px)]" />
 
-                      {/* Moving horizontal bars (TV interference) */}
-                      <div className="absolute inset-0 overflow-hidden">
-                        <div className="absolute w-full h-[2px] bg-white/20 animate-[tvBar1_4s_linear_infinite]" />
-                        <div className="absolute w-full h-[3px] bg-white/15 blur-[1px] animate-[tvBar2_5.5s_linear_infinite]" />
-                        <div className="absolute w-full h-[1px] bg-white/25 animate-[tvBar3_7s_linear_infinite]" />
-                      </div>
+                            {/* Moving horizontal bars (TV interference) - más sutiles */}
+                            <div className="absolute inset-0 overflow-hidden">
+                              <div className="absolute w-full h-[2px] bg-white/10 animate-[tvBar1_4s_linear_infinite]" />
+                              <div className="absolute w-full h-[3px] bg-white/8 blur-[1px] animate-[tvBar2_5.5s_linear_infinite]" />
+                              <div className="absolute w-full h-[1px] bg-white/12 animate-[tvBar3_7s_linear_infinite]" />
+                            </div>
 
-                      {/* Flickering vignette */}
-                      <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_50%,rgba(0,0,0,0.3)_100%)] animate-pulse" />
+                            {/* Flickering vignette - más sutil */}
+                            <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_50%,rgba(0,0,0,0.2)_100%)]" />
 
-                      {/* Warning message */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                        {/* Warning icon */}
-                        <div className="relative">
-                          <svg className="w-20 h-20 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                          </svg>
-                        </div>
+                            {/* Warning message */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 md:gap-4 pointer-events-auto">
+                              {/* Warning icon */}
+                              <div className="relative">
+                                <svg className="w-12 h-12 md:w-16 md:h-16 text-foreground/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                              </div>
 
-                        {/* Text with glitch effect */}
-                        <div className="text-center space-y-2 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-                          <div className="font-mono text-2xl font-bold text-white tracking-wider animate-[glitchText_10s_infinite]">
-                            EN CONSTRUCCIÓN
+                              {/* Text - tipografía normal */}
+                              <div className="text-center space-y-1 md:space-y-2">
+                                <div className="text-foreground/80 text-lg md:text-2xl font-semibold">
+                                  EN CONSTRUCCIÓN
+                                </div>
+                                <div className="text-foreground/70 text-sm md:text-base">
+                                  Work in Progress
+                                </div>
+                              </div>
+
+                              {/* Link con icono de peligro */}
+                              <a href="#proyecto-3" className="group/btn relative inline-flex items-center gap-2 rounded-md border-2 bg-primary px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 mt-2 md:mt-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3 md:h-4 md:w-4" aria-hidden="true">
+                                  <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                                Ir al proyecto
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" aria-hidden="true">
+                                  <path d="M7 7h10v10"></path>
+                                  <path d="M7 17 17 7"></path>
+                                </svg>
+                              </a>
+                            </div>
                           </div>
-                          <div className="font-mono text-sm text-white/90 animate-[glitchText_13s_infinite]">
-                            Work in Progress
+                        )}
+
+                        {/* Hover overlay with "Ir al proyecto" - only for projects 1 and 2 */}
+                        {item.id !== 3 && (
+                          <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover/image:opacity-100">
+                            <a href={`#proyecto-${item.id}`} className="group/btn relative inline-flex items-center gap-2 rounded-md border-2 bg-primary px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90">
+                              Ir al proyecto
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" aria-hidden="true">
+                                <path d="M7 7h10v10"></path>
+                                <path d="M7 17 17 7"></path>
+                              </svg>
+                            </a>
                           </div>
-                        </div>
+                        )}
+
+                        {/* Image */}
+                        {item.src ? (
+                          <img
+                            src={item.src}
+                            alt={item.alt}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover/image:scale-110"
+                          />
+                        ) : (
+                          <div className="flex h-full items-center justify-center">
+                            <span className="text-foreground/40 font-mono text-sm">
+                              Imagen {item.id}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
-                  )}
-
-                  {/* Hover overlay with "Ir al proyecto" - only for projects 1 and 2 */}
-                  {item.id !== 3 && (
-                    <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-6 py-3 font-semibold transition-all duration-300 hover:scale-105">
-                        Ir al proyecto
-                      </button>
-                    </div>
-                  )}
-
-                  {/* Image or Placeholder */}
-                  {item.src ? (
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  ) : (
-                    <div className="flex h-full items-center justify-center">
-                      <span className="text-foreground/40 font-mono text-sm">
-                        Imagen {item.id}
-                      </span>
-                    </div>
-                  )}
+                  </div>
                 </div>
 
                 {/* Project title and subtitle below image */}
                 <div className="text-center">
-                  <h3 className="text-foreground/80 text-lg font-semibold">
+                  <h3 className="text-foreground/80 text-sm md:text-lg font-semibold">
                     {item.title}
                   </h3>
-                  <p className="text-foreground/60 text-sm italic mt-1">
+                  <p className="text-foreground/60 text-xs md:text-sm italic mt-0.5">
                     {item.subtitle}
                   </p>
                 </div>
@@ -255,6 +285,16 @@ const Hero = () => {
             ))}
           </motion.div>
         </motion.div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute right-4 bottom-2 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
+          SCROLL DOWN
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+            <path d="M12 8v8"></path>
+            <path d="m8 12 4 4 4-4"></path>
+          </svg>
+        </div>
       </div>
     </div>
   );

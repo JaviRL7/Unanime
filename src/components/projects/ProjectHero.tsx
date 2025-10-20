@@ -183,23 +183,23 @@ export default function ProjectHero({
 
           {/* Contenido para Inanilux Portfolio */}
           {projectId === "inanilux-portfolio" && (
-            <div className="relative z-10 h-full flex items-center justify-center p-8 lg:p-20">
-              <div className="max-w-[1400px] w-full">
+            <div className="relative z-10 h-full flex items-center justify-center p-4 md:p-8 lg:p-20 overflow-y-auto lg:overflow-y-hidden">
+              <div className="max-w-[1400px] w-full py-4 md:py-0">
                 {/* Badge de "Prototipo en desarrollo" en esquina superior derecha */}
-                <div className="absolute top-8 right-8 px-5 py-2.5 bg-yellow-500/10 border border-yellow-500/30 rounded-lg backdrop-blur-sm">
-                  <span className="text-yellow-600 dark:text-yellow-400 text-sm font-mono font-semibold uppercase tracking-wider">
+                <div className="absolute top-2 right-2 md:top-8 md:right-8 px-2 py-1 md:px-5 md:py-2.5 bg-yellow-500/10 border border-yellow-500/30 rounded-lg backdrop-blur-sm">
+                  <span className="text-yellow-600 dark:text-yellow-400 text-[10px] md:text-sm font-mono font-semibold uppercase tracking-wider">
                     Prototipo en desarrollo
                   </span>
                 </div>
 
                 {/* Layout de 2 columnas */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 lg:gap-24 items-center">
                   {/* COLUMNA IZQUIERDA - Foto circular + Stats */}
-                  <div className="space-y-12">
+                  <div className="space-y-4 md:space-y-12">
                     {/* Foto circular de la creadora */}
                     <div className="flex justify-center lg:justify-start">
                       <div className="relative">
-                        <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-[6px] border-green-500/30 shadow-2xl">
+                        <div className="w-32 h-32 md:w-48 md:h-48 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 md:border-4 lg:border-[6px] border-green-500/30 shadow-2xl">
                           <img
                             src="/projects/fotoina.jpg"
                             alt="Inanilux - Creadora de contenido artístico"
@@ -207,60 +207,60 @@ export default function ProjectHero({
                           />
                         </div>
                         {/* Anillo decorativo */}
-                        <div className="absolute inset-0 rounded-full border-[3px] border-green-500/20 animate-pulse" style={{ animation: "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite" }} />
+                        <div className="absolute inset-0 rounded-full border-2 md:border-[3px] border-green-500/20 animate-pulse" style={{ animation: "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite" }} />
                       </div>
                     </div>
 
                     {/* Estadísticas grandes de redes sociales */}
-                    <div className="space-y-8">
+                    <div className="space-y-3 md:space-y-8">
                       {/* TikTok */}
-                      <div className="flex items-center gap-5">
-                        <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-pink-500/20 to-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                          <svg className="w-8 h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="currentColor">
+                      <div className="flex items-center gap-2 md:gap-5">
+                        <div className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-pink-500/20 to-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                           </svg>
                         </div>
                         <div>
-                          <div className="font-bold text-3xl lg:text-5xl font-mono">93.3K</div>
-                          <div className="text-base lg:text-lg text-muted-foreground">seguidores · 4.7M ♥</div>
+                          <div className="font-bold text-lg md:text-3xl lg:text-5xl font-mono">93.3K</div>
+                          <div className="text-xs md:text-base lg:text-lg text-muted-foreground">seguidores · 4.7M ♥</div>
                         </div>
                       </div>
 
                       {/* Instagram */}
-                      <div className="flex items-center gap-5">
-                        <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0">
-                          <svg className="w-8 h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="currentColor">
+                      <div className="flex items-center gap-2 md:gap-5">
+                        <div className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                           </svg>
                         </div>
                         <div>
-                          <div className="font-bold text-3xl lg:text-5xl font-mono">34.6K</div>
-                          <div className="text-base lg:text-lg text-muted-foreground">seguidores · 43 posts</div>
+                          <div className="font-bold text-lg md:text-3xl lg:text-5xl font-mono">34.6K</div>
+                          <div className="text-xs md:text-base lg:text-lg text-muted-foreground">seguidores · 43 posts</div>
                         </div>
                       </div>
 
                       {/* YouTube */}
-                      <div className="flex items-center gap-5">
-                        <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-red-500/20 to-red-600/20 flex items-center justify-center flex-shrink-0">
-                          <svg className="w-8 h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="currentColor">
+                      <div className="flex items-center gap-2 md:gap-5">
+                        <div className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-red-500/20 to-red-600/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                           </svg>
                         </div>
                         <div>
-                          <div className="font-bold text-3xl lg:text-5xl font-mono">4.05K</div>
-                          <div className="text-base lg:text-lg text-muted-foreground">suscriptores · 75 vídeos</div>
+                          <div className="font-bold text-lg md:text-3xl lg:text-5xl font-mono">4.05K</div>
+                          <div className="text-xs md:text-base lg:text-lg text-muted-foreground">suscriptores · 75 vídeos</div>
                         </div>
                       </div>
 
                       {/* Enlace */}
-                      <div className="pt-6 border-t border-border/50">
+                      <div className="pt-2 md:pt-6 border-t border-border/50">
                         <a
                           href="https://inanilux.carrd.co"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-3 text-lg font-medium text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors"
+                          className="inline-flex items-center gap-2 md:gap-3 text-sm md:text-lg font-medium text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors"
                         >
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
                           inanilux.carrd.co
@@ -270,31 +270,31 @@ export default function ProjectHero({
                   </div>
 
                   {/* COLUMNA DERECHA - Título y texto descriptivo */}
-                  <div className="space-y-10">
+                  <div className="space-y-4 md:space-y-10">
                     {/* Título del proyecto */}
-                    <h2 className="font-incognito text-6xl lg:text-7xl font-bold leading-tight">
+                    <h2 className="font-incognito text-2xl md:text-4xl lg:text-7xl font-bold leading-tight">
                       {title}
                     </h2>
 
-                    <div className="flex items-center gap-3">
-                      <div className="h-2 bg-primary" style={{ width: "80px" }} />
-                      <div className="h-2 bg-primary/60" style={{ width: "40px" }} />
-                      <div className="h-2 bg-primary/30" style={{ width: "20px" }} />
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="h-1 md:h-2 bg-primary" style={{ width: "40px" }} />
+                      <div className="h-1 md:h-2 bg-primary/60" style={{ width: "20px" }} />
+                      <div className="h-1 md:h-2 bg-primary/30" style={{ width: "10px" }} />
                     </div>
 
                     {/* Texto descriptivo con palabras destacadas */}
-                    <div className="space-y-8 text-2xl lg:text-3xl leading-relaxed lg:leading-relaxed">
+                    <div className="space-y-3 md:space-y-8 text-sm md:text-xl lg:text-3xl leading-tight md:leading-relaxed lg:leading-relaxed">
                       <p className="text-muted-foreground">
                         Este proyecto es un <span className="font-bold text-foreground">prototipo</span> que refleja mi forma de trabajar. Decidí intentar contactar con <span className="font-bold text-green-600 dark:text-green-400">Inanilux</span>, creadora de contenido artístico centrado en Pokémon, tras ver un tuit en el que comentaba que aún no tenía un <span className="font-semibold text-foreground">portfolio como ilustradora</span>.
                       </p>
                       <p className="text-muted-foreground">
-                        Me ofrecí para crearle uno, no por <span className="font-semibold text-foreground">encargo</span> ni por interés económico, sino como <span className="font-bold text-foreground">ejercicio creativo y de aprendizaje</span>. Me hubiera gustado mostrar este proyecto terminado, pero como <span className="font-semibold text-foreground">cierta empresa valenciana</span> me retó a venderme de la mejor manera posible, aún no he podido finalizarlo. Por ello, he decidido mostrar a <span className="text-3xl lg:text-4xl font-bold text-red-600 dark:text-red-500">continuación</span> cómo es mi <span className="text-3xl lg:text-4xl font-bold text-red-600 dark:text-red-500">proceso creativo</span>.
+                        Me ofrecí para crearle uno, no por <span className="font-semibold text-foreground">encargo</span> ni por interés económico, sino como <span className="font-bold text-foreground">ejercicio creativo y de aprendizaje</span>. Me hubiera gustado mostrar este proyecto terminado, pero como <span className="font-semibold text-foreground">cierta empresa valenciana</span> me retó a venderme de la mejor manera posible, aún no he podido finalizarlo. Por ello, he decidido mostrar a <span className="text-base md:text-2xl lg:text-4xl font-bold text-red-600 dark:text-red-500">continuación</span> cómo es mi <span className="text-base md:text-2xl lg:text-4xl font-bold text-red-600 dark:text-red-500">proceso creativo</span>.
                       </p>
                     </div>
 
                     {/* Descripción adicional */}
-                    <div className="pt-10 border-t-2 border-border/50">
-                      <p className="text-xl lg:text-2xl text-muted-foreground italic">
+                    <div className="pt-3 md:pt-10 border-t-2 border-border/50">
+                      <p className="text-sm md:text-xl lg:text-2xl text-muted-foreground italic">
                         Artista y creadora de contenido de arte y Pokémon
                       </p>
                     </div>
@@ -480,30 +480,30 @@ export default function ProjectHero({
 
           {/* Contenido para Proceso de Diseño - Portfolio Inanilux */}
           {projectId === "design-process" && (
-            <div className="relative z-10 h-full flex items-center justify-center px-24 py-8 lg:px-40 overflow-hidden">
-              <div className="w-full max-w-7xl space-y-8">
+            <div className="relative z-10 h-full flex items-center justify-center px-4 py-4 md:px-12 md:py-8 lg:px-40 overflow-y-auto lg:overflow-hidden">
+              <div className="w-full max-w-7xl space-y-4 md:space-y-8 py-4 md:py-0">
                 {/* Título superior */}
                 <div className="text-center">
-                  <h2 className="font-incognito text-4xl lg:text-5xl font-bold mb-2">
+                  <h2 className="font-incognito text-xl md:text-4xl lg:text-5xl font-bold mb-1 md:mb-2">
                     Proceso de Diseño: Portfolio Inanilux
                   </h2>
-                  <p className="text-lg lg:text-xl text-muted-foreground">
+                  <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
                     Guía visual de identidad, contenido y experiencia de usuario
                   </p>
                 </div>
 
                 {/* Grid de bloques informativos */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 lg:gap-x-40 gap-y-14">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-24 lg:gap-x-40 gap-y-6 md:gap-y-14">
 
                   {/* Bloque 1: Identidad Visual */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-lg font-bold text-primary-foreground">1</span>
+                  <div className="space-y-2 md:space-y-3">
+                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
+                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">1</span>
                       </div>
-                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Identidad Visual</h3>
+                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Identidad Visual</h3>
                     </div>
-                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
                       <p className="font-mono text-muted-foreground text-xs lg:text-sm">
                         <span className="font-bold text-foreground">Estilo:</span> Anime · Colorido · Infantil · Cálido
                       </p>
@@ -519,14 +519,14 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 2: Enfoque de Contenido */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-lg font-bold text-primary-foreground">2</span>
+                  <div className="space-y-2 md:space-y-3">
+                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
+                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">2</span>
                       </div>
-                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Enfoque de Contenido</h3>
+                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Enfoque de Contenido</h3>
                     </div>
-                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
                       <p className="text-foreground">
                         Contenido accesible para audiencia joven/familiar con comunicación natural.
                       </p>
@@ -539,14 +539,14 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 3: Métricas y Alcance */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-lg font-bold text-primary-foreground">3</span>
+                  <div className="space-y-2 md:space-y-3">
+                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
+                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">3</span>
                       </div>
-                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Métricas y Alcance</h3>
+                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Métricas y Alcance</h3>
                     </div>
-                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
                       <p className="text-foreground">
                         Análisis de redes con datos de seguidores y engagement visual.
                       </p>
@@ -559,14 +559,14 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 4: Panel de Publicaciones */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-lg font-bold text-primary-foreground">4</span>
+                  <div className="space-y-2 md:space-y-3">
+                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
+                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">4</span>
                       </div>
-                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Panel de Publicaciones</h3>
+                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Panel de Publicaciones</h3>
                     </div>
-                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
                       <p className="text-foreground">
                         Calendario de contenido con acceso directo a plataformas.
                       </p>
@@ -579,14 +579,14 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 5: Experiencia de Usuario */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-lg font-bold text-primary-foreground">5</span>
+                  <div className="space-y-2 md:space-y-3">
+                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
+                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">5</span>
                       </div>
-                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Experiencia de Usuario</h3>
+                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Experiencia de Usuario</h3>
                     </div>
-                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
                       <p className="text-foreground">
                         Flujo natural y emocional transmitiendo su mundo visual.
                       </p>
@@ -599,14 +599,14 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 6: Propósito Final */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-lg font-bold text-primary-foreground">6</span>
+                  <div className="space-y-2 md:space-y-3">
+                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
+                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">6</span>
                       </div>
-                      <h3 className="font-incognito text-2xl lg:text-3xl font-bold text-foreground">Propósito Final</h3>
+                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Propósito Final</h3>
                     </div>
-                    <div className="space-y-2 text-sm lg:text-base leading-relaxed">
+                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
                       <p className="text-foreground">
                         Carta de presentación visual para empresas y colaboradores.
                       </p>
@@ -621,8 +621,8 @@ export default function ProjectHero({
                 </div>
 
                 {/* Quote final */}
-                <div className="text-center pt-6 border-t-2 border-primary/30">
-                  <p className="text-base lg:text-lg font-mono italic text-muted-foreground">
+                <div className="text-center pt-3 md:pt-6 border-t-2 border-primary/30">
+                  <p className="text-xs md:text-base lg:text-lg font-mono italic text-muted-foreground">
                     "Portfolio como experiencia visual: del arte Pokémon al impacto digital"
                   </p>
                 </div>
@@ -728,9 +728,10 @@ export default function ProjectHero({
               <HeadingLine className="mt-3" />
             </div>
 
-            <p className="text-muted-foreground mb-6 text-sm leading-relaxed md:text-base">
-              {description}
-            </p>
+            <p
+              className="text-muted-foreground mb-6 text-base leading-relaxed md:text-lg lg:text-xl"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
 
             <div className="mb-8 flex flex-wrap gap-3">
               {githubUrl && (
@@ -883,9 +884,10 @@ export default function ProjectHero({
                 />
               </div>
 
-              <p className="text-muted-foreground mx-auto mb-6 max-w-2xl text-base leading-relaxed">
-                {description}
-              </p>
+              <p
+                className="text-muted-foreground mx-auto mb-6 max-w-2xl text-lg leading-relaxed md:text-xl lg:text-2xl"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
 
               <div className="flex flex-wrap justify-center gap-3">
                 {githubUrl && (

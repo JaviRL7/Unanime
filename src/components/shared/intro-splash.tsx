@@ -39,15 +39,6 @@ export const IntroSplash = () => {
             </div>
           </motion.div>
 
-          <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <span className="block font-serif">Javier Rodríguez</span>
-          </motion.h1>
-
           <motion.p
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-wide"
             initial={{ opacity: 0, y: 20 }}
@@ -63,7 +54,7 @@ export const IntroSplash = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <span className="block font-mono italic bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
+            <span className="block font-mono bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
               UNANIME
             </span>
           </motion.div>

@@ -54,23 +54,23 @@ export default function ProjectDetailRow({
   const isStructuredLayout = projectId === "more-features";
 
   return (
-    <section className={cn("group relative h-[50vh] max-h-[50vh] w-full", index > 0 && "border-t")}>
-      <div className="grid h-full lg:grid-cols-2">
+    <section className={cn("group relative h-screen lg:h-[50vh] max-h-screen lg:max-h-[50vh] w-full snap-start snap-always lg:snap-align-none", index > 0 && "border-t")}>
+      <div className="grid h-full grid-rows-2 lg:grid-rows-1 lg:grid-cols-2">
         {/* LEFT COLUMN - Image Side */}
         <div className="bg-muted/20 relative h-full overflow-hidden border-b lg:border-r lg:border-b-0">
-          {/* Cross pattern */}
+          {/* Cross pattern - más sutil en móvil */}
           <div className="absolute inset-0">
-            <div className="before:bg-border after:bg-border relative h-full w-full before:absolute before:top-1/2 before:left-0 before:h-0.5 before:w-full after:absolute after:top-0 after:left-1/2 after:h-full after:w-0.5" />
+            <div className="before:bg-border after:bg-border relative h-full w-full before:absolute before:top-1/2 before:left-0 before:h-px lg:before:h-0.5 before:w-full after:absolute after:top-0 after:left-1/2 after:h-full after:w-px lg:after:w-0.5" />
           </div>
 
           {/* Image Container */}
-          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-6 md:p-8 lg:p-10">
+          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-4 md:p-6 lg:p-10">
             <div className="group/image relative w-full max-w-4xl">
               {/* Frame corners */}
-              <div className="border-foreground/20 absolute -top-2 -left-2 h-8 w-8 border-t-2 border-l-2 transition-all group-hover:-top-3 group-hover:-left-3" />
-              <div className="border-foreground/20 absolute -top-2 -right-2 h-8 w-8 border-t-2 border-r-2 transition-all group-hover:-top-3 group-hover:-right-3" />
-              <div className="border-foreground/20 absolute -bottom-2 -left-2 h-8 w-8 border-b-2 border-l-2 transition-all group-hover:-bottom-3 group-hover:-left-3" />
-              <div className="border-foreground/20 absolute -right-2 -bottom-2 h-8 w-8 border-r-2 border-b-2 transition-all group-hover:-right-3 group-hover:-bottom-3" />
+              <div className="border-foreground/20 absolute -top-1 -left-1 h-6 w-6 lg:h-8 lg:w-8 lg:-top-2 lg:-left-2 border-t-2 border-l-2 transition-all group-hover:lg:-top-3 group-hover:lg:-left-3" />
+              <div className="border-foreground/20 absolute -top-1 -right-1 h-6 w-6 lg:h-8 lg:w-8 lg:-top-2 lg:-right-2 border-t-2 border-r-2 transition-all group-hover:lg:-top-3 group-hover:lg:-right-3" />
+              <div className="border-foreground/20 absolute -bottom-1 -left-1 h-6 w-6 lg:h-8 lg:w-8 lg:-bottom-2 lg:-left-2 border-b-2 border-l-2 transition-all group-hover:lg:-bottom-3 group-hover:lg:-left-3" />
+              <div className="border-foreground/20 absolute -right-1 -bottom-1 h-6 w-6 lg:h-8 lg:w-8 lg:-right-2 lg:-bottom-2 border-r-2 border-b-2 transition-all group-hover:lg:-right-3 group-hover:lg:-bottom-3" />
 
               {/* Main image/video */}
               <div className="bg-background relative overflow-hidden border-2">
@@ -130,10 +130,10 @@ export default function ProjectDetailRow({
 
         {/* RIGHT COLUMN - Content Side */}
         <div className="relative h-full overflow-hidden">
-          <div className="h-full overflow-y-auto p-6 md:p-8 lg:p-10 pt-12 md:pt-16 lg:pt-20">
+          <div className="h-full overflow-y-auto p-4 md:p-6 lg:p-10 pt-6 md:pt-12 lg:pt-20">
             {isGalleryLayout || isStructuredLayout ? (
               /* Sección de Galería para Doña Araña */
-              <div className="space-y-10">
+              <div className="space-y-4 md:space-y-10">
                 {/* Date & Status */}
                 <div className="mb-6 flex flex-wrap items-center gap-3">
                   <time className="text-muted-foreground font-mono text-xs">
@@ -156,8 +156,8 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Header */}
-                <div className="border-l-4 border-primary pl-6">
-                  <h3 className="font-incognito text-4xl font-bold mb-2 lg:text-5xl">
+                <div className="border-l-2 md:border-l-4 border-primary pl-3 md:pl-6">
+                  <h3 className="font-incognito text-xl md:text-4xl font-bold mb-1 md:mb-2 lg:text-5xl">
                     {title}
                   </h3>
                   <div className="flex items-center gap-2 mt-3 mb-4">
@@ -247,8 +247,8 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Header */}
-                <div className="border-l-4 border-primary pl-6">
-                  <h3 className="font-incognito text-4xl font-bold mb-2 lg:text-5xl">
+                <div className="border-l-2 md:border-l-4 border-primary pl-3 md:pl-6">
+                  <h3 className="font-incognito text-xl md:text-4xl font-bold mb-1 md:mb-2 lg:text-5xl">
                     {title}
                   </h3>
                   <div className="flex items-center gap-2 mt-3 mb-4">

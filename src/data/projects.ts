@@ -21,7 +21,7 @@ export const projects: Project[] = [
       date: "Ene, 2025",
       status: "in-progress",
       description:
-        "Aplicación web completa para digitalizar la tienda Doña Araña, especializada en lanas y manualidades. Desarrollada con Next.js y Spring Boot (Java), permite a los clientes explorar el catálogo, gestionar apartados y reseñas. El sistema incluye un panel de administración intuitivo para gestionar productos, controlar el stock y actualizar la galería, ofreciendo una experiencia moderna, funcional y totalmente responsive.",
+        "Aplicación web completa para <span class='font-bold text-primary'>digitalizar</span> la tienda Doña Araña, especializada en <span class='font-bold text-primary'>lanas y manualidades</span>. Desarrollada con <span class='font-semibold text-foreground'>Next.js</span> y <span class='font-semibold text-foreground'>Spring Boot</span>, permite a los clientes <span class='font-bold text-primary'>explorar el catálogo</span>, <span class='font-bold text-primary'>gestionar apartados</span> y dejar reseñas. Incluye un <span class='font-bold text-primary'>panel de administración</span> intuitivo para gestionar productos, controlar el stock y actualizar la galería, ofreciendo una experiencia <span class='font-semibold text-foreground'>moderna, funcional</span> y <span class='font-semibold text-foreground'>totalmente responsive</span>.",
       mediaType: "video",
       mediaSrc: "/video/u1.mkv",
       badges: [],

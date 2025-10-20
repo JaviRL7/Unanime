@@ -29,73 +29,54 @@ export const projects: Project[] = [
       demoUrl: "https://pure-gratitude-production-4381.up.railway.app",
     },
     details: [
-      // Primera fila - Sección de Galería
+      // Primera fila - Diseño y Dirección Visual
       {
-        date: "Ene, 2025",
-        status: "in-progress",
-        title: "Sección de Galería",
-        subtitle: "Gestión visual · Organización · Multimedia",
+        date: "Sept, 2025",
+        status: "completed",
+        title: "Diseño y Dirección Visual",
+        subtitle: "Frontend · Gestión visual · Organización",
         mediaType: "video",
         mediaSrc: "/video/u2.mkv",
         description:
-          "Sistema avanzado de gestión de imágenes que permite organizar, categorizar y visualizar contenido multimedia de forma intuitiva. Incluye funcionalidades de carga masiva, previsualización en tiempo real, y organización por etiquetas y categorías personalizables.",
-        systemTitle: "Sistema de Galería",
+          "Desarrollé la parte visual del proyecto, centrando el trabajo en crear una experiencia acogedora, clara y coherente con la identidad artesanal de la marca. Busqué una estética que recordara al mundo de las manualidades, las lanas y el ambiente cálido del otoño e invierno. Cuidé la composición, la tipografía y la paleta de colores para transmitir esa sensación \"cozy\" de lo hecho a mano, manteniendo al mismo tiempo una interfaz moderna, ordenada y funcional.",
+        systemTitle: "Diseño y Experiencia de Usuario",
         systemDescription:
-          "Sistema avanzado de gestión de imágenes que permite organizar, categorizar y visualizar contenido multimedia de forma intuitiva. Incluye funcionalidades de carga masiva, previsualización en tiempo real, y organización por etiquetas y categorías personalizables.",
+          "Desarrollé la parte visual del proyecto, centrando el trabajo en crear una experiencia acogedora, clara y coherente con la identidad artesanal de la marca. Busqué una estética que recordara al mundo de las manualidades, las lanas y el ambiente cálido del otoño e invierno. Cuidé la composición, la tipografía y la paleta de colores para transmitir esa sensación \"cozy\" de lo hecho a mano, manteniendo al mismo tiempo una interfaz moderna, ordenada y funcional.",
         features: [
-          "Optimización automática de imágenes",
-          "Vista en cuadrícula responsive",
-          "Filtros y búsqueda avanzada",
+          "Diseñar una interfaz visualmente atractiva y fácil de entender para todo tipo de usuarios",
+          "Aprender a equilibrar diseño estético y usabilidad dentro del frontend",
+          "Profundizar en la creación de una identidad visual coherente y artesanal",
+          "Mejorar la accesibilidad, especialmente para personas mayores o con menos experiencia digital",
+          "Consolidar un flujo de trabajo que una estética cálida con un desarrollo técnico sólido",
         ],
-        quote: "Sistema de galería optimizado para la gestión visual",
+        quote: "Uniendo estética cálida con desarrollo técnico sólido",
       },
-    ],
-  },
-
-  // Proyecto 2 - E-Commerce (Grid)
-  {
-    id: "e-commerce",
-    hero: {
-      title: "E-Commerce",
-      date: "Nov, 2024",
-      status: "completed",
-      description:
-        "Plataforma de comercio electrónico completa con gestión de productos, carrito de compras y pasarela de pago integrada.",
-      mediaType: "image",
-      mediaSrc: "/projects/ecommerce-screenshot.png",
-      badges: [
-        { text: "E-commerce", color: "bg-blue-500/10 text-blue-600 border-blue-500/30" },
-        { text: "Fullstack", color: "bg-orange-500/10 text-orange-600 border-orange-500/30" },
-        { text: "Pagos", color: "bg-green-500/10 text-green-600 border-green-500/30" },
-      ],
-      githubUrl: "https://github.com/javierrodriguez/ecommerce",
-      demoUrl: "https://ecommerce-demo.com",
-    },
-    details: [
-      // Primera fila - Carrito de Compras
+      // Segunda fila - Sistema de Ventas Online
       {
-        date: "Nov, 2024",
+        date: "Sept, 2025",
         status: "completed",
-        title: "Carrito de Compras",
-        subtitle: "E-commerce · Gestión de ventas · Checkout",
+        title: "Sistema de Ventas Online",
+        subtitle: "E-commerce · Gestión de pedidos · Procesamiento de pagos",
         mediaType: "video",
         mediaSrc: "/video/u3.mkv",
         description:
-          "Plataforma completa de comercio electrónico con carrito de compras inteligente, gestión de inventario en tiempo real y procesamiento seguro de pagos. Incluye sistema de descuentos, cupones promocionales y análisis de ventas para optimizar el rendimiento del negocio.",
-        systemTitle: "Sistema de Ventas",
+          "Desarrollé una plataforma completa de comercio electrónico centrada en simplificar la gestión de ventas y ofrecer una experiencia de compra clara para todo tipo de usuarios. Desde el principio me propuse que el diseño fuera legible, entendible y accesible, especialmente para personas mayores o con menos familiaridad con la tecnología. Quería demostrar que un e-commerce puede ser funcional y moderno sin perder la cercanía ni la facilidad de uso.",
+        systemTitle: "Gestión de Ventas",
         systemDescription:
-          "Plataforma completa de comercio electrónico con carrito de compras inteligente, gestión de inventario en tiempo real y procesamiento seguro de pagos. Incluye sistema de descuentos, cupones promocionales y análisis de ventas para optimizar el rendimiento del negocio.",
+          "Desarrollé una plataforma completa de comercio electrónico centrada en simplificar la gestión de ventas y ofrecer una experiencia de compra clara para todo tipo de usuarios. Desde el principio me propuse que el diseño fuera legible, entendible y accesible, especialmente para personas mayores o con menos familiaridad con la tecnología.",
         features: [
-          "Carrito persistente y sincronización multi-dispositivo",
-          "Gestión de inventario y control de stock",
-          "Pasarela de pago segura y múltiples métodos",
+          "Aprender a gestionar un portal e-commerce con ventas y procesos reales",
+          "Profundizar en la arquitectura y comunicación entre frontend y backend",
+          "Integrar pasarelas de pago seguras y un control de stock automatizado",
+          "Diseñar una experiencia accesible y comprensible también para personas mayores",
+          "Mejorar mi capacidad para equilibrar diseño, usabilidad y rendimiento técnico",
         ],
-        quote: "Experiencia de compra optimizada para conversión",
+        quote: "E-commerce funcional y moderno sin perder cercanía ni facilidad de uso",
       },
     ],
   },
 
-  // Proyecto 3 - Contabilidad Web
+  // Proyecto 2 - Contabilidad Web
   {
     id: "contabilidad-web",
     hero: {
@@ -104,79 +85,104 @@ export const projects: Project[] = [
       status: "completed",
       description:
         "Sistema de gestión contable para pequeñas empresas con dashboard interactivo, reportes financieros y análisis en tiempo real.",
-      mediaType: "image",
-      mediaSrc: "/projects/contabilidad-screenshot.png",
-      badges: [
-        { text: "Finanzas", color: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30" },
-        { text: "Gestión", color: "bg-emerald-500/10 text-emerald-600 border-emerald-500/30" },
-        { text: "Dashboard", color: "bg-indigo-500/10 text-indigo-600 border-indigo-500/30" },
-      ],
+      mediaType: "video",
+      mediaSrc: "/video/u4.mp4",
+      badges: [],
       githubUrl: "https://github.com/javierrodriguez/contabilidad-web",
     },
+    details: [],
+  },
+
+  // Proyecto 3 - LinkedIn Stats
+  {
+    id: "linkedin-stats",
+    hero: {
+      title: "Impacto en LinkedIn",
+      date: "2025",
+      status: "completed",
+      description: "Métricas de alcance y engagement de mi publicación sobre Contabilidad-DA",
+      mediaType: "image",
+      mediaSrc: undefined,
+      badges: [],
+      githubUrl: "https://github.com/JaviRL7/Contabilidad-DA",
+    },
+    details: [],
+  },
+
+  // Proyecto 4 - Más funcionalidades
+  {
+    id: "more-features",
+    hero: {
+      title: "",
+      date: "",
+      status: "in-progress",
+      description: "",
+      mediaType: "image",
+      mediaSrc: undefined,
+      badges: [],
+    },
     details: [
+      // Primera fila - Panel de Administración
       {
-        date: "Dic, 2024",
-        status: "completed",
-        title: "Contabilidad Web",
-        subtitle: "Finanzas · Gestión · Dashboard",
-        mediaType: "image",
-        mediaSrc: "/projects/contabilidad-screenshot.png",
+        date: "Ene, 2025",
+        status: "in-progress",
+        title: "Panel de Administración",
+        subtitle: "Control · Gestión · Dashboard",
+        mediaType: "video",
+        mediaSrc: "/video/u5.mkv",
         description:
-          "Sistema de gestión contable para pequeñas empresas con dashboard interactivo, reportes financieros y análisis en tiempo real.",
-        systemTitle: "Sistema de Gestión Contable",
+          "Panel administrativo completo para gestionar todos los aspectos de la tienda. Permite control total sobre productos, inventario, pedidos y usuarios desde una interfaz intuitiva.",
+        systemTitle: "Sistema Administrativo",
         systemDescription:
-          "Herramienta completa para el control financiero de pequeñas y medianas empresas, con funcionalidades de facturación, control de gastos e ingresos, y generación automática de reportes.",
+          "Dashboard completo con métricas en tiempo real, gestión de productos y stock, control de pedidos y administración de usuarios. Incluye gráficos interactivos y exportación de reportes.",
         features: [
-          "Dashboard interactivo con métricas en tiempo real",
-          "Generación automática de reportes financieros",
-          "Control de gastos e ingresos categorizado",
-          "Facturación y gestión de clientes",
+          "Control total de inventario y stock",
+          "Gestión de pedidos y usuarios",
+          "Métricas y reportes en tiempo real",
         ],
-        quote: "Simplifica la contabilidad de tu negocio",
+        quote: "Panel de control intuitivo para gestión eficiente",
+      },
+      // Segunda fila - Sistema de Apartados
+      {
+        date: "Ene, 2025",
+        status: "in-progress",
+        title: "Sistema de Apartados",
+        subtitle: "Reservas · Gestión · Pagos",
+        mediaType: "video",
+        mediaSrc: "/video/u6.mkv",
+        description:
+          "Funcionalidad única que permite a los clientes apartar productos con un sistema de pagos parciales. Ideal para artículos de alto valor que requieren planificación de compra.",
+        systemTitle: "Gestión de Apartados",
+        systemDescription:
+          "Sistema completo de reservas y apartados con seguimiento de pagos parciales, notificaciones automáticas y gestión de plazos. Los clientes pueden ver el estado de sus apartados en tiempo real.",
+        features: [
+          "Pagos parciales y seguimiento de saldos",
+          "Notificaciones automáticas de vencimientos",
+          "Historial completo de transacciones",
+        ],
+        quote: "Facilita compras planificadas con pagos flexibles",
       },
     ],
   },
 
-  // Proyecto 4 - Nuevo Proyecto
+  // Proyecto 5 - Portfolio para Inanilux
   {
-    id: "nuevo-proyecto",
+    id: "inanilux-portfolio",
     hero: {
-      title: "Nuevo Proyecto",
-      date: "Feb, 2025",
+      title: "Portfolio para Inanilux",
+      date: "En desarrollo",
       status: "in-progress",
-      description:
-        "Descripción del nuevo proyecto con funcionalidades avanzadas.",
+      description: "Prototipo de portfolio personalizado para creadora de contenido artístico centrado en Pokémon",
       mediaType: "image",
-      mediaSrc: "/projects/nuevo-proyecto-screenshot.png",
+      mediaSrc: undefined,
       badges: [
-        { text: "Web", color: "bg-rose-500/10 text-rose-600 border-rose-500/30" },
-        { text: "Desarrollo", color: "bg-amber-500/10 text-amber-600 border-amber-500/30" },
-        { text: "API", color: "bg-violet-500/10 text-violet-600 border-violet-500/30" },
+        { text: "Prototipo", color: "border-yellow-500/50 bg-yellow-500/10 text-yellow-500" },
+        { text: "En desarrollo", color: "border-blue-500/50 bg-blue-500/10 text-blue-500" },
       ],
-      githubUrl: "https://github.com/javierrodriguez/nuevo-proyecto",
     },
-    details: [
-      {
-        date: "Feb, 2025",
-        status: "in-progress",
-        title: "Nuevo Proyecto",
-        subtitle: "Web · Desarrollo · API",
-        mediaType: "image",
-        mediaSrc: "/projects/nuevo-proyecto-screenshot.png",
-        description:
-          "Descripción del nuevo proyecto con funcionalidades avanzadas.",
-        systemTitle: "Sistema en Desarrollo",
-        systemDescription:
-          "Proyecto actualmente en fase de desarrollo con funcionalidades avanzadas y arquitectura moderna.",
-        features: [
-          "API RESTful escalable",
-          "Interfaz moderna y responsive",
-          "Integración con servicios externos",
-        ],
-        quote: "En construcción - Próximamente más detalles",
-      },
-    ],
+    details: [],
   },
+
 ];
 
 /**

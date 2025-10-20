@@ -46,8 +46,8 @@ export interface ProjectHero {
   description: string;
   /** Type of media to display */
   mediaType: MediaType;
-  /** Path to media file (video or image) */
-  mediaSrc: string;
+  /** Path to media file (video or image) - undefined for blueprint pattern */
+  mediaSrc: string | undefined;
   /** Array of badge tags */
   badges: Badge[];
   /** GitHub repository URL (optional) */
@@ -134,6 +134,8 @@ export interface ProjectHeroProps {
   showLogo?: boolean;
   /** Project number (1, 2, 3, etc.) */
   projectNumber: number;
+  /** Project ID for conditional rendering */
+  projectId: string;
 }
 
 /**

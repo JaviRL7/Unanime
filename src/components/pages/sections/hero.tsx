@@ -129,7 +129,7 @@ const Hero = () => {
           </motion.h1>
 
           {/* Explanatory Text - With wide stretched font */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -137,14 +137,19 @@ const Hero = () => {
             style={{ letterSpacing: '0.05em' }}
           >
             <span className="text-foreground/90">
-              En vez de escribiros un email gigantesco hablando de todos mis{" "}
-              <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.3em]">proyectos</span> de forma aburrida,{" "}
+              En vez de explicar mis{" "}
+              <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.3em]">Proyectos</span>{" "}
+              con palabras, prefiero enseñároslos con{" "}
+              <span className="relative inline-block">
+                <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.3em]">Diseño</span>
+                <div className="mt-2 flex items-center justify-center gap-2">
+                  <div className="bg-primary h-1" style={{ width: '32px' }} aria-hidden="true"></div>
+                  <div className="bg-primary/60 h-1" style={{ width: '16px' }} aria-hidden="true"></div>
+                  <div className="bg-primary/30 h-1" style={{ width: '8px' }} aria-hidden="true"></div>
+                </div>
+              </span>
             </span>
-            <span className="text-primary font-extrabold">
-              quiero enseñároslo de la mejor manera que sé: programando diseños
-              estéticos
-            </span>
-          </motion.p>
+          </motion.div>
 
           {/* Image Placeholders */}
           <motion.div

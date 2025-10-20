@@ -42,7 +42,7 @@ export default function ProjectHero({
   } = hero;
 
   // Proyectos que muestran el bloque con grid de líneas
-  const isGridBlock = projectId === "linkedin-stats" || projectId === "inanilux-portfolio";
+  const isGridBlock = projectId === "linkedin-stats" || projectId === "inanilux-portfolio" || projectId === "color-palette";
 
   // Si no hay título y no es un bloque con grid, no renderizar hero
   if (!title && !isGridBlock) {
@@ -285,10 +285,10 @@ export default function ProjectHero({
                     {/* Texto descriptivo con palabras destacadas */}
                     <div className="space-y-8 text-2xl lg:text-3xl leading-relaxed lg:leading-relaxed">
                       <p className="text-muted-foreground">
-                        Este proyecto es un <span className="font-bold text-foreground">prototipo</span> que refleja mi forma de trabajar. Conocí a <span className="font-bold text-green-600 dark:text-green-400">Inanilux</span>, creadora de contenido artístico centrado en Pokémon, a través de un tuit en el que comentaba que aún no tenía un <span className="font-semibold text-foreground">portfolio como ilustradora</span>.
+                        Este proyecto es un <span className="font-bold text-foreground">prototipo</span> que refleja mi forma de trabajar. Decidí intentar contactar con <span className="font-bold text-green-600 dark:text-green-400">Inanilux</span>, creadora de contenido artístico centrado en Pokémon, tras ver un tuit en el que comentaba que aún no tenía un <span className="font-semibold text-foreground">portfolio como ilustradora</span>.
                       </p>
                       <p className="text-muted-foreground">
-                        Decidí ofrecerme para crearle uno, no por <span className="font-semibold text-foreground">encargo</span> ni por interés económico, sino como <span className="font-bold text-foreground">ejercicio creativo y de aprendizaje</span>. Aunque aún está en desarrollo, este prototipo representa el <span className="font-semibold text-foreground">proceso</span> que suelo seguir al diseñar y estructurar portfolios personalizados.
+                        Me ofrecí para crearle uno, no por <span className="font-semibold text-foreground">encargo</span> ni por interés económico, sino como <span className="font-bold text-foreground">ejercicio creativo y de aprendizaje</span>. Me hubiera gustado mostrar este proyecto terminado, pero como <span className="font-semibold text-foreground">cierta empresa valenciana</span> me retó a venderme de la mejor manera posible, aún no he podido finalizarlo. Por ello, he decidido mostrar a <span className="text-3xl lg:text-4xl font-bold text-red-600 dark:text-red-500">continuación</span> cómo es mi <span className="text-3xl lg:text-4xl font-bold text-red-600 dark:text-red-500">proceso creativo</span>.
                       </p>
                     </div>
 
@@ -297,6 +297,94 @@ export default function ProjectHero({
                       <p className="text-xl lg:text-2xl text-muted-foreground italic">
                         Artista y creadora de contenido de arte y Pokémon
                       </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Contenido para Paleta de Colores */}
+          {projectId === "color-palette" && (
+            <div className="relative z-10 h-full flex items-center justify-start p-6 lg:p-12">
+              <div className="w-full max-h-full flex flex-col">
+                {/* Título superior */}
+                <div className="mb-6 flex-shrink-0">
+                  <h2 className="font-incognito text-3xl lg:text-4xl font-bold mb-2">
+                    Paleta Cromática
+                  </h2>
+                  <p className="text-base lg:text-lg text-muted-foreground">
+                    Análisis de colores principales del diseño
+                  </p>
+                </div>
+
+                {/* Imágenes con hexadecimales */}
+                <div className="flex-1 flex flex-col justify-center space-y-8 min-h-0">
+                  {/* Imagen i3 con colores del modo claro */}
+                  <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
+                    <div className="flex-1 min-w-0 max-w-2xl">
+                      <img
+                        src="/projects/i3.png"
+                        alt="Análisis de paleta de colores - Modo claro"
+                        className="w-full h-auto max-h-[25vh] object-contain rounded-lg shadow-xl border-2 border-border"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-center gap-6 lg:min-w-[280px] flex-shrink-0">
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#F7D1D5' }} />
+                        <div className="flex flex-col">
+                          <span className="font-mono text-lg font-bold">#F7D1D5</span>
+                          <span className="text-xs text-muted-foreground">Rosa pastel</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#816D5A' }} />
+                        <div className="flex flex-col">
+                          <span className="font-mono text-lg font-bold">#816D5A</span>
+                          <span className="text-xs text-muted-foreground">Marrón cálido</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#FAFAFA' }} />
+                        <div className="flex flex-col">
+                          <span className="font-mono text-lg font-bold">#FAFAFA</span>
+                          <span className="text-xs text-muted-foreground">Blanco suave</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Imagen i4 con colores del modo oscuro */}
+                  <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
+                    <div className="flex-1 min-w-0 max-w-2xl">
+                      <img
+                        src="/projects/i4.png"
+                        alt="Análisis de paleta de colores - Modo oscuro"
+                        className="w-full h-auto max-h-[25vh] object-contain rounded-lg shadow-xl border-2 border-border"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-center gap-6 lg:min-w-[280px] flex-shrink-0">
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#746899' }} />
+                        <div className="flex flex-col">
+                          <span className="font-mono text-lg font-bold">#746899</span>
+                          <span className="text-xs text-muted-foreground">Morado lavanda</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#EE8778' }} />
+                        <div className="flex flex-col">
+                          <span className="font-mono text-lg font-bold">#EE8778</span>
+                          <span className="text-xs text-muted-foreground">Coral suave</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-lg border-2 border-border shadow-md flex-shrink-0" style={{ backgroundColor: '#413350' }} />
+                        <div className="flex flex-col">
+                          <span className="font-mono text-lg font-bold">#413350</span>
+                          <span className="text-xs text-muted-foreground">Púrpura oscuro</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

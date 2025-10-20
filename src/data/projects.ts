@@ -183,6 +183,21 @@ export const projects: Project[] = [
     details: [],
   },
 
+  // Proyecto 6 - Paleta de Colores
+  {
+    id: "color-palette",
+    hero: {
+      title: "Paleta de Colores",
+      date: "Diseño",
+      status: "in-progress",
+      description: "Análisis de paleta cromática del diseño",
+      mediaType: "image",
+      mediaSrc: "/projects/i1.png",
+      badges: [],
+    },
+    details: [],
+  },
+
 ];
 
 /**

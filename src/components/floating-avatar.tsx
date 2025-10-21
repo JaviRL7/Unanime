@@ -6,8 +6,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Robot } from "@/components/ui/robot";
 import { Eyes } from "@/components/ui/robot-eyes";
 import SpeechBubble from "@/components/ui/speech-bubble";
-import { X, Send } from "lucide-react";
-import { siteConfig } from "@/config/site";
+import { X } from "lucide-react";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import dynamic from "next/dynamic";
 
@@ -108,16 +107,10 @@ const FloatingAvatar = () => {
                 textColor={"#000000"}
                 className="max-w-[280px] min-w-[240px]"
               >
-                <div className="flex gap-2">
-                  <a
-                    href={siteConfig.telegram}
-                    target="_blank"
-                    rel="noopener,noreferrer"
-                    className="group flex h-8 flex-1 items-center justify-center gap-2 bg-[#0088cc] font-bold text-white"
-                  >
-                    <Send className="h-4 w-4" />
-                    <span className="text-xs uppercase">¿Quieres contratarme?</span>
-                  </a>
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-bold leading-relaxed">
+                    ¿Me vais a contratar?
+                  </p>
 
                   <motion.button
                     onClick={handleDismiss}

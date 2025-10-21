@@ -180,9 +180,40 @@
   html,
   body {
     @apply size-full;
+    font-size: 14px; /* Reducir tamaño base de fuente */
   }
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Reducir tamaños globales de elementos */
+  @media (min-width: 768px) {
+    html,
+    body {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    html,
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  /* Ajustar contenedores para 2K */
+  @media (min-width: 1920px) {
+    html,
+    body {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 2560px) {
+    html,
+    body {
+      font-size: 14px;
+    }
   }
 
   h1,

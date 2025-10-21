@@ -82,7 +82,7 @@ export default function ProjectDetailRow({
   };
 
   return (
-    <section className={cn("group relative min-h-screen lg:min-h-[50vh] lg:h-[50vh] lg:max-h-[50vh] w-full", index > 0 && "border-t")}>
+    <section className={cn("group relative min-h-fit lg:min-h-[50vh] lg:h-[50vh] lg:max-h-[50vh] w-full", index > 0 && "border-t")}>
       {/* Logo SVG - Only shown in first detail row */}
       {index === 0 && (
         <div className="absolute left-8 top-8 z-20 hidden lg:block">
@@ -182,9 +182,9 @@ export default function ProjectDetailRow({
         </div>
       )}
 
-      <div className="grid h-full grid-rows-2 lg:grid-rows-1 lg:grid-cols-2">
+      <div className="grid lg:h-full grid-cols-1 lg:grid-rows-1 lg:grid-cols-2">
         {/* LEFT COLUMN - Image Side */}
-        <div className="bg-muted/20 relative min-h-[50vh] lg:h-full overflow-hidden border-b lg:border-r lg:border-b-0">
+        <div className="bg-muted/20 relative min-h-[40vh] lg:h-full overflow-hidden border-b lg:border-r lg:border-b-0">
           {/* Cross pattern - más sutil en móvil */}
           <div className="absolute inset-0">
             <div className="before:bg-border after:bg-border relative h-full w-full before:absolute before:top-1/2 before:left-0 before:h-px lg:before:h-0.5 before:w-full after:absolute after:top-0 after:left-1/2 after:h-full after:w-px lg:after:w-0.5" />
@@ -256,8 +256,8 @@ export default function ProjectDetailRow({
         </div>
 
         {/* RIGHT COLUMN - Content Side */}
-        <div className="relative min-h-[50vh] lg:h-full overflow-hidden">
-          <div className="h-full overflow-y-auto p-6 md:p-8 flex items-center">
+        <div className="relative min-h-fit lg:h-full overflow-hidden">
+          <div className="lg:h-full lg:overflow-y-auto p-6 md:p-8 lg:flex lg:items-center">
             {isGalleryLayout || isStructuredLayout ? (
               /* Sección de Galería para Doña Araña */
               <div className="space-y-4 md:space-y-5 w-full">

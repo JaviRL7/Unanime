@@ -576,11 +576,11 @@ export default function ProjectHero({
                     {/* Sol - Flujo con flechas */}
                     <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3">
                       <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium ">Elemento común en diseño web</p>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70" />
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 rotate-90 md:rotate-0" />
                       <Button variant="outline" size="sm" className="px-4 py-2 md:px-5 md:py-3 h-auto text-sm md:text-base">
                         <Sun className="h-5 w-5 lg:h-6 lg:w-6" />
                       </Button>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
                       <p className="text-sm md:text-base italic text-foreground/90 w-[150px] lg:w-[170px] leading-tight text-center font-medium flex-shrink-0">Adaptar elemento a la iconografía de la temática</p>
                       <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 flex-shrink-0" />
                       <Button variant="outline" size="sm" className="px-4 lg:px-5 py-3 lg:py-4 h-auto border-orange-500/50 flex-shrink-0">
@@ -598,22 +598,22 @@ export default function ProjectHero({
                     {/* Luna - Flujo con flechas */}
                     <div className="flex items-center justify-center gap-3">
                       <p className="text-base lg:text-lg italic text-foreground/90 w-[150px] lg:w-[170px] leading-tight text-center font-medium flex-shrink-0">Elemento aburrido</p>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
                       <Button variant="outline" size="sm" className="px-4 lg:px-5 py-3 lg:py-4 h-auto flex-shrink-0">
                         <Moon className="h-5 w-5 lg:h-6 lg:w-6" />
                       </Button>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
                       <p className="text-sm lg:text-base italic text-foreground/90 w-[140px] lg:w-[160px] leading-tight text-center font-medium flex-shrink-0">Primera idea: poner logo de Pokémon edición Luna</p>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
                       <Button variant="outline" size="sm" className="px-4 lg:px-5 py-3 lg:py-4 h-auto border-purple-500/50 flex-shrink-0">
                         <Moon className="h-5 w-5 lg:h-6 lg:w-6 text-purple-500 mr-2" />
                         <span className="text-sm lg:text-base font-semibold whitespace-nowrap">Pokémon Luna</span>
                       </Button>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
                       <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden border-2 border-border shadow-lg flex-shrink-0">
                         <img src="/projects/i6.jpg" alt="Icono Luna" className="w-full h-full object-cover" />
                       </div>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
                       <p className="text-sm lg:text-base italic text-foreground/90 w-[140px] lg:w-[160px] leading-tight text-center font-medium flex-shrink-0">Opciones mucho más reconocibles para el público mainstream</p>
                     </div>
                   </div>

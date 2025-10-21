@@ -108,10 +108,6 @@ const FloatingAvatar = () => {
                 textColor={"#000000"}
                 className="max-w-[280px] min-w-[240px]"
               >
-                <p className="mb-4 text-sm leading-relaxed font-bold">
-                  Psst... Would you like to chat personally?
-                </p>
-
                 <div className="flex gap-2">
                   <a
                     href={siteConfig.telegram}
@@ -120,7 +116,7 @@ const FloatingAvatar = () => {
                     className="group flex h-8 flex-1 items-center justify-center gap-2 bg-[#0088cc] font-bold text-white"
                   >
                     <Send className="h-4 w-4" />
-                    <span className="text-xs uppercase">Chat</span>
+                    <span className="text-xs uppercase">¿Quieres contratarme?</span>
                   </a>
 
                   <motion.button

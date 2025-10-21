@@ -22,6 +22,12 @@ export const metadata: Metadata = {
     "fullstack",
     "nextjs",
   ],
+  viewport: {
+    width: "device-width",
+    initialScale: 0.85,
+    minimumScale: 0.85,
+    maximumScale: 2,
+  },
 
   openGraph: {
     images: [

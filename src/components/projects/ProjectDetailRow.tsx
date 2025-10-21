@@ -191,17 +191,17 @@ export default function ProjectDetailRow({
           </div>
 
           {/* Image Container */}
-          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-4 md:p-6 lg:p-8">
-            <div className="group/image relative w-full max-w-3xl">
+          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-4 md:p-6 lg:p-12">
+            <div className="group/image relative w-full max-w-2xl">
               {/* Frame corners */}
-              <div className="border-foreground/20 absolute -top-1 -left-1 h-6 w-6 lg:h-8 lg:w-8 lg:-top-2 lg:-left-2 border-t-2 border-l-2 transition-all group-hover:lg:-top-3 group-hover:lg:-left-3" />
-              <div className="border-foreground/20 absolute -top-1 -right-1 h-6 w-6 lg:h-8 lg:w-8 lg:-top-2 lg:-right-2 border-t-2 border-r-2 transition-all group-hover:lg:-top-3 group-hover:lg:-right-3" />
-              <div className="border-foreground/20 absolute -bottom-1 -left-1 h-6 w-6 lg:h-8 lg:w-8 lg:-bottom-2 lg:-left-2 border-b-2 border-l-2 transition-all group-hover:lg:-bottom-3 group-hover:lg:-left-3" />
-              <div className="border-foreground/20 absolute -right-1 -bottom-1 h-6 w-6 lg:h-8 lg:w-8 lg:-right-2 lg:-bottom-2 border-r-2 border-b-2 transition-all group-hover:lg:-right-3 group-hover:lg:-bottom-3" />
+              <div className="border-foreground/20 absolute -top-1 -left-1 h-5 w-5 lg:h-6 lg:w-6 lg:-top-2 lg:-left-2 border-t-2 border-l-2 transition-all group-hover:lg:-top-3 group-hover:lg:-left-3" />
+              <div className="border-foreground/20 absolute -top-1 -right-1 h-5 w-5 lg:h-6 lg:w-6 lg:-top-2 lg:-right-2 border-t-2 border-r-2 transition-all group-hover:lg:-top-3 group-hover:lg:-right-3" />
+              <div className="border-foreground/20 absolute -bottom-1 -left-1 h-5 w-5 lg:h-6 lg:w-6 lg:-bottom-2 lg:-left-2 border-b-2 border-l-2 transition-all group-hover:lg:-bottom-3 group-hover:lg:-left-3" />
+              <div className="border-foreground/20 absolute -right-1 -bottom-1 h-5 w-5 lg:h-6 lg:w-6 lg:-right-2 lg:-bottom-2 border-r-2 border-b-2 transition-all group-hover:lg:-right-3 group-hover:lg:-bottom-3" />
 
               {/* Main image/video */}
               <div className="bg-background relative overflow-hidden border-2">
-                <div className="relative aspect-video overflow-hidden" style={{ aspectRatio: '16/9', maxHeight: '60vh' }}>
+                <div className="relative aspect-video overflow-hidden" style={{ aspectRatio: '16/9', maxHeight: '45vh' }}>
                   {!mediaSrc ? (
                     /* Blueprint Grid Pattern */
                     <div className="h-full w-full bg-background relative">
@@ -260,9 +260,9 @@ export default function ProjectDetailRow({
           <div className="h-full overflow-y-auto p-4 md:p-6 lg:p-10 pt-6 md:pt-12 lg:pt-20">
             {isGalleryLayout || isStructuredLayout ? (
               /* Sección de Galería para Doña Araña */
-              <div className="space-y-4 md:space-y-10">
+              <div className="space-y-3 md:space-y-8">
                 {/* Date & Status */}
-                <div className="mb-6 flex flex-wrap items-center gap-3">
+                <div className="mb-4 flex flex-wrap items-center gap-3">
                   <time className="text-muted-foreground font-mono text-xs">
                     {date}
                   </time>
@@ -283,51 +283,51 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Header */}
-                <div className="border-l-2 md:border-l-4 border-primary pl-3 md:pl-6">
-                  <h3 className="font-incognito text-xl md:text-4xl font-bold mb-1 md:mb-2 lg:text-5xl">
+                <div className="border-l-2 md:border-l-4 border-primary pl-3 md:pl-5">
+                  <h3 className="font-incognito text-lg md:text-3xl font-bold mb-1 md:mb-2 lg:text-4xl">
                     {title}
                   </h3>
-                  <div className="flex items-center gap-2 mt-3 mb-4">
-                    <div className="h-1 bg-primary" style={{ width: "32px" }} />
+                  <div className="flex items-center gap-2 mt-2 mb-3">
+                    <div className="h-1 bg-primary" style={{ width: "28px" }} />
                     <div
                       className="h-1 bg-primary/60"
-                      style={{ width: "16px" }}
+                      style={{ width: "14px" }}
                     />
                     <div
                       className="h-1 bg-primary/30"
-                      style={{ width: "8px" }}
+                      style={{ width: "7px" }}
                     />
                   </div>
-                  <p className="text-muted-foreground text-base font-mono md:text-lg">
+                  <p className="text-muted-foreground text-sm font-mono md:text-base">
                     {subtitle}
                   </p>
                 </div>
 
                 {/* Descripción del sistema */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="h-1 w-3 bg-primary" />
-                    <h4 className="font-mono text-base font-semibold uppercase tracking-wider md:text-lg">
+                    <h4 className="font-mono text-sm font-semibold uppercase tracking-wider md:text-base">
                       {systemTitle}
                     </h4>
                   </div>
-                  <p className="text-foreground text-base leading-relaxed pl-6 md:text-lg">
+                  <p className="text-foreground text-sm leading-relaxed pl-5 md:text-base">
                     {systemDescription}
                   </p>
                 </div>
 
                 {/* Objetivos */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="h-1 w-3 bg-primary" />
-                    <h4 className="font-mono text-base font-semibold uppercase tracking-wider md:text-lg">
+                    <h4 className="font-mono text-sm font-semibold uppercase tracking-wider md:text-base">
                       Objetivos
                     </h4>
                   </div>
-                  <ul className="text-foreground text-base leading-relaxed pl-6 space-y-3 md:text-lg">
+                  <ul className="text-foreground text-sm leading-relaxed pl-5 space-y-2 md:text-base">
                     {features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <ChevronRight className="text-primary mt-1 h-5 w-5 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-2">
+                        <ChevronRight className="text-primary mt-0.5 h-4 w-4 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -335,8 +335,8 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Footer con línea */}
-                <div className="pt-6 border-t">
-                  <p className="text-muted-foreground text-sm font-mono italic md:text-base pr-16 md:pr-24 lg:pr-40">
+                <div className="pt-4 border-t">
+                  <p className="text-muted-foreground text-xs font-mono italic md:text-sm pr-16 md:pr-24 lg:pr-40">
                     &ldquo;{quote}&rdquo;
                   </p>
                 </div>
@@ -351,9 +351,9 @@ export default function ProjectDetailRow({
               </div>
             ) : isCartLayout ? (
               /* Sistema de Ventas Online */
-              <div className="space-y-10">
+              <div className="space-y-8">
                 {/* Date & Status */}
-                <div className="mb-6 flex flex-wrap items-center gap-3">
+                <div className="mb-4 flex flex-wrap items-center gap-3">
                   <time className="text-muted-foreground font-mono text-xs">
                     {date}
                   </time>
@@ -374,51 +374,51 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Header */}
-                <div className="border-l-2 md:border-l-4 border-primary pl-3 md:pl-6">
-                  <h3 className="font-incognito text-xl md:text-4xl font-bold mb-1 md:mb-2 lg:text-5xl">
+                <div className="border-l-2 md:border-l-4 border-primary pl-3 md:pl-5">
+                  <h3 className="font-incognito text-lg md:text-3xl font-bold mb-1 md:mb-2 lg:text-4xl">
                     {title}
                   </h3>
-                  <div className="flex items-center gap-2 mt-3 mb-4">
-                    <div className="h-1 bg-primary" style={{ width: "32px" }} />
+                  <div className="flex items-center gap-2 mt-2 mb-3">
+                    <div className="h-1 bg-primary" style={{ width: "28px" }} />
                     <div
                       className="h-1 bg-primary/60"
-                      style={{ width: "16px" }}
+                      style={{ width: "14px" }}
                     />
                     <div
                       className="h-1 bg-primary/30"
-                      style={{ width: "8px" }}
+                      style={{ width: "7px" }}
                     />
                   </div>
-                  <p className="text-muted-foreground text-base font-mono md:text-lg">
+                  <p className="text-muted-foreground text-sm font-mono md:text-base">
                     {subtitle}
                   </p>
                 </div>
 
                 {/* Descripción del sistema */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="h-1 w-3 bg-primary" />
-                    <h4 className="font-mono text-base font-semibold uppercase tracking-wider md:text-lg">
+                    <h4 className="font-mono text-sm font-semibold uppercase tracking-wider md:text-base">
                       {systemTitle}
                     </h4>
                   </div>
-                  <p className="text-foreground text-base leading-relaxed pl-6 md:text-lg">
+                  <p className="text-foreground text-sm leading-relaxed pl-5 md:text-base">
                     {systemDescription}
                   </p>
                 </div>
 
                 {/* Objetivos */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="h-1 w-3 bg-primary" />
-                    <h4 className="font-mono text-base font-semibold uppercase tracking-wider md:text-lg">
+                    <h4 className="font-mono text-sm font-semibold uppercase tracking-wider md:text-base">
                       Objetivos
                     </h4>
                   </div>
-                  <ul className="text-foreground text-base leading-relaxed pl-6 space-y-3 md:text-lg">
+                  <ul className="text-foreground text-sm leading-relaxed pl-5 space-y-2 md:text-base">
                     {features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <ChevronRight className="text-primary mt-1 h-5 w-5 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-2">
+                        <ChevronRight className="text-primary mt-0.5 h-4 w-4 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -426,8 +426,8 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Footer con línea */}
-                <div className="pt-6 border-t">
-                  <p className="text-muted-foreground text-sm font-mono italic md:text-base pr-16 md:pr-24 lg:pr-40">
+                <div className="pt-4 border-t">
+                  <p className="text-muted-foreground text-xs font-mono italic md:text-sm pr-16 md:pr-24 lg:pr-40">
                     &ldquo;{quote}&rdquo;
                   </p>
                 </div>

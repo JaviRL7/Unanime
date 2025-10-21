@@ -10,7 +10,7 @@ const Hero = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
   return (
-    <div id="home" className="relative flex h-screen flex-col justify-center overflow-hidden border-b lg:snap-start lg:snap-always">
+    <div id="home" className="relative flex min-h-screen lg:h-screen flex-col justify-center overflow-y-auto lg:overflow-hidden border-b lg:snap-start lg:snap-always pt-20 pb-10 lg:pt-0 lg:pb-0">
       {/* Decorative Corner Borders - All 4 corners */}
       <div className="absolute top-4 left-4 h-12 w-12 border-t-2 border-l-2 border-primary/40" />
       <div className="absolute top-4 right-4 h-12 w-12 border-t-2 border-r-2 border-primary/40" />
@@ -90,7 +90,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="space-y-2 px-4 md:space-y-6 md:px-6 lg:px-10 lg:space-y-10">
+      <div className="space-y-2 px-4 md:space-y-6 md:px-6 lg:px-10 lg:space-y-10 py-8 md:py-0">
         {/* Top Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}

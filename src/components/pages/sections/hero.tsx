@@ -12,39 +12,39 @@ const Hero = () => {
   return (
     <div id="home" className="relative flex h-screen flex-col justify-center overflow-hidden border-b snap-start snap-always">
       {/* Decorative Corner Borders - All 4 corners */}
-      <div className="absolute top-8 left-8 h-16 w-16 border-t-2 border-l-2 border-primary/40" />
-      <div className="absolute top-8 right-8 h-16 w-16 border-t-2 border-r-2 border-primary/40" />
-      <div className="absolute bottom-8 left-8 h-16 w-16 border-b-2 border-l-2 border-primary/40" />
-      <div className="absolute bottom-8 right-8 h-16 w-16 border-b-2 border-r-2 border-primary/40" />
+      <div className="absolute top-4 left-4 h-12 w-12 border-t-2 border-l-2 border-primary/40" />
+      <div className="absolute top-4 right-4 h-12 w-12 border-t-2 border-r-2 border-primary/40" />
+      <div className="absolute bottom-4 left-4 h-12 w-12 border-b-2 border-l-2 border-primary/40" />
+      <div className="absolute bottom-4 right-4 h-12 w-12 border-b-2 border-r-2 border-primary/40" />
 
       {/* Integrated Navigation */}
-      <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-12 py-12">
+      <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 md:px-8 md:py-8">
         {/* Logo - Top Left Corner */}
-        <a href="#home" className="group relative inline-flex items-center ml-8 mt-2">
-          <div className="w-28 text-foreground transition-all duration-300 group-hover:scale-110">
+        <a href="#home" className="group relative inline-flex items-center ml-2 md:ml-4">
+          <div className="w-20 md:w-24 text-foreground transition-all duration-300 group-hover:scale-110">
             <AnimatedLogo animate={false} />
           </div>
         </a>
 
         {/* Navigation Links - Center */}
-        <div className="font-incognito hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 rounded-full border px-4 py-1.5 bg-background/50 backdrop-blur-sm">
-          <a href="#proyecto-1" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
+        <div className="font-incognito hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 rounded-full border px-3 py-1 bg-background/50 backdrop-blur-sm">
+          <a href="#proyecto-1" className="relative rounded-full px-3 py-1 text-xs lg:text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
             Proyecto 1
           </a>
-          <a href="#proyecto-2" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
+          <a href="#proyecto-2" className="relative rounded-full px-3 py-1 text-xs lg:text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
             Proyecto 2
           </a>
-          <a href="#inanilux" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
+          <a href="#inanilux" className="relative rounded-full px-3 py-1 text-xs lg:text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
             Proyecto 3
           </a>
-          <a href="#contacto" className="relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
+          <a href="#contacto" className="relative rounded-full px-3 py-1 text-xs lg:text-sm font-medium transition-all duration-200 opacity-70 hover:opacity-100">
             Contacto
           </a>
         </div>
 
         {/* Right Actions */}
-        <div className="inline-flex items-center gap-2 mr-4 mt-2">
-          <div className="bg-background/50 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 backdrop-blur-sm">
+        <div className="inline-flex items-center gap-2 mr-2 md:mr-4">
+          <div className="bg-background/50 inline-flex items-center gap-2 rounded-full border px-2 py-1 md:px-3 md:py-1.5 backdrop-blur-sm">
             {/* GitHub */}
             <a
               href="https://github.com/JaviRL7"
@@ -90,7 +90,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="space-y-3 px-4 md:space-y-12 md:px-8 lg:px-12 lg:space-y-16">
+      <div className="space-y-2 px-4 md:space-y-6 md:px-6 lg:px-10 lg:space-y-10">
         {/* Top Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -98,8 +98,8 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="flex justify-center"
         >
-          <div className="bg-background inline-flex items-center gap-2 rounded-full border-2 px-3 py-1.5 md:px-4 md:py-2">
-            <span className="text-foreground/60 font-mono text-[10px] md:text-sm">
+          <div className="bg-background inline-flex items-center gap-2 rounded-full border-2 px-2 py-1 md:px-3 md:py-1.5">
+            <span className="text-foreground/60 font-mono text-[10px] md:text-xs">
               {"<"} Hola Unanime {"/>"}
             </span>
           </div>
@@ -116,7 +116,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-incognito mb-3 text-xl font-semibold leading-tight md:mb-10 md:text-4xl lg:mb-16 lg:text-6xl"
+            className="font-incognito mb-2 text-xl font-semibold leading-tight md:mb-6 md:text-3xl lg:mb-10 lg:text-5xl"
           >
             <span className="text-foreground">Hola de nuevo, </span>
             <span className="relative italic text-white">
@@ -136,7 +136,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-3 max-w-4xl text-base font-bold leading-tight md:leading-relaxed md:mb-12 md:text-2xl lg:mb-16 lg:text-4xl xl:text-5xl"
+            className="mb-2 max-w-4xl text-sm font-bold leading-tight md:leading-relaxed md:mb-8 md:text-xl lg:mb-12 lg:text-3xl xl:text-4xl"
           >
             <div className="text-foreground/90 text-center space-y-1 md:space-y-2">
               <div>
@@ -164,21 +164,21 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="grid w-full mx-auto grid-cols-1 gap-2 px-8 max-w-md md:max-w-none md:px-8 md:grid-cols-3 md:gap-8 lg:gap-10 lg:px-12 xl:gap-12 xl:px-16"
+            className="grid w-full mx-auto grid-cols-1 gap-2 px-4 max-w-md md:max-w-none md:px-6 md:grid-cols-3 md:gap-4 lg:gap-6 lg:px-8 xl:gap-8 xl:px-10"
           >
             {[
               { id: 1, src: "/projects/a1.jfif", alt: "Proyecto 1", title: "Proyecto 1", subtitle: "Lo estético" },
               { id: 2, src: "/projects/c1.png", alt: "Proyecto 2", title: "Proyecto 2", subtitle: "Lo funcional" },
               { id: 3, src: "/projects/h1.PNG", alt: "Proyecto 3", title: "Proyecto 3", subtitle: "Lo planeado" },
             ].map((item) => (
-              <div key={item.id} className="flex flex-col gap-1 md:gap-3">
-                <div className="relative flex items-center justify-center p-1 md:p-4">
+              <div key={item.id} className="flex flex-col gap-1 md:gap-2">
+                <div className="relative flex items-center justify-center p-1 md:p-2">
                   <div className="group/image relative w-full">
                     {/* Frame corners */}
-                    <div className="border-foreground/20 absolute -top-1 -left-1 h-6 w-6 md:h-8 md:w-8 md:-top-2 md:-left-2 border-t-2 border-l-2 transition-all group-hover/image:-top-3 group-hover/image:-left-3" />
-                    <div className="border-foreground/20 absolute -top-1 -right-1 h-6 w-6 md:h-8 md:w-8 md:-top-2 md:-right-2 border-t-2 border-r-2 transition-all group-hover/image:-top-3 group-hover/image:-right-3" />
-                    <div className="border-foreground/20 absolute -bottom-1 -left-1 h-6 w-6 md:h-8 md:w-8 md:-bottom-2 md:-left-2 border-b-2 border-l-2 transition-all group-hover/image:-bottom-3 group-hover/image:-left-3" />
-                    <div className="border-foreground/20 absolute -right-1 -bottom-1 h-6 w-6 md:h-8 md:w-8 md:-right-2 md:-bottom-2 border-r-2 border-b-2 transition-all group-hover/image:-right-3 group-hover/image:-bottom-3" />
+                    <div className="border-foreground/20 absolute -top-1 -left-1 h-4 w-4 md:h-6 md:w-6 border-t-2 border-l-2 transition-all group-hover/image:-top-2 group-hover/image:-left-2" />
+                    <div className="border-foreground/20 absolute -top-1 -right-1 h-4 w-4 md:h-6 md:w-6 border-t-2 border-r-2 transition-all group-hover/image:-top-2 group-hover/image:-right-2" />
+                    <div className="border-foreground/20 absolute -bottom-1 -left-1 h-4 w-4 md:h-6 md:w-6 border-b-2 border-l-2 transition-all group-hover/image:-bottom-2 group-hover/image:-left-2" />
+                    <div className="border-foreground/20 absolute -right-1 -bottom-1 h-4 w-4 md:h-6 md:w-6 border-r-2 border-b-2 transition-all group-hover/image:-right-2 group-hover/image:-bottom-2" />
 
                     <div className="bg-background relative overflow-hidden border-2">
                       <div className="relative aspect-[2/1] md:aspect-[16/10] overflow-hidden">
@@ -274,10 +274,10 @@ const Hero = () => {
 
                 {/* Project title and subtitle below image */}
                 <div className="text-center">
-                  <h3 className="text-foreground/80 text-sm md:text-lg font-semibold">
+                  <h3 className="text-foreground/80 text-xs md:text-base font-semibold">
                     {item.title}
                   </h3>
-                  <p className="text-foreground/60 text-xs md:text-sm italic mt-0.5">
+                  <p className="text-foreground/60 text-[10px] md:text-xs italic mt-0.5">
                     {item.subtitle}
                   </p>
                 </div>
@@ -287,7 +287,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Scroll Indicator - Centered bottom */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
           DESPLÁZATE
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
             <rect width="18" height="18" x="3" y="3" rx="2"></rect>

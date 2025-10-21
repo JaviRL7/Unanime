@@ -82,7 +82,7 @@ export default function ProjectDetailRow({
   };
 
   return (
-    <section className={cn("group relative min-h-screen lg:h-[50vh] lg:max-h-[50vh] w-full lg:snap-start lg:snap-always", index > 0 && "border-t")}>
+    <section className={cn("group relative min-h-screen lg:min-h-[50vh] lg:h-[50vh] lg:max-h-[50vh] w-full lg:snap-start lg:snap-always", index > 0 && "border-t")}>
       {/* Logo SVG - Only shown in first detail row */}
       {index === 0 && (
         <div className="absolute left-8 top-8 z-20 hidden lg:block">

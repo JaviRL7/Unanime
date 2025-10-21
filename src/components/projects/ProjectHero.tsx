@@ -458,8 +458,8 @@ export default function ProjectHero({
           {projectId === "color-palette" && (
             <div className="relative z-10 min-h-full lg:h-full flex flex-col lg:overflow-hidden">
               {/* Título superior más compacto */}
-              <div className="flex-shrink-0 pt-20 pb-4 px-6 md:px-8 lg:px-10">
-                <h2 className="font-incognito text-2xl md:text-3xl font-bold mb-1">
+              <div className="flex-shrink-0 pt-20 lg:pt-28 pb-4 lg:pb-6 px-6 md:px-8 lg:px-10">
+                <h2 className="font-incognito text-2xl md:text-3xl font-bold mb-1 lg:mb-2">
                   Paleta Cromática
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground">
@@ -468,19 +468,19 @@ export default function ProjectHero({
               </div>
 
               {/* Contenedor principal con scroll */}
-              <div className="flex-1 lg:overflow-y-auto px-6 md:px-8 lg:px-10 pb-6">
-                <div className="space-y-6 md:space-y-10 max-w-6xl mx-auto">
+              <div className="flex-1 lg:overflow-y-auto px-6 md:px-8 lg:px-10 pb-6 lg:pb-10">
+                <div className="space-y-6 md:space-y-10 lg:space-y-14 max-w-6xl mx-auto">
                   {/* PRIMERA FILA: Objetivos */}
-                  <div className="space-y-3 text-center">
+                  <div className="space-y-3 lg:space-y-5 text-center">
                     <div>
-                      <h3 className="text-xl md:text-3xl font-bold uppercase tracking-wider mb-2">Objetivos</h3>
+                      <h3 className="text-xl md:text-3xl font-bold uppercase tracking-wider mb-2 lg:mb-4">Objetivos</h3>
                       <div className="flex items-center justify-center gap-2">
                         <div className="h-2 bg-primary w-12 md:w-16"></div>
                         <div className="h-2 bg-primary/60 w-6 md:w-8"></div>
                         <div className="h-2 bg-primary/30 w-3 md:w-4"></div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 pt-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6 pt-2 lg:pt-4">
                       <div className="text-center">
                         <div className="text-base md:text-lg font-bold text-foreground">Conexión emocional</div>
                         <div className="text-sm md:text-base text-muted-foreground italic">Crear vínculos con el público</div>

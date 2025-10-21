@@ -191,7 +191,7 @@ export default function ProjectDetailRow({
           </div>
 
           {/* Image Container */}
-          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-4 md:p-6 lg:p-8">
+          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-4 md:p-6 lg:p-12">
             <div className="group/image relative w-full max-w-2xl">
               {/* Frame corners */}
               <div className="border-foreground/20 absolute -top-1 -left-1 h-5 w-5 lg:h-6 lg:w-6 lg:-top-2 lg:-left-2 border-t-2 border-l-2 transition-all group-hover:lg:-top-3 group-hover:lg:-left-3" />
@@ -284,10 +284,10 @@ export default function ProjectDetailRow({
 
                 {/* Header */}
                 <div className="border-l-2 md:border-l-4 border-primary pl-3 md:pl-5">
-                  <h3 className="font-incognito text-lg md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2">
+                  <h3 className="font-incognito text-lg md:text-3xl font-bold mb-1 md:mb-2 lg:text-4xl">
                     {title}
                   </h3>
-                  <div className="flex items-center gap-2 mt-1.5 lg:mt-2 mb-2 lg:mb-3">
+                  <div className="flex items-center gap-2 mt-2 mb-3">
                     <div className="h-1 bg-primary" style={{ width: "28px" }} />
                     <div
                       className="h-1 bg-primary/60"
@@ -375,10 +375,10 @@ export default function ProjectDetailRow({
 
                 {/* Header */}
                 <div className="border-l-2 md:border-l-4 border-primary pl-3 md:pl-5">
-                  <h3 className="font-incognito text-lg md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2">
+                  <h3 className="font-incognito text-lg md:text-3xl font-bold mb-1 md:mb-2 lg:text-4xl">
                     {title}
                   </h3>
-                  <div className="flex items-center gap-2 mt-1.5 lg:mt-2 mb-2 lg:mb-3">
+                  <div className="flex items-center gap-2 mt-2 mb-3">
                     <div className="h-1 bg-primary" style={{ width: "28px" }} />
                     <div
                       className="h-1 bg-primary/60"
@@ -395,7 +395,7 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Descripción del sistema */}
-                <div className="space-y-2 lg:space-y-3">
+                <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="h-1 w-3 bg-primary" />
                     <h4 className="font-mono text-sm font-semibold uppercase tracking-wider md:text-base">
@@ -444,7 +444,7 @@ export default function ProjectDetailRow({
               /* Diseño original para otros proyectos */
               <>
                 {/* Date & Status */}
-                <div className="mb-4 lg:mb-5 flex flex-wrap items-center gap-3">
+                <div className="mb-6 flex flex-wrap items-center gap-3">
                   <time className="text-muted-foreground font-mono text-xs">
                     {date}
                   </time>
@@ -465,11 +465,11 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Title */}
-                <div className="mb-4 lg:mb-5">
-                  <h3 className="font-incognito text-2xl font-bold lg:text-3xl">
+                <div className="mb-6">
+                  <h3 className="font-incognito text-3xl font-bold lg:text-4xl">
                     {title}
                   </h3>
-                  <div className="mt-2 lg:mt-3 flex items-center gap-2">
+                  <div className="mt-3 flex items-center gap-2">
                     <div className="h-1 bg-primary" style={{ width: "32px" }} />
                     <div
                       className="h-1 bg-primary/60"
@@ -483,13 +483,13 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground mb-4 lg:mb-5 text-sm leading-relaxed md:text-base">
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed md:text-base">
                   {description}
                 </p>
 
                 {/* Tags */}
                 {badges && badges.length > 0 && (
-                  <div className="mb-5 lg:mb-6 flex flex-wrap gap-2">
+                  <div className="mb-8 flex flex-wrap gap-2">
                     {badges.map((badge, badgeIndex) => (
                       <span
                         key={badgeIndex}

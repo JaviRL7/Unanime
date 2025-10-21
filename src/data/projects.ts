@@ -18,10 +18,10 @@ export const projects: Project[] = [
     id: "dona-arana",
     hero: {
       title: "E-Commerce Doña Araña",
-      date: "Ene, 2025",
+      date: "Septiembre, 2025",
       status: "in-progress",
       description:
-        "Aplicación web completa para <span class='font-bold text-primary'>digitalizar</span> la tienda Doña Araña, especializada en <span class='font-bold text-primary'>lanas y manualidades</span>. Desarrollada con <span class='font-semibold text-foreground'>Next.js</span> y <span class='font-semibold text-foreground'>Spring Boot</span>, permite a los clientes <span class='font-bold text-primary'>explorar el catálogo</span>, <span class='font-bold text-primary'>gestionar apartados</span> y dejar reseñas. Incluye un <span class='font-bold text-primary'>panel de administración</span> intuitivo para gestionar productos, controlar el stock y actualizar la galería, ofreciendo una experiencia <span class='font-semibold text-foreground'>moderna, funcional</span> y <span class='font-semibold text-foreground'>totalmente responsive</span>.",
+        "<span class='font-bold text-primary'>Desarrollé</span> una aplicación web completa para <span class='font-bold text-primary'>digitalizar</span> la tienda Doña Araña, especializada en <span class='font-bold text-primary'>lanas y manualidades</span>. <span class='font-bold text-primary'>Utilicé</span> <span class='font-semibold text-foreground'>Next.js</span> y <span class='font-semibold text-foreground'>Spring Boot</span> para crear una plataforma que permite a los clientes <span class='font-bold text-primary'>explorar el catálogo</span>, <span class='font-bold text-primary'>gestionar apartados</span> y dejar reseñas. Además, <span class='font-bold text-primary'>implementé</span> un <span class='font-bold text-primary'>panel de administración</span> intuitivo para gestionar productos, controlar el stock y actualizar la galería. El resultado es una experiencia <span class='font-semibold text-foreground'>moderna, funcional</span> y <span class='font-semibold text-foreground'>totalmente responsive</span>.",
       mediaType: "video",
       mediaSrc: "/video/u1.mkv",
       badges: [],
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     details: [
       // Primera fila - Diseño y Dirección Visual
       {
-        date: "Sept, 2025",
+        date: "Septiembre, 2025",
         status: "completed",
         title: "Diseño y Dirección Visual",
         subtitle: "Frontend · Gestión visual · Organización",
@@ -47,13 +47,12 @@ export const projects: Project[] = [
           "Equilibrio entre diseño estético y usabilidad",
           "Identidad visual coherente y artesanal",
           "Accesibilidad para todo tipo de usuarios",
-          "Estética cálida con desarrollo técnico sólido",
         ],
-        quote: "Uniendo estética cálida con desarrollo técnico sólido",
+        quote: "La idea era crear una página muy visual como parte del marketing de la tienda. Debía ser muy estética para móviles, ya que la mayoría del público accede desde ahí, combinando atractivo visual con funcionalidad técnica",
       },
       // Segunda fila - Sistema de Ventas Online
       {
-        date: "Sept, 2025",
+        date: "Septiembre, 2025",
         status: "completed",
         title: "Sistema de Ventas Online",
         subtitle: "E-commerce · Gestión de pedidos · Procesamiento de pagos",
@@ -63,13 +62,12 @@ export const projects: Project[] = [
           "Desarrollé una plataforma completa de comercio electrónico centrada en simplificar la gestión de ventas y ofrecer una experiencia de compra clara para todo tipo de usuarios. Desde el principio me propuse que el diseño fuera legible, entendible y accesible, especialmente para personas mayores o con menos familiaridad con la tecnología. Quería demostrar que un e-commerce puede ser funcional y moderno sin perder la cercanía ni la facilidad de uso.",
         systemTitle: "Gestión de Ventas",
         systemDescription:
-          "Plataforma e-commerce enfocada en simplificar ventas con una experiencia clara y accesible para todo tipo de usuarios, especialmente personas con poca familiaridad tecnológica.",
+          "Desarrollé una plataforma e-commerce enfocada en simplificar las ventas con una experiencia clara y accesible para todo tipo de usuarios, especialmente personas con poca familiaridad tecnológica.",
         features: [
           "Portal e-commerce con ventas reales",
           "Arquitectura frontend-backend robusta",
           "Pasarelas de pago y control de stock",
           "Experiencia accesible para personas mayores",
-          "Equilibrio entre diseño y rendimiento",
         ],
         quote: "E-commerce funcional y moderno sin perder cercanía ni facilidad de uso",
       },
@@ -81,10 +79,10 @@ export const projects: Project[] = [
     id: "contabilidad-web",
     hero: {
       title: "Contabilidad Web",
-      date: "Dic, 2024",
+      date: "Junio, 2025",
       status: "completed",
       description:
-        "Aplicación web de contabilidad creada para <span class='font-bold text-primary'>digitalizar la gestión financiera</span> de <span class='font-semibold text-foreground'>pequeños comercios</span>, inspirada en el negocio familiar de mi madre, <span class='font-bold text-primary'>Doña Araña</span>. Diseñada para personas que buscan llevar sus cuentas de forma <span class='font-bold text-primary'>simple, visual</span> y sin complicaciones técnicas. Permite <span class='font-bold text-primary'>registrar ingresos y gastos</span>, <span class='font-bold text-primary'>analizar movimientos diarios</span> y ver <span class='font-bold text-primary'>estadísticas en tiempo real</span>. Incluye un <span class='font-bold text-primary'>calendario financiero</span> y herramientas de <span class='font-bold text-primary'>categorización inteligente</span>, todo dentro de una interfaz <span class='font-semibold text-foreground'>intuitiva, moderna</span> y <span class='font-semibold text-foreground'>adaptada a cualquier dispositivo</span>.",
+        "<span class='font-bold text-primary'>Creé</span> una aplicación web de contabilidad para <span class='font-bold text-primary'>digitalizar la gestión financiera</span> de <span class='font-semibold text-foreground'>pequeños comercios</span>, inspirada en el negocio familiar de mi madre, <span class='font-bold text-primary'>Doña Araña</span>. La diseñé para personas que buscan llevar sus cuentas de forma <span class='font-bold text-primary'>simple, visual</span> y sin complicaciones técnicas. Permite <span class='font-bold text-primary'>registrar ingresos y gastos</span>, analizar movimientos diarios y ver <span class='font-bold text-primary'>estadísticas en tiempo real</span>. Incluye un <span class='font-bold text-primary'>calendario financiero</span> y herramientas de categorización inteligente, todo dentro de una interfaz <span class='font-semibold text-foreground'>intuitiva y moderna</span>.",
       mediaType: "video",
       mediaSrc: "/video/u4.mp4",
       badges: [],
@@ -125,7 +123,7 @@ export const projects: Project[] = [
     details: [
       // Primera fila - Panel de Administración y Contabilidad
       {
-        date: "Jun, 2025",
+        date: "Junio, 2025",
         status: "in-progress",
         title: "Panel de Administración y Contabilidad",
         subtitle: "Gestión · CRUD · Control · Finanzas",
@@ -141,13 +139,12 @@ export const projects: Project[] = [
           "Organizar la información mediante etiquetas y categorías",
           "Mantener la interfaz clara, intuitiva y fácil de usar",
           "Simplificar la gestión de la contabilidad sin complicaciones técnicas",
-          "Permitir un seguimiento rápido y ordenado del flujo de dinero",
         ],
         quote: "Contabilidad diaria simple, clara y sin complicaciones",
       },
       // Segunda fila - Sistema de Gestión de Pagos
       {
-        date: "Jun, 2025",
+        date: "Junio, 2025",
         status: "in-progress",
         title: "Sistema de Gestión de Pagos",
         subtitle: "Gestión · Análisis · Visualización · Calendario",
@@ -162,7 +159,6 @@ export const projects: Project[] = [
           "Simplificar la gestión y el seguimiento de pagos",
           "Visualizar datos y estadísticas de manera comprensible",
           "Integrar calendario y notificaciones automáticas",
-          "Mantener un equilibrio entre funcionalidad y claridad visual",
         ],
         quote: "Pagos organizados, análisis visual y control total",
       },
@@ -187,22 +183,7 @@ export const projects: Project[] = [
     details: [],
   },
 
-  // Proyecto 6 - Paleta de Colores
-  {
-    id: "color-palette",
-    hero: {
-      title: "Paleta de Colores",
-      date: "Diseño",
-      status: "in-progress",
-      description: "Análisis de paleta cromática del diseño",
-      mediaType: "image",
-      mediaSrc: "/projects/i1.png",
-      badges: [],
-    },
-    details: [],
-  },
-
-  // Proyecto 7 - Proceso de Diseño
+  // Proyecto 6 - Proceso de Diseño
   {
     id: "design-process",
     hero: {
@@ -212,6 +193,21 @@ export const projects: Project[] = [
       description: "Metodología y flujo de trabajo en proyectos",
       mediaType: "image",
       mediaSrc: undefined,
+      badges: [],
+    },
+    details: [],
+  },
+
+  // Proyecto 7 - Paleta de Colores
+  {
+    id: "color-palette",
+    hero: {
+      title: "Paleta de Colores",
+      date: "Diseño",
+      status: "in-progress",
+      description: "Análisis de paleta cromática del diseño",
+      mediaType: "image",
+      mediaSrc: "/projects/i1.png",
       badges: [],
     },
     details: [],

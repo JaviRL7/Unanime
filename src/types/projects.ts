@@ -148,4 +148,6 @@ export interface ProjectDetailRowProps {
   index: number;
   /** Project ID for conditional rendering */
   projectId: string;
+  /** Whether to show action buttons (only first row) */
+  showActionButtons?: boolean;
 }

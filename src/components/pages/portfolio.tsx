@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { BackgroundNoise } from "../shared/backgrounds";
 import { IntroSplash } from "../shared/intro-splash";
 import Navbar from "./sections/navbar";
@@ -7,8 +9,11 @@ import Projects from "./sections/projects";
 import About from "./sections/about";
 import Footer from "./sections/footer";
 import Contact from "./sections/contact";
+import { EmailModal } from "../ui/email-modal";
 
 const PortfolioPage = () => {
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+  
   return (
     <>
       <div className="no-scrollbar portfolio-container relative size-full snap-y snap-mandatory overflow-y-scroll">
@@ -22,12 +27,15 @@ const PortfolioPage = () => {
           <div className="min-h-[calc(100vh)] md:px-8">
             <div className="min-h-[calc(100vh-4rem)] md:border-r md:border-l">
               <Hero />
-              <Projects />
-              <Footer />
+              <Projects onEmailClick={() => setIsEmailModalOpen(true)} />
+              <Footer onEmailClick={() => setIsEmailModalOpen(true)} />
             </div>
           </div>
         </main>
       </div>
+      
+      {/* Email Modal */}
+      <EmailModal isOpen={isEmailModalOpen} onClose={() => setIsEmailModalOpen(false)} />
     </>
   );
 };

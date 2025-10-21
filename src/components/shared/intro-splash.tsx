@@ -54,7 +54,7 @@ export const IntroSplash = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <span className="block font-mono bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
+            <span className="block font-mono text-white">
               UNANIME
             </span>
           </motion.div>

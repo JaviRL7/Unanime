@@ -27,6 +27,8 @@ import type { ProjectHeroProps } from "@/types/projects";
 import CountUp from "react-countup";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTheme } from "next-themes";
+import { ThemeToggleButton2 } from "@/components/theme-toggle";
 
 /**
  * AnimatedCounter - Counter that animates when it comes into view
@@ -62,6 +64,8 @@ export default function ProjectHero({
     demoUrl,
   } = hero;
 
+  const { resolvedTheme, setTheme } = useTheme();
+
   // Proyectos que muestran el bloque con grid de líneas
   const isGridBlock = projectId === "linkedin-stats" || projectId === "inanilux-portfolio" || projectId === "color-palette" || projectId === "design-process";
 
@@ -87,11 +91,82 @@ export default function ProjectHero({
 
         {/* Project Label - Top right corner */}
         {projectNumber && (
-          <div className="absolute right-4 top-4 z-30 hidden lg:block">
+          <div className="absolute right-4 top-4 z-30 hidden lg:flex lg:flex-col lg:items-end lg:gap-3">
             <div className="bg-primary/10 border border-primary/20 px-4 py-2 backdrop-blur-sm">
               <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider">
                 Proyecto {projectNumber}
               </span>
+            </div>
+            {/* Badge de "Prototipo en desarrollo" para Inanilux */}
+            {projectId === "inanilux-portfolio" && (
+              <div className="px-3 py-1.5 md:px-5 md:py-2.5 bg-yellow-500/10 border border-yellow-500/30 rounded-lg backdrop-blur-sm">
+                <span className="text-yellow-600 dark:text-yellow-400 text-[10px] md:text-sm font-mono font-semibold uppercase tracking-wider">
+                  Prototipo en desarrollo
+                </span>
+              </div>
+            )}
+            
+            {/* Action Buttons */}
+            <div className="bg-background/50 inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 backdrop-blur-sm">
+              {/* GitHub */}
+              <a
+                href="https://github.com/JaviRL7"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-foreground/60 hover:text-foreground text-sm transition-colors duration-200 hover:scale-110"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" className="size-5">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+
+              <div className="bg-border h-4 w-px" />
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/javier-rodriguez-lopez-4795a8180/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+
+              <div className="bg-border h-4 w-px" />
+
+              {/* Theme Toggle */}
+              <button
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+                className="transition-transform duration-200 hover:scale-110"
+                aria-label="Cambiar tema"
+              >
+                <ThemeToggleButton2 className="size-5" theme={resolvedTheme} />
+              </button>
+
+              <div className="bg-border h-4 w-px" />
+
+              {/* Back to Top */}
+              <button
+                onClick={() => {
+                  const heroSection = document.querySelector('#home');
+                  if (heroSection) {
+                    heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
+                aria-label="Volver arriba"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+                  <path d="M12 19V5M5 12l7-7 7 7"/>
+                </svg>
+              </button>
             </div>
           </div>
         )}
@@ -122,9 +197,9 @@ export default function ProjectHero({
 
           {/* Contenido sobre el grid */}
           {isLinkedInStats && (
-          <div className="relative z-10 h-full flex flex-col lg:flex-row items-stretch justify-between gap-10 lg:gap-20 p-8 lg:p-16">
+          <div className="relative z-10 h-full flex flex-col lg:flex-row items-stretch justify-center gap-10 lg:gap-32 p-8 lg:px-24 lg:py-16">
             {/* Columna izquierda: Título y métricas destacadas */}
-            <div className="flex-1 flex flex-col justify-center">
+            <div className="flex-1 flex flex-col justify-center max-w-2xl">
               <h2 className="font-incognito text-5xl lg:text-6xl font-bold mb-4">
                 {title}
               </h2>
@@ -135,7 +210,7 @@ export default function ProjectHero({
               </div>
 
               {/* Texto motivacional */}
-              <p className="text-muted-foreground text-lg lg:text-xl mb-10 leading-relaxed italic border-l-4 border-primary pl-4">
+              <p className="text-foreground text-lg lg:text-xl mb-10 leading-relaxed font-semibold border-l-4 border-primary pl-4 bg-primary/5 py-4 pr-4 rounded-r-lg">
                 Este proyecto es el que más ilusión me hizo, no solo porque cumplía la necesidad de mis seres queridos, sino que alcancé bastantes interacciones, reviews y contactos en LinkedIn. Me devolvió bastante la motivación después de un periodo complicado.
               </p>
 
@@ -197,9 +272,9 @@ export default function ProjectHero({
             </div>
 
             {/* Columna derecha: Imagen y enlaces */}
-            <div className="flex-1 flex flex-col justify-center gap-6">
+            <div className="flex-1 flex flex-col justify-center gap-6 max-w-2xl">
               {/* Imagen con bordes decorativos */}
-              <div className="relative w-full max-w-2xl mx-auto group/image">
+              <div className="relative w-full mx-auto group/image">
                 {/* Esquinas decorativas (estilo video) */}
                 <div className="border-foreground/20 absolute -top-2 -left-2 h-8 w-8 border-t-2 border-l-2 transition-all group-hover/image:-top-3 group-hover/image:-left-3" />
                 <div className="border-foreground/20 absolute -top-2 -right-2 h-8 w-8 border-t-2 border-r-2 transition-all group-hover/image:-top-3 group-hover/image:-right-3" />
@@ -252,13 +327,6 @@ export default function ProjectHero({
           {projectId === "inanilux-portfolio" && (
             <div className="relative z-10 h-full flex items-center justify-center p-4 md:p-8 lg:p-20 overflow-y-auto lg:overflow-y-hidden">
               <div className="max-w-[1400px] w-full py-4 md:py-0">
-                {/* Badge de "Prototipo en desarrollo" en esquina superior derecha */}
-                <div className="absolute top-2 right-2 md:top-8 md:right-8 px-2 py-1 md:px-5 md:py-2.5 bg-yellow-500/10 border border-yellow-500/30 rounded-lg backdrop-blur-sm">
-                  <span className="text-yellow-600 dark:text-yellow-400 text-[10px] md:text-sm font-mono font-semibold uppercase tracking-wider">
-                    Prototipo en desarrollo
-                  </span>
-                </div>
-
                 {/* Layout de 2 columnas */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 lg:gap-24 items-center">
                   {/* COLUMNA IZQUIERDA - Foto circular + Stats */}
@@ -288,8 +356,12 @@ export default function ProjectHero({
                           </svg>
                         </div>
                         <div>
-                          <div className="font-bold text-lg md:text-3xl lg:text-5xl font-mono">93.3K</div>
-                          <div className="text-xs md:text-base lg:text-lg text-muted-foreground">seguidores · 4.7M ♥</div>
+                          <div className="font-bold text-lg md:text-3xl lg:text-5xl font-mono">
+                            <AnimatedCounter end={93.3} decimals={1} className="font-bold text-lg md:text-3xl lg:text-5xl font-mono" />K
+                          </div>
+                          <div className="text-xs md:text-base lg:text-lg text-muted-foreground">
+                            seguidores · <AnimatedCounter end={4.7} decimals={1} className="text-xs md:text-base lg:text-lg text-muted-foreground" />M ♥
+                          </div>
                         </div>
                       </div>
 
@@ -301,8 +373,12 @@ export default function ProjectHero({
                           </svg>
                         </div>
                         <div>
-                          <div className="font-bold text-lg md:text-3xl lg:text-5xl font-mono">34.6K</div>
-                          <div className="text-xs md:text-base lg:text-lg text-muted-foreground">seguidores · 43 posts</div>
+                          <div className="font-bold text-lg md:text-3xl lg:text-5xl font-mono">
+                            <AnimatedCounter end={34.6} decimals={1} className="font-bold text-lg md:text-3xl lg:text-5xl font-mono" />K
+                          </div>
+                          <div className="text-xs md:text-base lg:text-lg text-muted-foreground">
+                            seguidores · <AnimatedCounter end={43} className="text-xs md:text-base lg:text-lg text-muted-foreground" /> posts
+                          </div>
                         </div>
                       </div>
 
@@ -314,8 +390,12 @@ export default function ProjectHero({
                           </svg>
                         </div>
                         <div>
-                          <div className="font-bold text-lg md:text-3xl lg:text-5xl font-mono">4.05K</div>
-                          <div className="text-xs md:text-base lg:text-lg text-muted-foreground">suscriptores · 75 vídeos</div>
+                          <div className="font-bold text-lg md:text-3xl lg:text-5xl font-mono">
+                            <AnimatedCounter end={4.05} decimals={2} className="font-bold text-lg md:text-3xl lg:text-5xl font-mono" />K
+                          </div>
+                          <div className="text-xs md:text-base lg:text-lg text-muted-foreground">
+                            suscriptores · <AnimatedCounter end={75} className="text-xs md:text-base lg:text-lg text-muted-foreground" /> vídeos
+                          </div>
                         </div>
                       </div>
 
@@ -355,7 +435,10 @@ export default function ProjectHero({
                         Este proyecto es un <span className="font-bold text-foreground">prototipo</span> que refleja mi forma de trabajar. Decidí intentar contactar con <span className="font-bold text-green-600 dark:text-green-400">Inanilux</span>, creadora de contenido artístico centrado en Pokémon, tras ver un tuit en el que comentaba que aún no tenía un <span className="font-semibold text-foreground">portfolio como ilustradora</span>.
                       </p>
                       <p className="text-muted-foreground">
-                        Me ofrecí para crearle uno, no por <span className="font-semibold text-foreground">encargo</span> ni por interés económico, sino como <span className="font-bold text-foreground">ejercicio creativo y de aprendizaje</span>. Me hubiera gustado mostrar este proyecto terminado, pero como <span className="font-semibold text-foreground">cierta empresa valenciana</span> me retó a venderme de la mejor manera posible, aún no he podido finalizarlo. Por ello, he decidido mostrar a <span className="text-base md:text-2xl lg:text-4xl font-bold text-red-600 dark:text-red-500">continuación</span> cómo es mi <span className="text-base md:text-2xl lg:text-4xl font-bold text-red-600 dark:text-red-500">proceso creativo</span>.
+                        Me ofrecí para crearle uno, no por <span className="font-semibold text-foreground">encargo</span> ni por interés económico, sino como <span className="font-bold text-foreground">ejercicio creativo y de aprendizaje</span>. Me hubiera gustado mostrar este proyecto terminado, pero como <span className="font-semibold text-foreground">cierta empresa valenciana</span> me retó a venderme de la mejor manera posible, aún no he podido finalizarlo.
+                      </p>
+                      <p className="text-foreground text-lg md:text-2xl lg:text-3xl font-bold border-l-4 border-primary pl-4 md:pl-6 bg-primary/10 py-4 md:py-5 lg:py-6 pr-4 rounded-r-lg mt-4 md:mt-6 leading-relaxed">
+                        Por ello, he decidido <span className="text-red-600 dark:text-red-400">mostrar</span> a continuación cómo es mi <span className="text-red-600 dark:text-red-400">proceso creativo</span>.
                       </p>
                     </div>
 
@@ -373,171 +456,165 @@ export default function ProjectHero({
 
           {/* Contenido para Paleta de Colores */}
           {projectId === "color-palette" && (
-            <div className="relative z-10 h-full flex flex-col p-8 lg:p-16 overflow-hidden">
-              {/* Título superior */}
-              <div className="mb-16 flex-shrink-0 pt-8">
-                <h2 className="font-incognito text-3xl lg:text-4xl font-bold mb-2">
+            <div className="relative z-10 h-full flex flex-col justify-center p-6 lg:p-12 overflow-hidden">
+              {/* Título superior más compacto - con más espacio arriba */}
+              <div className="mb-8 flex-shrink-0 pt-32 lg:pt-40">
+                <h2 className="font-incognito text-2xl lg:text-3xl font-bold mb-1">
                   Paleta Cromática
                 </h2>
-                <p className="text-base lg:text-lg text-muted-foreground">
+                <p className="text-sm lg:text-base text-muted-foreground">
                   Análisis de colores principales del diseño
                 </p>
               </div>
 
-              {/* Contenedor principal: Grid de 2 columnas */}
-              <div className="flex-1 flex items-center justify-center min-h-0">
-                <div className="grid grid-cols-[1fr_auto] gap-8 items-center">
-                  {/* Columna izquierda: Filas de contenido */}
-                  <div className="flex flex-col gap-10">
-                    {/* Fila 1: Pokémon Sol */}
-                    <div className="grid grid-cols-[auto_auto_1fr] gap-4 items-center min-w-0">
-                      {/* Imagen i3 */}
-                      <div className="w-48 h-auto flex-shrink-0">
+              {/* Contenedor principal con scroll */}
+              <div className="flex-1 min-h-0 overflow-y-auto">
+                <div className="space-y-12 max-w-6xl mx-auto pt-8 lg:pt-16">
+                  {/* PRIMERA FILA: Objetivos */}
+                  <div className="space-y-6 text-center">
+                    <div>
+                      <h3 className="text-2xl lg:text-3xl font-bold uppercase tracking-wider mb-3">Objetivos</h3>
+                      <div className="flex items-center justify-center gap-2">
+                        <div className="h-2 lg:h-2.5 bg-primary" style={{ width: '60px' }}></div>
+                        <div className="h-2 lg:h-2.5 bg-primary/60" style={{ width: '30px' }}></div>
+                        <div className="h-2 lg:h-2.5 bg-primary/30" style={{ width: '15px' }}></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="text-center">
+                        <div className="text-base lg:text-lg font-bold text-foreground">Conexión emocional</div>
+                        <div className="text-sm lg:text-base text-muted-foreground italic">Crear vínculos con el público</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-base lg:text-lg font-bold text-foreground">Estudio del público</div>
+                        <div className="text-sm lg:text-base text-muted-foreground italic">Conocer gustos y necesidades</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-base lg:text-lg font-bold text-foreground">Atención a los detalles</div>
+                        <div className="text-sm lg:text-base text-muted-foreground italic">Cuidar cada elemento</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-base lg:text-lg font-bold text-foreground">Diseños originales</div>
+                        <div className="text-sm lg:text-base text-muted-foreground italic">Identidad única</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* SEGUNDA FILA: Imágenes PNG con sus colores */}
+                  <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 pt-10">
+                    {/* Pokémon Sol - Imagen y colores */}
+                    <div className="flex items-center gap-5">
+                      <div className="w-40 lg:w-48 flex-shrink-0">
                         <img
                           src="/projects/i3.png"
                           alt="Paleta modo claro"
                           className="w-full h-auto object-contain rounded-lg shadow-xl border-2 border-border"
                         />
                       </div>
-
-                      {/* Códigos de color */}
-                      <div className="flex flex-col gap-3 flex-shrink-0">
-                        <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#F7D1D5' }} />
-                          <div className="flex flex-col min-w-0">
-                            <span className="font-mono text-sm font-bold">#F7D1D5</span>
-                            <span className="text-xs text-muted-foreground font-semibold">Rosa pastel</span>
+                      <div className="flex flex-col gap-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 lg:w-12 lg:h-12 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#F7D1D5' }} />
+                          <div className="flex flex-col">
+                            <span className="font-mono text-sm lg:text-base font-bold">#F7D1D5</span>
+                            <span className="text-xs lg:text-sm text-muted-foreground font-semibold">Rosa pastel</span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#816D5A' }} />
-                          <div className="flex flex-col min-w-0">
-                            <span className="font-mono text-sm font-bold">#816D5A</span>
-                            <span className="text-xs text-muted-foreground font-semibold">Marrón cálido</span>
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 lg:w-12 lg:h-12 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#816D5A' }} />
+                          <div className="flex flex-col">
+                            <span className="font-mono text-sm lg:text-base font-bold">#816D5A</span>
+                            <span className="text-xs lg:text-sm text-muted-foreground font-semibold">Marrón cálido</span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#FAFAFA' }} />
-                          <div className="flex flex-col min-w-0">
-                            <span className="font-mono text-sm font-bold">#FAFAFA</span>
-                            <span className="text-xs text-muted-foreground font-semibold">Blanco suave</span>
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 lg:w-12 lg:h-12 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#FAFAFA' }} />
+                          <div className="flex flex-col">
+                            <span className="font-mono text-sm lg:text-base font-bold">#FAFAFA</span>
+                            <span className="text-xs lg:text-sm text-muted-foreground font-semibold">Blanco suave</span>
                           </div>
-                        </div>
-                      </div>
-
-                      {/* Flujo de diseño */}
-                      <div className="flex items-center gap-3 min-w-0 overflow-x-auto">
-                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
-                        <p className="text-xs italic text-foreground/90 max-w-[140px] leading-tight flex-shrink-0">Iconografía temática de Pokémon Sol</p>
-                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
-                        <Button variant="outline" size="sm" className="px-3 py-4 flex-shrink-0">
-                          <Sun className="h-4 w-4 mr-1" />
-                          <Moon className="h-4 w-4" />
-                        </Button>
-                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
-                        <Button variant="outline" size="sm" className="px-6 py-4 border-orange-500/50 flex-shrink-0">
-                          <Sun className="h-5 w-5 text-orange-500 mr-2" />
-                          <span className="text-sm font-semibold">Pokémon Sol</span>
-                        </Button>
-                        <p className="text-xs italic text-foreground/90 max-w-[140px] leading-tight flex-shrink-0">Detalles que refuerzan identidad</p>
-                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
-                        <div className="w-24 h-24 rounded-xl overflow-hidden border-2 border-border shadow-lg flex-shrink-0">
-                          <img src="/projects/i5.jpg" alt="Icono Sol" className="w-full h-full object-cover" />
                         </div>
                       </div>
                     </div>
 
-                    {/* Fila 2: Pokémon Luna */}
-                    <div className="grid grid-cols-[auto_auto_1fr] gap-4 items-center min-w-0">
-                      {/* Imagen i4 */}
-                      <div className="w-48 h-auto flex-shrink-0">
+                    {/* Pokémon Luna - Imagen y colores */}
+                    <div className="flex items-center gap-5">
+                      <div className="w-40 lg:w-48 flex-shrink-0">
                         <img
                           src="/projects/i4.png"
                           alt="Paleta modo oscuro"
                           className="w-full h-auto object-contain rounded-lg shadow-xl border-2 border-border"
                         />
                       </div>
-
-                      {/* Códigos de color */}
-                      <div className="flex flex-col gap-3 flex-shrink-0">
-                        <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#746899' }} />
-                          <div className="flex flex-col min-w-0">
-                            <span className="font-mono text-sm font-bold">#746899</span>
-                            <span className="text-xs text-muted-foreground font-semibold">Morado lavanda</span>
+                      <div className="flex flex-col gap-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 lg:w-12 lg:h-12 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#746899' }} />
+                          <div className="flex flex-col">
+                            <span className="font-mono text-sm lg:text-base font-bold">#746899</span>
+                            <span className="text-xs lg:text-sm text-muted-foreground font-semibold">Morado lavanda</span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#EE8778' }} />
-                          <div className="flex flex-col min-w-0">
-                            <span className="font-mono text-sm font-bold">#EE8778</span>
-                            <span className="text-xs text-muted-foreground font-semibold">Coral suave</span>
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 lg:w-12 lg:h-12 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#EE8778' }} />
+                          <div className="flex flex-col">
+                            <span className="font-mono text-sm lg:text-base font-bold">#EE8778</span>
+                            <span className="text-xs lg:text-sm text-muted-foreground font-semibold">Coral suave</span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#413350' }} />
-                          <div className="flex flex-col min-w-0">
-                            <span className="font-mono text-sm font-bold">#413350</span>
-                            <span className="text-xs text-muted-foreground font-semibold">Púrpura oscuro</span>
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 lg:w-12 lg:h-12 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#413350' }} />
+                          <div className="flex flex-col">
+                            <span className="font-mono text-sm lg:text-base font-bold">#413350</span>
+                            <span className="text-xs lg:text-sm text-muted-foreground font-semibold">Púrpura oscuro</span>
                           </div>
-                        </div>
-                      </div>
-
-                      {/* Flujo de diseño */}
-                      <div className="flex items-center gap-3 min-w-0 overflow-x-auto">
-                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
-                        <p className="text-xs italic text-foreground/90 max-w-[140px] leading-tight flex-shrink-0">Iconografía temática de Pokémon Luna</p>
-                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
-                        <Button variant="outline" size="sm" className="px-3 py-4 flex-shrink-0">
-                          <Sun className="h-4 w-4 mr-1" />
-                          <Moon className="h-4 w-4" />
-                        </Button>
-                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
-                        <Button variant="outline" size="sm" className="px-6 py-4 border-purple-500/50 flex-shrink-0">
-                          <Moon className="h-5 w-5 text-purple-500 mr-2" />
-                          <span className="text-sm font-semibold">Pokémon Luna</span>
-                        </Button>
-                        <p className="text-xs italic text-foreground/90 max-w-[140px] leading-tight flex-shrink-0">Coherencia temática en la experiencia</p>
-                        <img src="/projects/f1.png" alt="→" className="h-16 w-auto opacity-70 flex-shrink-0" />
-                        <div className="w-24 h-24 rounded-xl overflow-hidden border-2 border-border shadow-lg flex-shrink-0">
-                          <img src="/projects/i6.jpg" alt="Icono Luna" className="w-full h-full object-cover" />
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Columna derecha: Bloque de Objetivos (altura doble) */}
-                  <div className="flex-shrink-0 pl-12 border-l-2 border-border/50 self-stretch flex items-center">
-                    <div className="space-y-6">
-                      {/* Título con subrayado */}
-                      <div>
-                        <h3 className="text-3xl font-bold uppercase tracking-wider mb-3">Objetivos</h3>
-                        <div className="flex items-center gap-2">
-                          <div className="h-2 bg-primary" style={{ width: '80px' }}></div>
-                          <div className="h-2 bg-primary/60" style={{ width: '40px' }}></div>
-                          <div className="h-2 bg-primary/30" style={{ width: '20px' }}></div>
-                        </div>
+                  {/* TERCERA Y CUARTA FILA: Notas con flechas y botones (una debajo de otra) */}
+                  <div className="space-y-8 pt-10">
+                    {/* Sol - Flujo con flechas */}
+                    <div className="flex items-center justify-center gap-4">
+                      <p className="text-sm lg:text-base italic text-foreground/90 w-[140px] lg:w-[160px] leading-tight text-center font-medium flex-shrink-0">Elemento común en diseño web</p>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <Button variant="outline" size="sm" className="px-4 lg:px-5 py-3 lg:py-4 h-auto flex-shrink-0">
+                        <Sun className="h-5 w-5 lg:h-6 lg:w-6" />
+                      </Button>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <p className="text-sm lg:text-base italic text-foreground/90 w-[140px] lg:w-[160px] leading-tight text-center font-medium flex-shrink-0">Adaptar elemento a la iconografía de la temática</p>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <Button variant="outline" size="sm" className="px-4 lg:px-5 py-3 lg:py-4 h-auto border-orange-500/50 flex-shrink-0">
+                        <Sun className="h-5 w-5 lg:h-6 lg:w-6 text-orange-500 mr-2" />
+                        <span className="text-sm lg:text-base font-semibold whitespace-nowrap">Pokémon Sol</span>
+                      </Button>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden border-2 border-border shadow-lg flex-shrink-0">
+                        <img src="/projects/i5.jpg" alt="Icono Sol" className="w-full h-full object-cover" />
                       </div>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <p className="text-sm lg:text-base italic text-foreground/90 w-[140px] lg:w-[160px] leading-tight text-center font-medium flex-shrink-0">Utilizar colores de Pokémon reconocibles con la idea en el diseño</p>
+                    </div>
 
-                      {/* Lista de objetivos */}
-                      <ul className="space-y-6">
-                        <li>
-                          <div className="text-lg font-bold text-foreground">Conexión emocional</div>
-                          <div className="text-xs text-muted-foreground italic">Crear vínculos con el público</div>
-                        </li>
-                        <li>
-                          <div className="text-lg font-bold text-foreground">Estudio del público</div>
-                          <div className="text-xs text-muted-foreground italic">Conocer gustos y necesidades</div>
-                        </li>
-                        <li>
-                          <div className="text-lg font-bold text-foreground">Atención a los detalles</div>
-                          <div className="text-xs text-muted-foreground italic">Cuidar cada elemento</div>
-                        </li>
-                        <li>
-                          <div className="text-lg font-bold text-foreground">Diseños originales</div>
-                          <div className="text-xs text-muted-foreground italic">Identidad única</div>
-                        </li>
-                      </ul>
+                    {/* Luna - Flujo con flechas */}
+                    <div className="flex items-center justify-center gap-4">
+                      <p className="text-sm lg:text-base italic text-foreground/90 w-[140px] lg:w-[160px] leading-tight text-center font-medium flex-shrink-0">Elemento aburrido</p>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <Button variant="outline" size="sm" className="px-4 lg:px-5 py-3 lg:py-4 h-auto flex-shrink-0">
+                        <Moon className="h-5 w-5 lg:h-6 lg:w-6" />
+                      </Button>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <p className="text-sm lg:text-base italic text-foreground/90 w-[140px] lg:w-[160px] leading-tight text-center font-medium flex-shrink-0">Primera idea: poner logo de Pokémon edición Luna</p>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <Button variant="outline" size="sm" className="px-4 lg:px-5 py-3 lg:py-4 h-auto border-purple-500/50 flex-shrink-0">
+                        <Moon className="h-5 w-5 lg:h-6 lg:w-6 text-purple-500 mr-2" />
+                        <span className="text-sm lg:text-base font-semibold whitespace-nowrap">Pokémon Luna</span>
+                      </Button>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden border-2 border-border shadow-lg flex-shrink-0">
+                        <img src="/projects/i6.jpg" alt="Icono Luna" className="w-full h-full object-cover" />
+                      </div>
+                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <p className="text-sm lg:text-base italic text-foreground/90 w-[140px] lg:w-[160px] leading-tight text-center font-medium flex-shrink-0">Opciones mucho más reconocibles para el público mainstream</p>
                     </div>
                   </div>
                 </div>
@@ -547,11 +624,11 @@ export default function ProjectHero({
 
           {/* Contenido para Proceso de Diseño - Portfolio Inanilux */}
           {projectId === "design-process" && (
-            <div className="relative z-10 h-full flex items-center justify-center px-4 py-4 md:px-12 md:py-8 lg:px-40 overflow-y-auto lg:overflow-hidden">
-              <div className="w-full max-w-7xl space-y-4 md:space-y-8 py-4 md:py-0">
+            <div className="relative z-10 h-full flex items-center justify-center px-6 py-6 md:px-16 md:py-10 lg:px-32 overflow-y-auto lg:overflow-hidden">
+              <div className="w-full max-w-7xl space-y-8 md:space-y-12 lg:space-y-16 py-6 md:py-4">
                 {/* Título superior */}
                 <div className="text-center">
-                  <h2 className="font-incognito text-xl md:text-4xl lg:text-5xl font-bold mb-1 md:mb-2">
+                  <h2 className="font-incognito text-xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 lg:mb-5">
                     Proceso de Diseño: Portfolio Inanilux
                   </h2>
                   <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
@@ -560,24 +637,24 @@ export default function ProjectHero({
                 </div>
 
                 {/* Grid de bloques informativos */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-24 lg:gap-x-40 gap-y-6 md:gap-y-14">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 md:gap-x-32 lg:gap-x-48 gap-y-10 md:gap-y-20">
 
                   {/* Bloque 1: Identidad Visual */}
-                  <div className="space-y-2 md:space-y-3">
-                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
-                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">1</span>
+                  <div className="space-y-4 md:space-y-5">
+                    <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-5">
+                      <div className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-base md:text-xl font-bold text-primary-foreground">1</span>
                       </div>
-                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Identidad Visual</h3>
+                      <h3 className="font-incognito text-lg md:text-2xl lg:text-3xl font-bold text-foreground">Identidad Visual</h3>
                     </div>
-                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
+                    <div className="space-y-2 md:space-y-3 text-xs md:text-sm lg:text-base leading-relaxed">
                       <p className="font-mono text-muted-foreground text-xs lg:text-sm">
                         <span className="font-bold text-foreground">Estilo:</span> Anime · Colorido · Infantil · Cálido
                       </p>
                       <p className="text-foreground">
                         Diseño amable evocando Pokémon con tonos pastel y creatividad.
                       </p>
-                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                      <div className="border-l-2 border-primary/50 pl-5 space-y-2 text-foreground/90 text-xs lg:text-sm">
                         <p>• Paleta cromática viva</p>
                         <p>• Tipografía redondeada</p>
                         <p>• Ilustraciones acompañantes</p>
@@ -586,18 +663,18 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 2: Enfoque de Contenido */}
-                  <div className="space-y-2 md:space-y-3">
-                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
-                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">2</span>
+                  <div className="space-y-4 md:space-y-5">
+                    <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-5">
+                      <div className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-base md:text-xl font-bold text-primary-foreground">2</span>
                       </div>
-                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Enfoque de Contenido</h3>
+                      <h3 className="font-incognito text-lg md:text-2xl lg:text-3xl font-bold text-foreground">Enfoque de Contenido</h3>
                     </div>
-                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
+                    <div className="space-y-2 md:space-y-3 text-xs md:text-sm lg:text-base leading-relaxed">
                       <p className="text-foreground">
                         Contenido accesible para audiencia joven/familiar con comunicación natural.
                       </p>
-                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                      <div className="border-l-2 border-primary/50 pl-5 space-y-2 text-foreground/90 text-xs lg:text-sm">
                         <p>• Galería con mejores obras</p>
                         <p>• Clips destacados de streams</p>
                         <p>• Descripción de estilo artístico</p>
@@ -606,18 +683,18 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 3: Métricas y Alcance */}
-                  <div className="space-y-2 md:space-y-3">
-                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
-                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">3</span>
+                  <div className="space-y-4 md:space-y-5">
+                    <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-5">
+                      <div className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-base md:text-xl font-bold text-primary-foreground">3</span>
                       </div>
-                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Métricas y Alcance</h3>
+                      <h3 className="font-incognito text-lg md:text-2xl lg:text-3xl font-bold text-foreground">Métricas y Alcance</h3>
                     </div>
-                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
+                    <div className="space-y-2 md:space-y-3 text-xs md:text-sm lg:text-base leading-relaxed">
                       <p className="text-foreground">
                         Análisis de redes con datos de seguidores y engagement visual.
                       </p>
-                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                      <div className="border-l-2 border-primary/50 pl-5 space-y-2 text-foreground/90 text-xs lg:text-sm">
                         <p>• Seguidores y crecimiento</p>
                         <p>• Alcance promedio</p>
                         <p>• Valor para colaboraciones</p>
@@ -626,18 +703,18 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 4: Panel de Publicaciones */}
-                  <div className="space-y-2 md:space-y-3">
-                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
-                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">4</span>
+                  <div className="space-y-4 md:space-y-5">
+                    <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-5">
+                      <div className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-base md:text-xl font-bold text-primary-foreground">4</span>
                       </div>
-                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Panel de Publicaciones</h3>
+                      <h3 className="font-incognito text-lg md:text-2xl lg:text-3xl font-bold text-foreground">Panel de Publicaciones</h3>
                     </div>
-                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
+                    <div className="space-y-2 md:space-y-3 text-xs md:text-sm lg:text-base leading-relaxed">
                       <p className="text-foreground">
                         Calendario de contenido con acceso directo a plataformas.
                       </p>
-                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                      <div className="border-l-2 border-primary/50 pl-5 space-y-2 text-foreground/90 text-xs lg:text-sm">
                         <p>• Módulo de actualizaciones</p>
                         <p>• Enlaces directos a redes</p>
                         <p>• Opción de notificaciones</p>
@@ -646,18 +723,18 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 5: Experiencia de Usuario */}
-                  <div className="space-y-2 md:space-y-3">
-                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
-                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">5</span>
+                  <div className="space-y-4 md:space-y-5">
+                    <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-5">
+                      <div className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-base md:text-xl font-bold text-primary-foreground">5</span>
                       </div>
-                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Experiencia de Usuario</h3>
+                      <h3 className="font-incognito text-lg md:text-2xl lg:text-3xl font-bold text-foreground">Experiencia de Usuario</h3>
                     </div>
-                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
+                    <div className="space-y-2 md:space-y-3 text-xs md:text-sm lg:text-base leading-relaxed">
                       <p className="text-foreground">
                         Flujo natural y emocional transmitiendo su mundo visual.
                       </p>
-                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                      <div className="border-l-2 border-primary/50 pl-5 space-y-2 text-foreground/90 text-xs lg:text-sm">
                         <p>• Transmitir alegría y arte</p>
                         <p>• Balance infantil-profesional</p>
                         <p>• Conexión emocional inmediata</p>
@@ -666,18 +743,18 @@ export default function ProjectHero({
                   </div>
 
                   {/* Bloque 6: Propósito Final */}
-                  <div className="space-y-2 md:space-y-3">
-                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
-                      <div className="h-8 w-8 md:h-12 md:w-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <span className="font-incognito text-sm md:text-lg font-bold text-primary-foreground">6</span>
+                  <div className="space-y-4 md:space-y-5">
+                    <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-5">
+                      <div className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                        <span className="font-incognito text-base md:text-xl font-bold text-primary-foreground">6</span>
                       </div>
-                      <h3 className="font-incognito text-base md:text-2xl lg:text-3xl font-bold text-foreground">Propósito Final</h3>
+                      <h3 className="font-incognito text-lg md:text-2xl lg:text-3xl font-bold text-foreground">Propósito Final</h3>
                     </div>
-                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm lg:text-base leading-tight md:leading-relaxed">
+                    <div className="space-y-2 md:space-y-3 text-xs md:text-sm lg:text-base leading-relaxed">
                       <p className="text-foreground">
                         Carta de presentación visual para empresas y colaboradores.
                       </p>
-                      <div className="border-l-2 border-primary/50 pl-4 space-y-1.5 text-foreground/90 text-xs lg:text-sm">
+                      <div className="border-l-2 border-primary/50 pl-5 space-y-2 text-foreground/90 text-xs lg:text-sm">
                         <p>• Quién es Inanilux</p>
                         <p>• Qué hace y cómo se expresa</p>
                         <p>• Valor de su presencia digital</p>
@@ -688,8 +765,8 @@ export default function ProjectHero({
                 </div>
 
                 {/* Quote final */}
-                <div className="text-center pt-3 md:pt-6 border-t-2 border-primary/30">
-                  <p className="text-xs md:text-base lg:text-lg font-mono italic text-muted-foreground">
+                <div className="text-center pt-5 md:pt-8 border-t-2 border-primary/30">
+                  <p className="text-sm md:text-base lg:text-lg font-mono italic text-muted-foreground">
                     &quot;Portfolio como experiencia visual: del arte Pokémon al impacto digital&quot;
                   </p>
                 </div>
@@ -714,11 +791,69 @@ export default function ProjectHero({
 
       {/* Project Label - Top right corner */}
       {projectNumber && (
-        <div className="absolute right-4 top-4 z-20 hidden lg:block">
+        <div className="absolute right-4 top-4 z-20 hidden lg:flex lg:flex-col lg:items-end lg:gap-3">
           <div className="bg-primary/10 border border-primary/20 px-4 py-2 backdrop-blur-sm">
             <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider">
               Proyecto {projectNumber}
             </span>
+          </div>
+          
+          {/* Action Buttons */}
+          <div className="bg-background/50 inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 backdrop-blur-sm">
+            {/* GitHub */}
+            <a
+              href="https://github.com/JaviRL7"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-foreground/60 hover:text-foreground text-sm transition-colors duration-200 hover:scale-110"
+              aria-label="GitHub"
+            >
+              <svg viewBox="0 0 24 24" className="size-5">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+
+            <div className="bg-border h-4 w-px" />
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/javier-rodriguez-lopez-4795a8180/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
+              aria-label="LinkedIn"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+
+            <div className="bg-border h-4 w-px" />
+
+            {/* Theme Toggle */}
+            <button
+              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+              className="transition-transform duration-200 hover:scale-110"
+              aria-label="Cambiar tema"
+            >
+              <ThemeToggleButton2 className="size-5" theme={resolvedTheme} />
+            </button>
+
+            <div className="bg-border h-4 w-px" />
+
+            {/* Back to Top */}
+            <button
+              onClick={() => { const heroSection = document.querySelector('#home'); if (heroSection) { heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }}
+              className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
+              aria-label="Volver arriba"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+              </svg>
+            </button>
           </div>
         </div>
       )}

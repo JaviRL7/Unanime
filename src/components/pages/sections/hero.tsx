@@ -10,7 +10,7 @@ const Hero = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
   return (
-    <div className="relative flex h-screen flex-col justify-center overflow-hidden border-b snap-start snap-always">
+    <div id="home" className="relative flex h-screen flex-col justify-center overflow-hidden border-b snap-start snap-always">
       {/* Decorative Corner Borders - All 4 corners */}
       <div className="absolute top-8 left-8 h-16 w-16 border-t-2 border-l-2 border-primary/40" />
       <div className="absolute top-8 right-8 h-16 w-16 border-t-2 border-r-2 border-primary/40" />
@@ -47,7 +47,7 @@ const Hero = () => {
           <div className="bg-background/50 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 backdrop-blur-sm">
             {/* GitHub */}
             <a
-              href="https://github.com/NotStark"
+              href="https://github.com/JaviRL7"
               target="_blank"
               rel="noreferrer noopener"
               className="text-foreground/60 hover:text-foreground text-sm transition-colors duration-200 hover:scale-110"
@@ -65,7 +65,7 @@ const Hero = () => {
 
             {/* LinkedIn */}
             <a
-              href="#"
+              href="https://www.linkedin.com/in/javier-rodriguez-lopez-4795a8180/"
               target="_blank"
               rel="noreferrer noopener"
               className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
@@ -119,7 +119,7 @@ const Hero = () => {
             className="font-incognito mb-3 text-xl font-semibold leading-tight md:mb-10 md:text-4xl lg:mb-16 lg:text-6xl"
           >
             <span className="text-foreground">Hola de nuevo, </span>
-            <span className="relative italic text-[#8cc2ff]">
+            <span className="relative italic text-white">
               <Typewriter
                 text={["Unanime"]}
                 speed={100}
@@ -168,8 +168,8 @@ const Hero = () => {
           >
             {[
               { id: 1, src: "/projects/a1.jfif", alt: "Proyecto 1", title: "Proyecto 1", subtitle: "Lo estético" },
-              { id: 2, src: "/projects/b1.jpeg", alt: "Proyecto 2", title: "Proyecto 2", subtitle: "Lo funcional" },
-              { id: 3, src: "/projects/c1.png", alt: "Proyecto 3", title: "Proyecto 3", subtitle: "Lo planeado" },
+              { id: 2, src: "/projects/c1.png", alt: "Proyecto 2", title: "Proyecto 2", subtitle: "Lo funcional" },
+              { id: 3, src: "/projects/h1.PNG", alt: "Proyecto 3", title: "Proyecto 3", subtitle: "Lo planeado" },
             ].map((item) => (
               <div key={item.id} className="flex flex-col gap-1 md:gap-3">
                 <div className="relative flex items-center justify-center p-1 md:p-4">
@@ -286,9 +286,9 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute right-4 bottom-2 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
-          SCROLL DOWN
+        {/* Scroll Indicator - Centered bottom */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
+          DESPLÁZATE
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
             <rect width="18" height="18" x="3" y="3" rx="2"></rect>
             <path d="M12 8v8"></path>

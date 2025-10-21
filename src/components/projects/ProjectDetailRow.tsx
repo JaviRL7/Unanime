@@ -191,8 +191,8 @@ export default function ProjectDetailRow({
           </div>
 
           {/* Image Container */}
-          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-4 md:p-6 lg:p-10">
-            <div className="group/image relative w-full max-w-4xl">
+          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-4 md:p-6 lg:p-8">
+            <div className="group/image relative w-full max-w-3xl">
               {/* Frame corners */}
               <div className="border-foreground/20 absolute -top-1 -left-1 h-6 w-6 lg:h-8 lg:w-8 lg:-top-2 lg:-left-2 border-t-2 border-l-2 transition-all group-hover:lg:-top-3 group-hover:lg:-left-3" />
               <div className="border-foreground/20 absolute -top-1 -right-1 h-6 w-6 lg:h-8 lg:w-8 lg:-top-2 lg:-right-2 border-t-2 border-r-2 transition-all group-hover:lg:-top-3 group-hover:lg:-right-3" />
@@ -201,7 +201,7 @@ export default function ProjectDetailRow({
 
               {/* Main image/video */}
               <div className="bg-background relative overflow-hidden border-2">
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-video overflow-hidden" style={{ aspectRatio: '16/9', maxHeight: '60vh' }}>
                   {!mediaSrc ? (
                     /* Blueprint Grid Pattern */
                     <div className="h-full w-full bg-background relative">

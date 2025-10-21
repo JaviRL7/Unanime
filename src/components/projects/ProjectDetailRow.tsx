@@ -200,8 +200,8 @@ export default function ProjectDetailRow({
               <div className="border-foreground/20 absolute -right-1 -bottom-1 h-5 w-5 lg:h-6 lg:w-6 lg:-right-2 lg:-bottom-2 border-r-2 border-b-2 transition-all group-hover:lg:-right-3 group-hover:lg:-bottom-3" />
 
               {/* Main image/video */}
-              <div className="bg-background relative overflow-hidden border-2">
-                <div className="relative aspect-video overflow-hidden" style={{ aspectRatio: '16/9', maxHeight: '26vh' }}>
+              <div className="bg-background relative overflow-hidden border-2 aspect-video">
+                <div className="absolute inset-0">
                   {!mediaSrc ? (
                     /* Blueprint Grid Pattern */
                     <div className="h-full w-full bg-background relative">
@@ -257,12 +257,12 @@ export default function ProjectDetailRow({
 
         {/* RIGHT COLUMN - Content Side */}
         <div className="relative min-h-[50vh] lg:h-full overflow-hidden">
-          <div className="lg:h-full lg:overflow-y-auto p-4 md:p-6 lg:p-6 lg:px-8 pt-6 md:pt-10 lg:pt-12">
+          <div className="h-full overflow-y-auto p-6 md:p-8 lg:p-10">
             {isGalleryLayout || isStructuredLayout ? (
               /* Sección de Galería para Doña Araña */
-              <div className="space-y-2 md:space-y-5 lg:space-y-4">
+              <div className="space-y-4 md:space-y-6">
                 {/* Date & Status */}
-                <div className="mb-2 lg:mb-3 flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <time className="text-muted-foreground font-mono text-xs">
                     {date}
                   </time>
@@ -284,10 +284,10 @@ export default function ProjectDetailRow({
 
                 {/* Header */}
                 <div className="border-l-2 md:border-l-4 border-primary pl-3 md:pl-5">
-                  <h3 className="font-incognito text-lg md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2">
+                  <h3 className="font-incognito text-xl md:text-3xl font-bold mb-2">
                     {title}
                   </h3>
-                  <div className="flex items-center gap-2 mt-1.5 lg:mt-2 mb-2 lg:mb-3">
+                  <div className="flex items-center gap-2 my-3">
                     <div className="h-1 bg-primary" style={{ width: "28px" }} />
                     <div
                       className="h-1 bg-primary/60"
@@ -469,7 +469,7 @@ export default function ProjectDetailRow({
                   <h3 className="font-incognito text-2xl font-bold lg:text-3xl">
                     {title}
                   </h3>
-                  <div className="mt-2 lg:mt-3 flex items-center gap-2">
+                  <div className="my-3 flex items-center gap-2">
                     <div className="h-1 bg-primary" style={{ width: "32px" }} />
                     <div
                       className="h-1 bg-primary/60"

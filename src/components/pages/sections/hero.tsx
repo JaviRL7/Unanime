@@ -119,7 +119,7 @@ const Hero = () => {
             className="font-incognito mb-2 text-xl font-semibold leading-tight md:mb-6 md:text-3xl lg:mb-10 lg:text-5xl"
           >
             <span className="text-foreground">Hola de nuevo, </span>
-            <span className="relative italic text-white">
+            <span className="relative italic text-[#8cc2ff]">
               <Typewriter
                 text={["Unanime"]}
                 speed={100}

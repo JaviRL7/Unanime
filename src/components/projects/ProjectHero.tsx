@@ -1006,16 +1006,16 @@ export default function ProjectHero({
       </div>
 
       {/* Desktop: Full screen centered video layout */}
-      <div className="hidden h-full lg:flex lg:flex-col lg:justify-center">
-        <div className="relative px-6 py-6 lg:px-12 xl:px-16">
+      <div className="hidden h-full lg:flex lg:flex-col lg:justify-center lg:pb-16">
+        <div className="relative px-6 py-4 lg:px-12 xl:px-16">
           {/* Centered large video container */}
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-6xl">
             {/* Image wrapper */}
             <div className="bg-muted/20 relative overflow-hidden border">
               <GridBackground />
 
               {/* Video section */}
-              <div className="relative z-10 p-6 lg:p-8 xl:p-10">
+              <div className="relative z-10 p-4 lg:p-6 xl:p-7">
                 <div className="group/image relative">
                   <DecorativeCorners size="medium" hoverExpand />
 
@@ -1072,8 +1072,8 @@ export default function ProjectHero({
             </div>
 
             {/* Content below image */}
-            <div className="mt-8 text-center">
-              <div className="mb-4 flex items-center justify-center gap-3">
+            <div className="mt-6 text-center">
+              <div className="mb-3 flex items-center justify-center gap-3">
                 <span className="text-muted-foreground font-mono text-xs uppercase">
                   Proyecto {projectNumber}
                 </span>
@@ -1083,11 +1083,11 @@ export default function ProjectHero({
                 </time>
               </div>
 
-              <h3 className="font-incognito mb-4 text-4xl font-bold">
+              <h3 className="font-incognito mb-3 text-3xl font-bold">
                 {title}
               </h3>
 
-              <div className="mb-6 flex items-center justify-center gap-2">
+              <div className="mb-4 flex items-center justify-center gap-2">
                 <div
                   className="bg-primary h-1"
                   style={{ width: "32px" }}
@@ -1106,7 +1106,7 @@ export default function ProjectHero({
               </div>
 
               <p
-                className="text-muted-foreground mx-auto mb-6 max-w-2xl text-lg leading-relaxed md:text-xl lg:text-2xl"
+                className="text-muted-foreground mx-auto mb-5 max-w-2xl text-base leading-relaxed md:text-lg lg:text-xl"
                 dangerouslySetInnerHTML={{ __html: description }}
               />
 

@@ -201,7 +201,7 @@ export default function ProjectDetailRow({
 
               {/* Main image/video */}
               <div className="bg-background relative overflow-hidden border-2">
-                <div className="relative aspect-video overflow-hidden" style={{ aspectRatio: '16/9', maxHeight: '45vh' }}>
+                <div className="relative aspect-video overflow-hidden" style={{ aspectRatio: '16/9', maxHeight: '32vh' }}>
                   {!mediaSrc ? (
                     /* Blueprint Grid Pattern */
                     <div className="h-full w-full bg-background relative">

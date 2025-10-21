@@ -10,7 +10,7 @@ const Hero = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
   return (
-    <div id="home" className="relative flex h-screen flex-col justify-center overflow-hidden border-b snap-start snap-always">
+    <div id="home" className="relative flex h-screen flex-col justify-center overflow-hidden border-b lg:snap-start lg:snap-always">
       {/* Decorative Corner Borders - All 4 corners */}
       <div className="absolute top-4 left-4 h-12 w-12 border-t-2 border-l-2 border-primary/40" />
       <div className="absolute top-4 right-4 h-12 w-12 border-t-2 border-r-2 border-primary/40" />

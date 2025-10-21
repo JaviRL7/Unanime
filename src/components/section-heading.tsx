@@ -21,7 +21,7 @@ const SectionHeading = ({
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       id={id}
-      className={cn("relative w-full border-b h-screen snap-start snap-always flex flex-col", className)}
+      className={cn("relative w-full border-b h-screen lg:snap-start lg:snap-always flex flex-col", className)}
     >
       <div className="bg-background absolute top-0 left-0 z-20 rounded-br-md border-r border-b px-4 py-2 font-mono text-xs tracking-wider uppercase">
         <HyperText text={text} />

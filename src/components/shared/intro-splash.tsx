@@ -10,7 +10,7 @@ export const IntroSplash = () => {
 
   return (
     <motion.div
-      className="relative top-0 z-20 size-full snap-start overflow-hidden"
+      className="relative top-0 z-20 size-full lg:snap-start overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}

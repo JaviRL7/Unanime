@@ -79,7 +79,7 @@ export default function ProjectHero({
     const isLinkedInStats = projectId === "linkedin-stats";
 
     return (
-      <section className="group relative h-screen w-full overflow-hidden border-b snap-start snap-always bg-background">
+      <section className="group relative h-screen w-full overflow-hidden border-b lg:snap-start lg:snap-always bg-background">
         {/* Logo SVG - Shown in grid blocks */}
         <div className="absolute left-8 top-16 z-30 hidden lg:block">
           <div
@@ -779,7 +779,7 @@ export default function ProjectHero({
   }
 
   return (
-    <section className="group relative h-screen w-full overflow-hidden border-b snap-start snap-always">
+    <section className="group relative h-screen w-full overflow-hidden border-b lg:snap-start lg:snap-always">
       {/* Logo SVG - Shown in all projects */}
       <div className="absolute left-8 top-16 z-20 hidden lg:block">
         <div

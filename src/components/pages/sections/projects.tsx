@@ -73,7 +73,7 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
 
 
       {/* Contact Section */}
-      <div id="contacto" className="relative h-screen snap-start snap-always border-b">
+      <div id="contacto" className="relative h-screen lg:snap-start lg:snap-always border-b">
         {/* Contact Label & Action Buttons - Top right corner */}
         <div className="absolute right-4 top-4 z-20 hidden lg:flex lg:flex-col lg:items-end lg:gap-3">
           <div className="bg-primary/10 border border-primary/20 px-4 py-2 backdrop-blur-sm">

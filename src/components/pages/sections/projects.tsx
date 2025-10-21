@@ -41,7 +41,7 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              id={projectIndex + 1 === 1 ? "proyecto-1" : projectIndex + 1 === 2 ? "proyecto-2" : undefined}
+              id={projectIndex + 1 === 1 ? "proyecto-1" : projectIndex + 1 === 2 ? "proyecto-2" : project.id === "inanilux-portfolio" ? "proyecto-3" : undefined}
             >
               <ProjectHero
                 hero={project.hero}
@@ -59,7 +59,6 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: detailIndex * 0.1 }}
               viewport={{ once: true }}
-              id={project.id === "inanilux-portfolio" && detailIndex === 0 ? "proyecto-3" : undefined}
             >
               <ProjectDetailRow
                 detail={detail}

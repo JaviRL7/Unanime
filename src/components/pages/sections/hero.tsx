@@ -274,10 +274,10 @@ const Hero = () => {
 
                 {/* Project title and subtitle below image */}
                 <div className="text-center">
-                  <h3 className="text-foreground/80 text-xs md:text-base font-semibold">
+                  <h3 className="text-foreground/80 text-sm md:text-lg lg:text-xl font-semibold">
                     {item.title}
                   </h3>
-                  <p className="text-foreground/60 text-[10px] md:text-xs italic mt-0.5">
+                  <p className="text-foreground/60 text-xs md:text-sm lg:text-base italic mt-0.5">
                     {item.subtitle}
                   </p>
                 </div>

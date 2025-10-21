@@ -572,49 +572,49 @@ export default function ProjectHero({
                   </div>
 
                   {/* TERCERA Y CUARTA FILA: Notas con flechas y botones */}
-                  <div className="space-y-6 md:space-y-8">
+                  <div className="space-y-6 md:space-y-8 w-full overflow-hidden px-4 md:px-0">
                     {/* Sol - Flujo con flechas */}
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-3">
-                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium">Elemento común en diseño web</p>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 rotate-90 md:rotate-0" />
-                      <Button variant="outline" size="sm" className="px-4 py-2 md:px-5 md:py-3 h-auto text-sm md:text-base">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-3 w-full">
+                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium px-2">Elemento común en diseño web</p>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
+                      <Button variant="outline" size="sm" className="px-3 py-2 md:px-5 md:py-3 h-auto text-sm md:text-base flex-shrink-0">
                         <Sun className="h-5 w-5 lg:h-6 lg:w-6" />
                       </Button>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
-                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium">Adaptar elemento a la iconografía de la temática</p>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 rotate-90 md:rotate-0" />
-                      <Button variant="outline" size="sm" className="px-4 py-2 md:px-5 md:py-3 h-auto border-orange-500/50">
-                        <Sun className="h-5 w-5 lg:h-6 lg:w-6 text-orange-500 mr-2" />
-                        <span className="text-sm lg:text-base font-semibold whitespace-nowrap">Pokémon Sol</span>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
+                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium px-2">Adaptar elemento a la iconografía de la temática</p>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
+                      <Button variant="outline" size="sm" className="px-3 py-2 md:px-5 md:py-3 h-auto border-orange-500/50 text-sm flex-shrink-0 max-w-full">
+                        <Sun className="h-5 w-5 lg:h-6 lg:w-6 text-orange-500 mr-1 md:mr-2 flex-shrink-0" />
+                        <span className="text-sm lg:text-base font-semibold truncate">Pokémon Sol</span>
                       </Button>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 rotate-90 md:rotate-0" />
-                      <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden border-2 border-border shadow-lg">
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
+                      <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden border-2 border-border shadow-lg flex-shrink-0">
                         <img src="/projects/i5.jpg" alt="Icono Sol" className="w-full h-full object-cover" />
                       </div>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 rotate-90 md:rotate-0" />
-                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium">Utilizar colores de Pokémon reconocibles con la idea en el diseño</p>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
+                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium px-2">Utilizar colores de Pokémon reconocibles con la idea en el diseño</p>
                     </div>
 
                     {/* Luna - Flujo con flechas */}
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-3">
-                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium">Elemento aburrido</p>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
-                      <Button variant="outline" size="sm" className="px-4 py-2 md:px-5 md:py-3 h-auto text-sm md:text-base">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-3 w-full">
+                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 px-2 leading-tight text-center font-medium">Elemento aburrido</p>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
+                      <Button variant="outline" size="sm" className="px-3 py-2 md:px-5 md:py-3 h-auto text-sm md:text-base flex-shrink-0">
                         <Moon className="h-5 w-5 lg:h-6 lg:w-6" />
                       </Button>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
-                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium">Primera idea: poner logo de Pokémon edición Luna</p>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
-                      <Button variant="outline" size="sm" className="px-4 py-2 md:px-5 md:py-3 h-auto border-purple-500/50 text-sm md:text-base">
-                        <Moon className="h-5 w-5 lg:h-6 lg:w-6 text-purple-500 mr-2" />
-                        <span className="text-sm lg:text-base font-semibold whitespace-nowrap">Pokémon Luna</span>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
+                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 px-2 leading-tight text-center font-medium">Primera idea: poner logo de Pokémon edición Luna</p>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
+                      <Button variant="outline" size="sm" className="px-3 py-2 md:px-5 md:py-3 h-auto border-purple-500/50 text-sm flex-shrink-0 max-w-full">
+                        <Moon className="h-5 w-5 lg:h-6 lg:w-6 text-purple-500 mr-1 md:mr-2 flex-shrink-0" />
+                        <span className="text-sm lg:text-base font-semibold truncate">Pokémon Luna</span>
                       </Button>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
                       <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden border-2 border-border shadow-lg">
                         <img src="/projects/i6.jpg" alt="Icono Luna" className="w-full h-full object-cover" />
                       </div>
-                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0" />
-                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium">Opciones mucho más reconocibles para el público mainstream</p>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 lg:h-16 w-auto opacity-70 rotate-90 md:rotate-0 flex-shrink-0" />
+                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 px-2 leading-tight text-center font-medium">Opciones mucho más reconocibles para el público mainstream</p>
                     </div>
                   </div>
                 </div>

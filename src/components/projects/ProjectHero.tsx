@@ -79,7 +79,7 @@ export default function ProjectHero({
     const isLinkedInStats = projectId === "linkedin-stats";
 
     return (
-      <section className="group relative h-screen w-full overflow-hidden border-b lg:snap-start lg:snap-always bg-background">
+      <section className="group relative min-h-screen lg:h-screen w-full overflow-y-auto lg:overflow-hidden border-b lg:snap-start lg:snap-always bg-background">
         {/* Logo SVG - Shown in grid blocks */}
         <div className="absolute left-8 top-16 z-30 hidden lg:block">
           <div
@@ -197,7 +197,7 @@ export default function ProjectHero({
 
           {/* Contenido sobre el grid */}
           {isLinkedInStats && (
-          <div className="relative z-10 h-full flex flex-col lg:flex-row items-stretch justify-center gap-10 lg:gap-32 p-8 lg:px-24 lg:py-16">
+          <div className="relative z-10 min-h-full flex flex-col lg:flex-row items-stretch justify-center gap-10 lg:gap-32 p-8 lg:px-24 lg:py-16">
             {/* Columna izquierda: Título y métricas destacadas */}
             <div className="flex-1 flex flex-col justify-center max-w-2xl">
               <h2 className="font-incognito text-5xl lg:text-6xl font-bold mb-4">
@@ -456,7 +456,7 @@ export default function ProjectHero({
 
           {/* Contenido para Paleta de Colores */}
           {projectId === "color-palette" && (
-            <div className="relative z-10 h-full flex flex-col overflow-hidden">
+            <div className="relative z-10 min-h-full lg:h-full flex flex-col lg:overflow-hidden">
               {/* Título superior más compacto */}
               <div className="flex-shrink-0 pt-20 pb-4 px-6 md:px-8 lg:px-10">
                 <h2 className="font-incognito text-2xl md:text-3xl font-bold mb-1">
@@ -468,7 +468,7 @@ export default function ProjectHero({
               </div>
 
               {/* Contenedor principal con scroll */}
-              <div className="flex-1 overflow-y-auto px-6 md:px-8 lg:px-10 pb-6">
+              <div className="flex-1 lg:overflow-y-auto px-6 md:px-8 lg:px-10 pb-6">
                 <div className="space-y-6 md:space-y-10 max-w-6xl mx-auto">
                   {/* PRIMERA FILA: Objetivos */}
                   <div className="space-y-3 text-center">
@@ -624,7 +624,7 @@ export default function ProjectHero({
 
           {/* Contenido para Proceso de Diseño - Portfolio Inanilux */}
           {projectId === "design-process" && (
-            <div className="relative z-10 h-full flex items-center justify-center px-6 py-6 md:px-16 md:py-10 lg:px-32 overflow-y-auto lg:overflow-hidden">
+            <div className="relative z-10 min-h-full lg:h-full flex items-center justify-center px-6 py-6 md:px-16 md:py-10 lg:px-32 lg:overflow-y-auto lg:overflow-hidden">
               <div className="w-full max-w-7xl space-y-8 md:space-y-12 lg:space-y-16 py-6 md:py-4">
                 {/* Título superior */}
                 <div className="text-center">
@@ -779,7 +779,7 @@ export default function ProjectHero({
   }
 
   return (
-    <section className="group relative h-screen w-full overflow-hidden border-b lg:snap-start lg:snap-always">
+    <section className="group relative min-h-screen lg:h-screen w-full overflow-y-auto lg:overflow-hidden border-b lg:snap-start lg:snap-always">
       {/* Logo SVG - Shown in all projects */}
       <div className="absolute left-8 top-16 z-20 hidden lg:block">
         <div

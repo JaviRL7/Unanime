@@ -34,7 +34,7 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
         const projectNumber = projectNumberMap[project.id];
         
         return (
-          <div key={project.id}>
+          <div key={project.id} className="lg:snap-start lg:snap-always">
             {/* Hero Section (Full Screen) */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}

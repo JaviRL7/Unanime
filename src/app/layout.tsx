@@ -7,7 +7,6 @@ import MotionConfigWrapper from "@/components/motion-config";
 import { siteConfig } from "@/config/site";
 import Script from "next/script";
 import env from "@/config/env";
-import FloatingAvatar from "@/components/floating-avatar";
 import RobotBubble from "@/components/shared/RobotBubble";
 
 
@@ -60,7 +59,6 @@ export default function RootLayout({
       >
         <Providers>
           <MotionConfigWrapper>
-            <FloatingAvatar />
             <RobotBubble />
             {children}
           </MotionConfigWrapper>

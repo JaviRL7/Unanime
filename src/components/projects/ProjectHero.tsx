@@ -456,115 +456,115 @@ export default function ProjectHero({
 
           {/* Contenido para Paleta de Colores */}
           {projectId === "color-palette" && (
-            <div className="relative z-10 h-full flex flex-col p-4 lg:p-6 overflow-hidden">
+            <div className="relative z-10 h-full flex flex-col overflow-hidden">
               {/* Título superior más compacto */}
-              <div className="mb-4 flex-shrink-0 pt-16 lg:pt-20">
-                <h2 className="font-incognito text-3xl lg:text-4xl font-bold mb-1">
+              <div className="flex-shrink-0 pt-20 pb-4 px-6 md:px-8 lg:px-10">
+                <h2 className="font-incognito text-2xl md:text-3xl font-bold mb-1">
                   Paleta Cromática
                 </h2>
-                <p className="text-base lg:text-lg text-muted-foreground">
+                <p className="text-sm md:text-base text-muted-foreground">
                   Análisis de colores principales del diseño
                 </p>
               </div>
 
-              {/* Contenedor principal con scroll - mejor centrado */}
-              <div className="flex-1 min-h-0 overflow-y-auto flex items-center">
-                <div className="space-y-8 lg:space-y-12 max-w-7xl mx-auto w-full py-4">
+              {/* Contenedor principal con scroll */}
+              <div className="flex-1 overflow-y-auto px-6 md:px-8 lg:px-10 pb-6">
+                <div className="space-y-6 md:space-y-10 max-w-6xl mx-auto">
                   {/* PRIMERA FILA: Objetivos */}
-                  <div className="space-y-4 text-center">
+                  <div className="space-y-3 text-center">
                     <div>
-                      <h3 className="text-3xl lg:text-4xl font-bold uppercase tracking-wider mb-3">Objetivos</h3>
+                      <h3 className="text-xl md:text-3xl font-bold uppercase tracking-wider mb-2">Objetivos</h3>
                       <div className="flex items-center justify-center gap-2">
-                        <div className="h-2 lg:h-3 bg-primary" style={{ width: '60px' }}></div>
-                        <div className="h-2 lg:h-3 bg-primary/60" style={{ width: '30px' }}></div>
-                        <div className="h-2 lg:h-3 bg-primary/30" style={{ width: '15px' }}></div>
+                        <div className="h-2 bg-primary w-12 md:w-16"></div>
+                        <div className="h-2 bg-primary/60 w-6 md:w-8"></div>
+                        <div className="h-2 bg-primary/30 w-3 md:w-4"></div>
                       </div>
                     </div>
-                    <div className="flex flex-col items-center gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 pt-2">
                       <div className="text-center">
-                        <div className="text-lg lg:text-xl font-bold text-foreground">Conexión emocional</div>
-                        <div className="text-base lg:text-lg text-muted-foreground italic">Crear vínculos con el público</div>
+                        <div className="text-base md:text-lg font-bold text-foreground">Conexión emocional</div>
+                        <div className="text-sm md:text-base text-muted-foreground italic">Crear vínculos con el público</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-lg lg:text-xl font-bold text-foreground">Estudio del público</div>
-                        <div className="text-base lg:text-lg text-muted-foreground italic">Conocer gustos y necesidades</div>
+                        <div className="text-base md:text-lg font-bold text-foreground">Estudio del público</div>
+                        <div className="text-sm md:text-base text-muted-foreground italic">Conocer gustos y necesidades</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-lg lg:text-xl font-bold text-foreground">Atención a los detalles</div>
-                        <div className="text-base lg:text-lg text-muted-foreground italic">Cuidar cada elemento</div>
+                        <div className="text-base md:text-lg font-bold text-foreground">Atención a los detalles</div>
+                        <div className="text-sm md:text-base text-muted-foreground italic">Cuidar cada elemento</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-lg lg:text-xl font-bold text-foreground">Diseños originales</div>
-                        <div className="text-base lg:text-lg text-muted-foreground italic">Identidad única</div>
+                        <div className="text-base md:text-lg font-bold text-foreground">Diseños originales</div>
+                        <div className="text-sm md:text-base text-muted-foreground italic">Identidad única</div>
                       </div>
                     </div>
                   </div>
 
                   {/* SEGUNDA FILA: Imágenes PNG con sus colores */}
-                  <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-10 pt-4">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
                     {/* Pokémon Sol - Imagen y colores */}
-                    <div className="flex items-center gap-4">
-                      <div className="w-44 lg:w-52 flex-shrink-0">
+                    <div className="flex flex-col md:flex-row items-center gap-4">
+                      <div className="w-36 md:w-44 flex-shrink-0">
                         <img
                           src="/projects/i3.png"
                           alt="Paleta modo claro"
-                          className="w-full h-auto object-contain rounded-lg shadow-xl border-2 border-border"
+                          className="w-full h-auto object-contain rounded-lg shadow-lg border border-border"
                         />
                       </div>
-                      <div className="flex flex-col gap-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#F7D1D5' }} />
+                      <div className="flex flex-col gap-2 md:gap-3">
+                        <div className="flex items-center gap-2 md:gap-3">
+                          <div className="w-10 h-10 md:w-12 md:h-12 rounded border border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#F7D1D5' }} />
                           <div className="flex flex-col">
-                            <span className="font-mono text-base lg:text-lg font-bold">#F7D1D5</span>
-                            <span className="text-sm lg:text-base text-muted-foreground font-semibold">Rosa pastel</span>
+                            <span className="font-mono text-sm md:text-base font-bold">#F7D1D5</span>
+                            <span className="text-xs md:text-sm text-muted-foreground font-semibold">Rosa pastel</span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#816D5A' }} />
+                        <div className="flex items-center gap-2 md:gap-3">
+                          <div className="w-10 h-10 md:w-12 md:h-12 rounded border border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#816D5A' }} />
                           <div className="flex flex-col">
-                            <span className="font-mono text-base lg:text-lg font-bold">#816D5A</span>
-                            <span className="text-sm lg:text-base text-muted-foreground font-semibold">Marrón cálido</span>
+                            <span className="font-mono text-sm md:text-base font-bold">#816D5A</span>
+                            <span className="text-xs md:text-sm text-muted-foreground font-semibold">Marrón cálido</span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#FAFAFA' }} />
+                        <div className="flex items-center gap-2 md:gap-3">
+                          <div className="w-10 h-10 md:w-12 md:h-12 rounded border border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#FAFAFA' }} />
                           <div className="flex flex-col">
-                            <span className="font-mono text-base lg:text-lg font-bold">#FAFAFA</span>
-                            <span className="text-sm lg:text-base text-muted-foreground font-semibold">Blanco suave</span>
+                            <span className="font-mono text-sm md:text-base font-bold">#FAFAFA</span>
+                            <span className="text-xs md:text-sm text-muted-foreground font-semibold">Blanco suave</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
                     {/* Pokémon Luna - Imagen y colores */}
-                    <div className="flex items-center gap-4">
-                      <div className="w-44 lg:w-52 flex-shrink-0">
+                    <div className="flex flex-col md:flex-row items-center gap-4">
+                      <div className="w-36 md:w-44 flex-shrink-0">
                         <img
                           src="/projects/i4.png"
                           alt="Paleta modo oscuro"
-                          className="w-full h-auto object-contain rounded-lg shadow-xl border-2 border-border"
+                          className="w-full h-auto object-contain rounded-lg shadow-lg border border-border"
                         />
                       </div>
-                      <div className="flex flex-col gap-3">
+                      <div className="flex flex-col gap-2 md:gap-3">
                         <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#746899' }} />
+                          <div className="w-10 h-10 md:w-12 md:h-12 rounded border border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#746899' }} />
                           <div className="flex flex-col">
-                            <span className="font-mono text-base lg:text-lg font-bold">#746899</span>
-                            <span className="text-sm lg:text-base text-muted-foreground font-semibold">Morado lavanda</span>
+                            <span className="font-mono text-sm md:text-base font-bold">#746899</span>
+                            <span className="text-xs md:text-sm text-muted-foreground font-semibold">Morado lavanda</span>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#EE8778' }} />
+                          <div className="w-10 h-10 md:w-12 md:h-12 rounded border border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#EE8778' }} />
                           <div className="flex flex-col">
-                            <span className="font-mono text-base lg:text-lg font-bold">#EE8778</span>
-                            <span className="text-sm lg:text-base text-muted-foreground font-semibold">Coral suave</span>
+                            <span className="font-mono text-sm md:text-base font-bold">#EE8778</span>
+                            <span className="text-xs md:text-sm text-muted-foreground font-semibold">Coral suave</span>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 lg:w-14 lg:h-14 rounded border-2 border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#413350' }} />
+                          <div className="w-10 h-10 md:w-12 md:h-12 rounded border border-border shadow-sm flex-shrink-0" style={{ backgroundColor: '#413350' }} />
                           <div className="flex flex-col">
-                            <span className="font-mono text-base lg:text-lg font-bold">#413350</span>
-                            <span className="text-sm lg:text-base text-muted-foreground font-semibold">Púrpura oscuro</span>
+                            <span className="font-mono text-sm md:text-base font-bold">#413350</span>
+                            <span className="text-xs md:text-sm text-muted-foreground font-semibold">Púrpura oscuro</span>
                           </div>
                         </div>
                       </div>
@@ -572,27 +572,27 @@ export default function ProjectHero({
                   </div>
 
                   {/* TERCERA Y CUARTA FILA: Notas con flechas y botones (una debajo de otra) */}
-                  <div className="space-y-6 pt-4 pb-4">
+                  <div className="space-y-4 md:space-y-6">
                     {/* Sol - Flujo con flechas */}
-                    <div className="flex items-center justify-center gap-3">
-                      <p className="text-base lg:text-lg italic text-foreground/90 w-[150px] lg:w-[170px] leading-tight text-center font-medium flex-shrink-0">Elemento común en diseño web</p>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
-                      <Button variant="outline" size="sm" className="px-4 lg:px-5 py-3 lg:py-4 h-auto flex-shrink-0">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3">
+                      <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium ">Elemento común en diseño web</p>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70" />
+                      <Button variant="outline" size="sm" className="px-4 py-2 md:px-5 md:py-3 h-auto text-sm md:text-base">
                         <Sun className="h-5 w-5 lg:h-6 lg:w-6" />
                       </Button>
                       <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
-                      <p className="text-base lg:text-lg italic text-foreground/90 w-[150px] lg:w-[170px] leading-tight text-center font-medium flex-shrink-0">Adaptar elemento a la iconografía de la temática</p>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <p className="text-sm md:text-base italic text-foreground/90 w-[150px] lg:w-[170px] leading-tight text-center font-medium flex-shrink-0">Adaptar elemento a la iconografía de la temática</p>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 flex-shrink-0" />
                       <Button variant="outline" size="sm" className="px-4 lg:px-5 py-3 lg:py-4 h-auto border-orange-500/50 flex-shrink-0">
                         <Sun className="h-5 w-5 lg:h-6 lg:w-6 text-orange-500 mr-2" />
                         <span className="text-sm lg:text-base font-semibold whitespace-nowrap">Pokémon Sol</span>
                       </Button>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 flex-shrink-0" />
                       <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden border-2 border-border shadow-lg flex-shrink-0">
                         <img src="/projects/i5.jpg" alt="Icono Sol" className="w-full h-full object-cover" />
                       </div>
-                      <img src="/projects/f1.png" alt="→" className="h-14 lg:h-16 w-auto opacity-70 flex-shrink-0" />
-                      <p className="text-base lg:text-lg italic text-foreground/90 w-[150px] lg:w-[170px] leading-tight text-center font-medium flex-shrink-0">Utilizar colores de Pokémon reconocibles con la idea en el diseño</p>
+                      <img src="/projects/f1.png" alt="→" className="h-10 md:h-14 w-auto opacity-70 flex-shrink-0" />
+                      <p className="text-base lg:text-lg italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium flex-shrink-0">Utilizar colores de Pokémon reconocibles con la idea en el diseño</p>
                     </div>
 
                     {/* Luna - Flujo con flechas */}

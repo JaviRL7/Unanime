@@ -191,8 +191,8 @@ export default function ProjectDetailRow({
           </div>
 
           {/* Image Container */}
-          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-4 md:p-6 lg:p-8">
-            <div className="group/image relative w-full max-w-2xl">
+          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-6 md:p-8">
+            <div className="group/image relative w-full max-w-3xl">
               {/* Frame corners */}
               <div className="border-foreground/20 absolute -top-1 -left-1 h-5 w-5 lg:h-6 lg:w-6 lg:-top-2 lg:-left-2 border-t-2 border-l-2 transition-all group-hover:lg:-top-3 group-hover:lg:-left-3" />
               <div className="border-foreground/20 absolute -top-1 -right-1 h-5 w-5 lg:h-6 lg:w-6 lg:-top-2 lg:-right-2 border-t-2 border-r-2 transition-all group-hover:lg:-top-3 group-hover:lg:-right-3" />
@@ -257,10 +257,10 @@ export default function ProjectDetailRow({
 
         {/* RIGHT COLUMN - Content Side */}
         <div className="relative min-h-[50vh] lg:h-full overflow-hidden">
-          <div className="h-full overflow-y-auto p-6 md:p-8 lg:p-10">
+          <div className="h-full overflow-y-auto p-6 md:p-8">
             {isGalleryLayout || isStructuredLayout ? (
               /* Sección de Galería para Doña Araña */
-              <div className="space-y-4 md:space-y-6">
+              <div className="space-y-4 md:space-y-5">
                 {/* Date & Status */}
                 <div className="flex flex-wrap items-center gap-3">
                   <time className="text-muted-foreground font-mono text-xs">

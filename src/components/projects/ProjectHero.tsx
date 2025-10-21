@@ -456,9 +456,9 @@ export default function ProjectHero({
 
           {/* Contenido para Paleta de Colores */}
           {projectId === "color-palette" && (
-            <div className="relative z-10 h-full flex flex-col justify-center p-6 lg:p-12 overflow-hidden">
-              {/* Título superior más compacto - con más espacio arriba */}
-              <div className="mb-8 flex-shrink-0 pt-32 lg:pt-40">
+            <div className="relative z-10 h-full flex flex-col p-6 lg:p-12 overflow-hidden">
+              {/* Título superior más compacto */}
+              <div className="mb-6 flex-shrink-0 pt-20 lg:pt-24">
                 <h2 className="font-incognito text-2xl lg:text-3xl font-bold mb-1">
                   Paleta Cromática
                 </h2>
@@ -467,11 +467,11 @@ export default function ProjectHero({
                 </p>
               </div>
 
-              {/* Contenedor principal con scroll */}
-              <div className="flex-1 min-h-0 overflow-y-auto">
-                <div className="space-y-12 max-w-6xl mx-auto pt-8 lg:pt-16">
+              {/* Contenedor principal con scroll - mejor centrado */}
+              <div className="flex-1 min-h-0 overflow-y-auto flex items-center">
+                <div className="space-y-10 lg:space-y-14 max-w-6xl mx-auto w-full py-6">
                   {/* PRIMERA FILA: Objetivos */}
-                  <div className="space-y-6 text-center">
+                  <div className="space-y-5 text-center">
                     <div>
                       <h3 className="text-2xl lg:text-3xl font-bold uppercase tracking-wider mb-3">Objetivos</h3>
                       <div className="flex items-center justify-center gap-2">
@@ -501,7 +501,7 @@ export default function ProjectHero({
                   </div>
 
                   {/* SEGUNDA FILA: Imágenes PNG con sus colores */}
-                  <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 pt-10">
+                  <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 pt-6">
                     {/* Pokémon Sol - Imagen y colores */}
                     <div className="flex items-center gap-5">
                       <div className="w-40 lg:w-48 flex-shrink-0">
@@ -572,7 +572,7 @@ export default function ProjectHero({
                   </div>
 
                   {/* TERCERA Y CUARTA FILA: Notas con flechas y botones (una debajo de otra) */}
-                  <div className="space-y-8 pt-10">
+                  <div className="space-y-8 pt-6 pb-6">
                     {/* Sol - Flujo con flechas */}
                     <div className="flex items-center justify-center gap-4">
                       <p className="text-sm lg:text-base italic text-foreground/90 w-[140px] lg:w-[160px] leading-tight text-center font-medium flex-shrink-0">Elemento común en diseño web</p>

@@ -51,7 +51,7 @@ const Footer = ({ onEmailClick }: FooterProps) => {
             viewport={{ once: true }}
             className="flex flex-col items-center gap-6"
           >
-            <div className="w-56 md:w-64 lg:w-72">
+            <div className="w-64 md:w-72 lg:w-80">
               <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 319 74" preserveAspectRatio="xMidYMid meet">
                 <g fill="currentColor" fillOpacity="1">
                   <g transform="translate(15.573501, 55.485679)">

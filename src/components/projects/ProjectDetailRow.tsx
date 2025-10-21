@@ -257,10 +257,10 @@ export default function ProjectDetailRow({
 
         {/* RIGHT COLUMN - Content Side */}
         <div className="relative min-h-[50vh] lg:h-full overflow-hidden">
-          <div className="h-full overflow-y-auto p-6 md:p-8">
+          <div className="h-full overflow-y-auto p-6 md:p-8 flex items-center">
             {isGalleryLayout || isStructuredLayout ? (
               /* Sección de Galería para Doña Araña */
-              <div className="space-y-4 md:space-y-5">
+              <div className="space-y-4 md:space-y-5 w-full">
                 {/* Date & Status */}
                 <div className="flex flex-wrap items-center gap-3">
                   <time className="text-muted-foreground font-mono text-xs">
@@ -336,7 +336,7 @@ export default function ProjectDetailRow({
 
                 {/* Footer con línea */}
                 <div className="pt-4 border-t">
-                  <p className="text-muted-foreground text-xs font-mono italic md:text-sm pr-16 md:pr-24 lg:pr-40">
+                  <p className="text-muted-foreground text-xs font-mono italic md:text-sm pr-20 md:pr-28 lg:pr-48">
                     &ldquo;{quote}&rdquo;
                   </p>
                 </div>
@@ -427,7 +427,7 @@ export default function ProjectDetailRow({
 
                 {/* Footer con línea */}
                 <div className="pt-4 border-t">
-                  <p className="text-muted-foreground text-xs font-mono italic md:text-sm pr-16 md:pr-24 lg:pr-40">
+                  <p className="text-muted-foreground text-xs font-mono italic md:text-sm pr-20 md:pr-28 lg:pr-48">
                     &ldquo;{quote}&rdquo;
                   </p>
                 </div>

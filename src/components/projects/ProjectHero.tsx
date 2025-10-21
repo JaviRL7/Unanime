@@ -469,7 +469,7 @@ export default function ProjectHero({
 
               {/* Contenedor principal con scroll */}
               <div className="flex-1 lg:overflow-y-auto px-6 md:px-8 lg:px-10 pb-6 lg:pb-10">
-                <div className="space-y-6 md:space-y-10 lg:space-y-14 max-w-6xl mx-auto">
+                <div className="space-y-6 md:space-y-10 lg:space-y-20 max-w-6xl mx-auto">
                   {/* PRIMERA FILA: Objetivos */}
                   <div className="space-y-3 lg:space-y-5 text-center">
                     <div>
@@ -501,7 +501,7 @@ export default function ProjectHero({
                   </div>
 
                   {/* SEGUNDA FILA: Imágenes PNG con sus colores */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 pt-4 lg:pt-6">
                     {/* Pokémon Sol - Imagen y colores */}
                     <div className="flex flex-col md:flex-row items-center gap-4">
                       <div className="w-36 md:w-44 flex-shrink-0">
@@ -572,7 +572,7 @@ export default function ProjectHero({
                   </div>
 
                   {/* TERCERA Y CUARTA FILA: Notas con flechas y botones */}
-                  <div className="space-y-6 md:space-y-8 w-full overflow-hidden px-4 md:px-0">
+                  <div className="space-y-6 md:space-y-8 lg:space-y-12 w-full overflow-hidden px-4 md:px-0 pt-4 lg:pt-6">
                     {/* Sol - Flujo con flechas */}
                     <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-3 w-full">
                       <p className="text-sm md:text-base italic text-foreground/90 w-full md:w-40 leading-tight text-center font-medium px-2">Elemento común en diseño web</p>

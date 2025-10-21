@@ -184,14 +184,14 @@ export default function ProjectDetailRow({
 
       <div className="grid lg:h-full grid-cols-1 lg:grid-rows-1 lg:grid-cols-2">
         {/* LEFT COLUMN - Image Side */}
-        <div className="bg-muted/20 relative min-h-[40vh] lg:h-full overflow-hidden border-b lg:border-r lg:border-b-0">
+        <div className="bg-muted/20 relative min-h-[35vh] lg:h-full overflow-hidden border-b lg:border-r lg:border-b-0">
           {/* Cross pattern - más sutil en móvil */}
           <div className="absolute inset-0">
             <div className="before:bg-border after:bg-border relative h-full w-full before:absolute before:top-1/2 before:left-0 before:h-px lg:before:h-0.5 before:w-full after:absolute after:top-0 after:left-1/2 after:h-full after:w-px lg:after:w-0.5" />
           </div>
 
           {/* Image Container */}
-          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-6 md:p-8">
+          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-4 md:p-6 lg:p-8">
             <div className="group/image relative w-full max-w-3xl">
               {/* Frame corners */}
               <div className="border-foreground/20 absolute -top-1 -left-1 h-5 w-5 lg:h-6 lg:w-6 lg:-top-2 lg:-left-2 border-t-2 border-l-2 transition-all group-hover:lg:-top-3 group-hover:lg:-left-3" />

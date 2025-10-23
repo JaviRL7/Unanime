@@ -16,7 +16,7 @@ const PortfolioPage = () => {
   
   return (
     <>
-      <div className="no-scrollbar portfolio-container relative size-full lg:snap-y lg:snap-proximity overflow-y-scroll">
+      <div className="no-scrollbar portfolio-container relative size-full overflow-y-scroll lg:snap-y lg:snap-mandatory">
         <BackgroundNoise className="z-50" />
 
         <div className="h-screen lg:snap-start">

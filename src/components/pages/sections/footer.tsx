@@ -37,12 +37,12 @@ const Footer = ({ onEmailClick }: FooterProps) => {
   ];
 
   return (
-    <footer className="relative border-t min-h-[50vh] flex items-center justify-center bg-muted/20 pb-safe">
+    <footer className="relative border-t w-full flex items-center justify-center bg-muted/20">
       <div className="absolute inset-0" aria-hidden="true">
         <div className="before:bg-border after:bg-border relative h-full w-full before:absolute before:top-1/2 before:left-0 before:h-0.5 before:w-full after:absolute after:top-0 after:left-1/2 after:h-full after:w-0.5"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 md:px-12 lg:px-16 pb-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 md:px-12 lg:px-16">
         <div className="flex flex-col items-center justify-center gap-12 md:gap-16">
           {/* Logo and Name */}
           <motion.div

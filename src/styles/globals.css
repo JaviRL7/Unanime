@@ -205,7 +205,7 @@
   @media (min-width: 1024px) and (max-height: 700px) {
     html,
     body {
-      font-size: 10px; /* Reducir más para pantallas pequeñas en altura */
+      font-size: 8.5px; /* Reducir mucho más para pantallas pequeñas en altura */
     }
   }
   

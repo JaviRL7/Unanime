@@ -32,7 +32,9 @@ const PortfolioPage = () => {
               <div className="min-h-screen lg:snap-start lg:snap-always">
                 <Projects onEmailClick={() => setIsEmailModalOpen(true)} />
               </div>
-              <Footer onEmailClick={() => setIsEmailModalOpen(true)} />
+              <div className="min-h-[50vh] lg:snap-start lg:snap-always w-full">
+                <Footer onEmailClick={() => setIsEmailModalOpen(true)} />
+              </div>
             </div>
           </div>
         </main>

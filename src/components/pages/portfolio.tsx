@@ -25,14 +25,14 @@ const PortfolioPage = () => {
 
         <main className="before:border-border after:border-border relative z-10 before:absolute before:top-0 before:left-0 before:h-full before:w-12 before:border-r before:bg-[linear-gradient(-135deg,_var(--color-border)_25%,_transparent_25%,_transparent_50%,_var(--color-border)_50%,_var(--color-border)_75%,_transparent_75%,_transparent)] before:bg-[length:5px_5px] after:absolute after:top-0 after:right-0 after:h-full after:w-12 after:border-l after:bg-[linear-gradient(135deg,_var(--color-border)_25%,_transparent_25%,_transparent_50%,_var(--color-border)_50%,_var(--color-border)_75%,_transparent_75%,_transparent)] after:bg-[length:5px_5px] max-md:before:hidden max-md:after:hidden md:px-12">
           <div className="md:px-8">
-            <div className="md:border-r md:border-l">
+            <div className="md:border-r md:border-l pb-[50vh]">
               <div className="min-h-screen lg:snap-start lg:snap-always">
                 <Hero />
               </div>
               <div className="min-h-screen lg:snap-start lg:snap-always">
                 <Projects onEmailClick={() => setIsEmailModalOpen(true)} />
               </div>
-              <div className="min-h-screen lg:snap-start lg:snap-always flex items-center">
+              <div className="min-h-[50vh] lg:snap-start lg:snap-always lg:scroll-mt-0">
                 <Footer onEmailClick={() => setIsEmailModalOpen(true)} />
               </div>
             </div>

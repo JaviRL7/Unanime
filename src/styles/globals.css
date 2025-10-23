@@ -205,7 +205,7 @@
   @media (min-width: 1024px) and (max-height: 700px) {
     html,
     body {
-      font-size: 8.5px; /* Reducir mucho más para pantallas pequeñas en altura */
+      font-size: 7.5px; /* Reducir aún más para pantallas pequeñas en altura */
     }
   }
   
@@ -243,17 +243,6 @@
   h2,
   h3 {
     @apply font-semibold;
-  }
-  
-  /* Desactivar snap en pantallas de poca altura (netbooks, etc.) */
-  @media (min-width: 1024px) and (max-height: 700px) {
-    .portfolio-container {
-      scroll-snap-type: none !important;
-    }
-    .portfolio-container > * {
-      scroll-snap-align: none !important;
-      scroll-snap-stop: normal !important;
-    }
   }
 }
 

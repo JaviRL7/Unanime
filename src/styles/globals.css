@@ -201,6 +201,14 @@
     }
   }
   
+  /* Portátiles - Resoluciones comunes 1280px-1600px */
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    html,
+    body {
+      font-size: 11.8px; /* Tamaño optimizado para laptops */
+    }
+  }
+  
   /* Ajustar contenedores para 2K */
   @media (min-width: 1920px) {
     html,

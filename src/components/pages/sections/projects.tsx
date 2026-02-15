@@ -1,13 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
 import { motion } from "motion/react";
 import ProjectHero from "@/components/projects/ProjectHero";
 import ProjectDetailRow from "@/components/projects/ProjectDetailRow";
 import { projects } from "@/data/projects";
 import { useTheme } from "next-themes";
 import { ThemeToggleButton2 } from "@/components/theme-toggle";
+import { PROJECT_NUMBER_MAP } from "@/config/projects";
 
 interface ProjectsProps {
   onEmailClick: () => void;
@@ -15,23 +14,12 @@ interface ProjectsProps {
 
 const Projects = ({ onEmailClick }: ProjectsProps) => {
   const { resolvedTheme, setTheme } = useTheme();
-  
-  // Mapeo manual de projectId a número de proyecto
-  const projectNumberMap: Record<string, number> = {
-    "dona-arana": 1,
-    "contabilidad-web": 2,
-    "linkedin-stats": 2,
-    "more-features": 2,
-    "inanilux-portfolio": 3,
-    "color-palette": 3,
-    "design-process": 3,
-  };
-  
+
   return (
     <>
       {/* Render all projects */}
       {projects.map((project, projectIndex) => {
-        const projectNumber = projectNumberMap[project.id];
+        const projectNumber = PROJECT_NUMBER_MAP[project.id];
         
         return (
           <div key={project.id} className="lg:snap-start lg:snap-always">
@@ -41,7 +29,14 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              id={projectIndex + 1 === 1 ? "proyecto-1" : projectIndex + 1 === 2 ? "proyecto-2" : project.id === "inanilux-portfolio" ? "proyecto-3" : undefined}
+              id={
+                projectIndex + 1 === 1 ? "proyecto-1" :
+                projectIndex + 1 === 2 ? "proyecto-2" :
+                project.id === "local-noise" ? "proyecto-3" :
+                project.id === "extra-tfg" ? "proyecto-4" :
+                project.id === "inanilux-portfolio" ? "proyecto-5" :
+                undefined
+              }
             >
               <ProjectHero
                 hero={project.hero}
@@ -83,7 +78,7 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
           </div>
           
           {/* Action Buttons */}
-          <div className="bg-background/50 inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 backdrop-blur-sm">
+          <div className="bg-background/30 inline-flex items-center gap-2 rounded-full px-2 py-1 backdrop-blur-md">
             {/* GitHub */}
             <a
               href="https://github.com/JaviRL7"
@@ -92,7 +87,7 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
               className="text-foreground/60 hover:text-foreground text-sm transition-colors duration-200 hover:scale-110"
               aria-label="GitHub"
             >
-              <svg viewBox="0 0 24 24" className="size-5">
+              <svg viewBox="0 0 24 24" className="size-4">
                 <path
                   d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
                   fill="currentColor"
@@ -110,7 +105,7 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
               className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
               aria-label="LinkedIn"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
@@ -123,7 +118,7 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
               className="transition-transform duration-200 hover:scale-110"
               aria-label="Cambiar tema"
             >
-              <ThemeToggleButton2 className="size-5" theme={resolvedTheme} />
+              <ThemeToggleButton2 className="size-4" theme={resolvedTheme} />
             </button>
 
             <div className="bg-border h-4 w-px" />
@@ -139,7 +134,7 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
               className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
               aria-label="Volver arriba"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4">
                 <path d="M12 19V5M5 12l7-7 7 7"/>
               </svg>
             </button>
@@ -148,45 +143,45 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
 
         <div className="h-full flex flex-col justify-center">
           {/* Texto superior */}
-          <div className="text-center mb-8 px-4">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground">
+          <div className="text-center mb-6 px-4">
+            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-foreground">
               Gracias por la oportunidad y por llegar hasta aquí
             </p>
           </div>
           
-          <div className="relative px-6 py-6 lg:px-12 xl:px-16">
-            <div className="mx-auto max-w-7xl">
+          <div className="relative px-4 py-4 lg:px-8 xl:px-12">
+            <div className="mx-auto max-w-6xl">
               <div className="bg-muted/20 relative overflow-hidden border">
                 {/* Grid background */}
                 <div className="absolute inset-0" aria-hidden="true">
                   <div className="before:bg-border after:bg-border relative h-full w-full before:absolute before:top-1/2 before:left-0 before:h-0.5 before:w-full after:absolute after:top-0 after:left-1/2 after:h-full after:w-0.5"></div>
                 </div>
 
-                <div className="relative z-10 p-6 lg:p-12 xl:p-16">
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="relative z-10 p-4 lg:p-8 xl:p-10">
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
                     {/* Columna izquierda - Foto */}
                     <div className="flex justify-center">
                       <div className="relative">
                         <img
                           src="/data/FotoJavier1.jpeg"
                           alt="Javier Rodríguez López"
-                          className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-primary/20"
+                          className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover border-3 border-primary/20"
                         />
                       </div>
                     </div>
 
                     {/* Columna derecha - Información */}
-                    <div className="space-y-8">
+                    <div className="space-y-5 md:space-y-6">
                       <div>
-                        <h2 className="font-incognito text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">Contacto</h2>
-                        <div className="flex items-center gap-3 mb-6">
-                          <div className="h-2 bg-primary" style={{ width: '80px' }}></div>
-                          <div className="h-2 bg-primary/60" style={{ width: '40px' }}></div>
-                          <div className="h-2 bg-primary/30" style={{ width: '20px' }}></div>
+                        <h2 className="font-incognito text-3xl lg:text-4xl xl:text-5xl font-bold mb-3">Contacto</h2>
+                        <div className="flex items-center gap-2 mb-4">
+                          <div className="h-1.5 bg-primary" style={{ width: '64px' }}></div>
+                          <div className="h-1.5 bg-primary/60" style={{ width: '32px' }}></div>
+                          <div className="h-1.5 bg-primary/30" style={{ width: '16px' }}></div>
                         </div>
                       </div>
 
-                      <div className="space-y-6 text-base lg:text-lg">
+                      <div className="space-y-4 text-sm lg:text-base">
                         {/* Email */}
                         <div className="flex items-start gap-4 group">
                           <div className="text-primary mt-1">
@@ -263,11 +258,11 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
           </div>
           
           {/* Texto inferior */}
-          <div className="text-center mt-8 px-4">
-            <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mt-6 px-4">
+            <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto">
               En mi portfolio podéis encontrar todos mis otros proyectos más pequeños. Si tenéis alguna duda estaré más que encantado de resolvérosla.
             </p>
-            <p className="text-sm md:text-base text-primary/80 mt-4 font-mono italic">
+            <p className="text-xs md:text-sm text-primary/80 mt-3 font-mono italic">
               (Consejo! Usa el botón de email del footer...)
             </p>
           </div>

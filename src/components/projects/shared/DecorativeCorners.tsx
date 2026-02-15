@@ -16,34 +16,34 @@
 import { cn } from "@/lib/utils";
 import type { DecorativeCornersProps, CornerSize } from "@/types/projects";
 
-const CORNER_BASE_CLASSES = "border-foreground/20 absolute border-2 transition-all";
+const CORNER_BASE_CLASSES = "border-foreground/20 absolute border transition-all";
 
 const CORNER_SIZES: Record<CornerSize, string> = {
-  small: "h-8 w-8",
-  medium: "h-12 w-12",
-  large: "h-16 w-16",
+  small: "h-6 w-6",
+  medium: "h-10 w-10",
+  large: "h-14 w-14",
 };
 
 const HOVER_POSITIONS = {
   topLeft: {
-    base: "-top-2 -left-2",
-    hover: "group-hover:-top-3 group-hover:-left-3",
-    hoverLarge: "group-hover:-top-4 group-hover:-left-4",
+    base: "-top-1.5 -left-1.5",
+    hover: "group-hover:-top-2 group-hover:-left-2",
+    hoverLarge: "group-hover:-top-2.5 group-hover:-left-2.5",
   },
   topRight: {
-    base: "-top-2 -right-2",
-    hover: "group-hover:-top-3 group-hover:-right-3",
-    hoverLarge: "group-hover:-top-4 group-hover:-right-4",
+    base: "-top-1.5 -right-1.5",
+    hover: "group-hover:-top-2 group-hover:-right-2",
+    hoverLarge: "group-hover:-top-2.5 group-hover:-right-2.5",
   },
   bottomLeft: {
-    base: "-bottom-2 -left-2",
-    hover: "group-hover:-bottom-3 group-hover:-left-3",
-    hoverLarge: "group-hover:-bottom-4 group-hover:-left-4",
+    base: "-bottom-1.5 -left-1.5",
+    hover: "group-hover:-bottom-2 group-hover:-left-2",
+    hoverLarge: "group-hover:-bottom-2.5 group-hover:-left-2.5",
   },
   bottomRight: {
-    base: "-bottom-2 -right-2",
-    hover: "group-hover:-bottom-3 group-hover:-right-3",
-    hoverLarge: "group-hover:-bottom-4 group-hover:-right-4",
+    base: "-bottom-1.5 -right-1.5",
+    hover: "group-hover:-bottom-2 group-hover:-right-2",
+    hoverLarge: "group-hover:-bottom-2.5 group-hover:-right-2.5",
   },
 };
 
@@ -61,7 +61,7 @@ export default function DecorativeCorners({
         className={cn(
           CORNER_BASE_CLASSES,
           sizeClasses,
-          "border-t-2 border-l-2",
+          "border-t border-l",
           HOVER_POSITIONS.topLeft.base,
           hoverExpand && (useHoverLarge ? HOVER_POSITIONS.topLeft.hoverLarge : HOVER_POSITIONS.topLeft.hover)
         )}
@@ -73,7 +73,7 @@ export default function DecorativeCorners({
         className={cn(
           CORNER_BASE_CLASSES,
           sizeClasses,
-          "border-t-2 border-r-2",
+          "border-t border-r",
           HOVER_POSITIONS.topRight.base,
           hoverExpand && (useHoverLarge ? HOVER_POSITIONS.topRight.hoverLarge : HOVER_POSITIONS.topRight.hover)
         )}
@@ -85,7 +85,7 @@ export default function DecorativeCorners({
         className={cn(
           CORNER_BASE_CLASSES,
           sizeClasses,
-          "border-b-2 border-l-2",
+          "border-b border-l",
           HOVER_POSITIONS.bottomLeft.base,
           hoverExpand && (useHoverLarge ? HOVER_POSITIONS.bottomLeft.hoverLarge : HOVER_POSITIONS.bottomLeft.hover)
         )}
@@ -97,7 +97,7 @@ export default function DecorativeCorners({
         className={cn(
           CORNER_BASE_CLASSES,
           sizeClasses,
-          "border-r-2 border-b-2",
+          "border-r border-b",
           HOVER_POSITIONS.bottomRight.base,
           hoverExpand && (useHoverLarge ? HOVER_POSITIONS.bottomRight.hoverLarge : HOVER_POSITIONS.bottomRight.hover)
         )}

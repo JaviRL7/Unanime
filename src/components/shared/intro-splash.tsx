@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "motion/react";
 import BackgroundAnimation from "@/components/ui/background-gradient";
-import { Logo } from "../ui/logo";
 import { useTheme } from "next-themes";
 import { AnimatedLogo } from "../ui/animated-logo";
 
@@ -45,7 +44,7 @@ export const IntroSplash = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="block">presenta sus proyectos para</span>
+            <span className="block">Portfolio</span>
           </motion.p>
 
           <motion.div
@@ -55,7 +54,7 @@ export const IntroSplash = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <span className="block font-mono text-white">
-              UNANIME
+              2026
             </span>
           </motion.div>
         </div>

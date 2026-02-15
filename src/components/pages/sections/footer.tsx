@@ -30,28 +30,28 @@ const Footer = ({ onEmailClick }: FooterProps) => {
     },
     {
       icon: Mail,
-      href: `mailto:${siteConfig.email}`,
+      href: `mailto:${siteConfig.email}?subject=${encodeURIComponent("Nos ha gustado tu portfolio")}&body=${encodeURIComponent("Hola Javi,\n\nNos ha gustado tu portfolio y queremos una entrevista.\n\nSaludos")}`,
       label: "Email",
       isEmail: true,
     },
   ];
 
   return (
-    <footer className="relative border-t min-h-[50vh] flex items-center justify-center bg-muted/20">
+    <footer className="relative border-t h-[50vh] flex items-center justify-center bg-muted/20 overflow-hidden">
       <div className="absolute inset-0" aria-hidden="true">
         <div className="before:bg-border after:bg-border relative h-full w-full before:absolute before:top-1/2 before:left-0 before:h-0.5 before:w-full after:absolute after:top-0 after:left-1/2 after:h-full after:w-0.5"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 md:px-12 lg:px-16">
-        <div className="flex flex-col items-center justify-center gap-8 md:gap-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-8 md:py-10">
+        <div className="flex flex-col items-center justify-center gap-4 md:gap-6 lg:gap-8">
           {/* Logo and Name */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center gap-6"
+            className="flex flex-col items-center gap-3 md:gap-4"
           >
-            <div className="w-64 md:w-72 lg:w-80">
+            <div className="w-48 md:w-56 lg:w-64 px-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 319 74" preserveAspectRatio="xMidYMid meet">
                 <g fill="currentColor" fillOpacity="1">
                   <g transform="translate(15.573501, 55.485679)">
@@ -81,9 +81,9 @@ const Footer = ({ onEmailClick }: FooterProps) => {
                 </g>
               </svg>
             </div>
-            <div className="text-center space-y-2">
-              <h3 className="font-incognito text-3xl md:text-4xl font-bold">Javier Rodríguez López</h3>
-              <p className="text-muted-foreground text-lg md:text-xl">Desarrollador Full Stack</p>
+            <div className="text-center space-y-1">
+              <h3 className="font-incognito text-xl md:text-2xl lg:text-3xl font-bold">Javier Rodríguez López</h3>
+              <p className="text-muted-foreground text-sm md:text-base lg:text-lg">Desarrollador Full Stack</p>
             </div>
           </motion.div>
 
@@ -93,14 +93,14 @@ const Footer = ({ onEmailClick }: FooterProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="flex items-center gap-6"
+            className="flex items-center gap-4 md:gap-5"
           >
             {socialLinks.map((link, index) => {
               const Component = link.isEmail ? motion.button : motion.a;
-              const props = link.isEmail 
+              const props = link.isEmail
                 ? { onClick: onEmailClick }
                 : { href: link.href, target: "_blank", rel: "noopener noreferrer" };
-              
+
               return (
                 <Component
                   key={link.label}
@@ -110,14 +110,14 @@ const Footer = ({ onEmailClick }: FooterProps) => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + index * 0.1 }}
-                  whileHover={{ y: -4, scale: 1.1 }}
+                  whileHover={{ y: -3, scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex flex-col items-center gap-2 group"
+                  className="flex flex-col items-center gap-1.5 group"
                 >
-                  <div className="size-12 md:size-14 rounded-full border-2 border-primary/20 bg-primary/5 flex items-center justify-center transition-all group-hover:border-primary/60 group-hover:bg-primary/10">
-                    <link.icon className="h-6 w-6 md:h-7 md:w-7 text-primary" />
+                  <div className="size-10 md:size-11 lg:size-12 rounded-full border-2 border-primary/20 bg-primary/5 flex items-center justify-center transition-all group-hover:border-primary/60 group-hover:bg-primary/10">
+                    <link.icon className="h-5 w-5 md:h-5 md:w-5 lg:h-6 lg:w-6 text-primary" />
                   </div>
-                  <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
+                  <span className="text-[10px] md:text-xs text-muted-foreground group-hover:text-foreground transition-colors">
                     {link.label}
                   </span>
                 </Component>
@@ -129,13 +129,13 @@ const Footer = ({ onEmailClick }: FooterProps) => {
           <div className="w-full max-w-2xl h-px bg-border" />
 
           {/* Bottom Info */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full max-w-4xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 w-full max-w-4xl">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="flex items-center gap-2 text-muted-foreground text-sm"
+              className="flex items-center gap-1.5 text-muted-foreground text-xs md:text-sm"
             >
               <span>© {new Date().getFullYear()} Javier Rodríguez López.</span>
               <span className="hidden md:inline">Todos los derechos reservados.</span>
@@ -146,10 +146,10 @@ const Footer = ({ onEmailClick }: FooterProps) => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="flex items-center gap-2 text-muted-foreground text-sm"
+              className="flex items-center gap-1.5 text-muted-foreground text-xs md:text-sm"
             >
               <span>Hecho con</span>
-              <Heart className={`h-4 w-4 fill-red-400 text-red-400 animate-pulse`} />
+              <Heart className={`h-3.5 w-3.5 md:h-4 md:w-4 fill-red-400 text-red-400 animate-pulse`} />
               <span>en Next.js 15 + TypeScript</span>
             </motion.div>
 
@@ -161,7 +161,7 @@ const Footer = ({ onEmailClick }: FooterProps) => {
               transition={{ delay: 0.5 }}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="rounded-md border-2 border-primary/20 bg-primary/5 px-6 py-2 text-sm font-semibold transition-all hover:border-primary/60 hover:bg-primary/10"
+              className="rounded-md border-2 border-primary/20 bg-primary/5 px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-semibold transition-all hover:border-primary/60 hover:bg-primary/10"
             >
               Volver arriba
             </motion.a>

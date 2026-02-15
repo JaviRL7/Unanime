@@ -12,7 +12,7 @@ interface EmailModalProps {
 export function EmailModal({ isOpen, onClose }: EmailModalProps) {
   const [to, setTo] = useState("jrlsanlucar11@gmail.com");
   const [subject, setSubject] = useState("Contratación inminente");
-  const [message, setMessage] = useState("Nos ha encantado tu presentación Javi, vente a Valencia que te contratamos.");
+  const [message, setMessage] = useState("Nos ha encantado tu presentación Javi, queremos que formes parte de nuestro equipo.");
   const [showCcBcc, setShowCcBcc] = useState(false);
 
   const handleSend = () => {

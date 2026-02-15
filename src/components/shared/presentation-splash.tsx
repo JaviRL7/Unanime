@@ -57,7 +57,7 @@ export const PresentationSplash = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="space-y-8 w-full max-w-xl">
+          <div className="space-y-8 w-full max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl">
             {/* Logo grande */}
             <div className="flex justify-center">
               <div

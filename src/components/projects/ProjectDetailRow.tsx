@@ -178,7 +178,7 @@ export default function ProjectDetailRow({
 
           {/* Image Container */}
           <div className="relative inset-0 z-10 flex h-full items-center justify-center p-10 md:p-14 lg:p-20 xl:p-24">
-            <div className="group/image relative w-full max-w-lg">
+            <div className="group/image relative w-full max-w-lg 3xl:max-w-xl 4xl:max-w-2xl">
               {/* Frame corners */}
               <div className="border-foreground/20 absolute -top-1 -left-1 h-4 w-4 lg:h-5 lg:w-5 lg:-top-1.5 lg:-left-1.5 border-t border-l transition-all group-hover:lg:-top-2 group-hover:lg:-left-2" />
               <div className="border-foreground/20 absolute -top-1 -right-1 h-4 w-4 lg:h-5 lg:w-5 lg:-top-1.5 lg:-right-1.5 border-t border-r transition-all group-hover:lg:-top-2 group-hover:lg:-right-2" />

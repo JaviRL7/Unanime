@@ -46,6 +46,10 @@
   --font-incognito: var(--incognito);
   --font-pixelify: var(--font-pixelify);
 
+  /* Breakpoints para pantallas grandes */
+  --breakpoint-3xl: 1920px;
+  --breakpoint-4xl: 2560px;
+
   --animate-background-gradient: 10s cubic-bezier(0.445, 0.05, 0.55, 0.95)
     infinite background-gradient;
   --animate-marquee: marquee var(--duration) infinite linear;
@@ -192,6 +196,30 @@
     html,
     body {
       font-size: 14px; /* Reducir ligeramente para pantallas pequeñas en altura */
+    }
+  }
+
+  /* Escalar para pantallas Full HD+ (1920px) */
+  @media (min-width: 1920px) {
+    html,
+    body {
+      font-size: 18px; /* Escalar proporcionalmente */
+    }
+  }
+
+  /* Escalar para pantallas 2K/QHD (2560px) */
+  @media (min-width: 2560px) {
+    html,
+    body {
+      font-size: 22px; /* Escalar más para 2K */
+    }
+  }
+
+  /* Escalar para pantallas 4K (3840px) */
+  @media (min-width: 3840px) {
+    html,
+    body {
+      font-size: 28px; /* Escalar para 4K */
     }
   }
 

@@ -194,7 +194,7 @@ export default function ProjectHero({
           {isLinkedInStats && (
           <div className="relative z-10 min-h-full flex flex-col lg:flex-row items-stretch justify-center gap-6 lg:gap-12 p-4 lg:px-10 lg:py-8">
             {/* Columna izquierda: Título y métricas destacadas */}
-            <div className="flex-1 flex flex-col justify-center max-w-2xl">
+            <div className="flex-1 flex flex-col justify-center max-w-2xl 3xl:max-w-4xl 4xl:max-w-5xl">
               <h2 className="font-incognito text-xl lg:text-2xl xl:text-3xl font-bold mb-2">
                 {title}
               </h2>
@@ -275,7 +275,7 @@ export default function ProjectHero({
             </div>
 
             {/* Columna derecha: Imagen y enlaces */}
-            <div className="flex-1 flex flex-col justify-center gap-3 lg:gap-4 max-w-2xl">
+            <div className="flex-1 flex flex-col justify-center gap-3 lg:gap-4 max-w-2xl 3xl:max-w-4xl 4xl:max-w-5xl">
               {/* Imagen con bordes decorativos */}
               <div className="relative w-full mx-auto group/image">
                 {/* Esquinas decorativas (estilo video) */}
@@ -343,7 +343,7 @@ export default function ProjectHero({
                 <div className="relative min-h-fit lg:h-full order-2 lg:order-1">
                   <div className="h-full overflow-hidden p-6 md:p-8 lg:p-10 xl:p-12">
                     <div className="lg:flex lg:items-center lg:justify-center lg:h-full">
-                      <div className="space-y-3 md:space-y-4 w-full max-w-xl">
+                      <div className="space-y-3 md:space-y-4 w-full max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl">
                   {/* Título superior */}
                   <div>
                     <h3 className="font-incognito text-lg md:text-xl font-bold">Trabajo Final de Grado</h3>
@@ -445,7 +445,7 @@ export default function ProjectHero({
                 <div className="relative min-h-fit lg:h-full">
                   <div className="h-full overflow-hidden p-6 md:p-8 lg:p-10 xl:p-12">
                     <div className="lg:flex lg:items-center lg:justify-center lg:h-full">
-                      <div className="space-y-3 md:space-y-4 w-full max-w-xl">
+                      <div className="space-y-3 md:space-y-4 w-full max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl">
                         {/* Título principal */}
                         <div>
                           <h2 className="font-incognito text-lg md:text-xl lg:text-2xl font-bold text-primary">
@@ -519,7 +519,7 @@ export default function ProjectHero({
                 <div className="relative min-h-fit lg:h-full">
                   <div className="h-full overflow-hidden p-6 md:p-8 lg:p-10 xl:p-12">
                     <div className="lg:flex lg:items-center lg:justify-center lg:h-full">
-                      <div className="space-y-3 md:space-y-4 w-full max-w-xl">
+                      <div className="space-y-3 md:space-y-4 w-full max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl">
                         {/* Complejidad Técnica */}
                         <div className="space-y-3">
                           <div className="flex items-center gap-1.5">
@@ -592,7 +592,7 @@ export default function ProjectHero({
                       </div>
 
                       {/* Grid de 2 columnas centrado */}
-                      <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-md w-full">
+                      <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-md 3xl:max-w-lg 4xl:max-w-xl w-full">
                         {/* Columna 1: Primeros 2 objetivos */}
                         <div className="space-y-1.5 text-center">
                           <div>
@@ -798,7 +798,7 @@ export default function ProjectHero({
           <div className="flex-1 grid grid-cols-1 lg:grid-cols-2">
             {/* COLUMNA IZQUIERDA - 3 puntos */}
             <div className="relative flex items-start justify-center p-6 md:p-8 lg:p-10">
-              <div className="space-y-4 md:space-y-5 w-full max-w-md">
+              <div className="space-y-4 md:space-y-5 w-full max-w-md 3xl:max-w-lg 4xl:max-w-xl">
                 {/* Bloque 1: Identidad Visual */}
                 <div className="space-y-1 md:space-y-1.5">
                   <div className="flex items-center gap-2 mb-1">
@@ -860,7 +860,7 @@ export default function ProjectHero({
 
             {/* COLUMNA DERECHA - 3 puntos */}
             <div className="relative flex items-start justify-center p-6 md:p-8 lg:p-10">
-              <div className="space-y-4 md:space-y-5 w-full max-w-md">
+              <div className="space-y-4 md:space-y-5 w-full max-w-md 3xl:max-w-lg 4xl:max-w-xl">
                 {/* Bloque 4: Panel de Publicaciones */}
                 <div className="space-y-1 md:space-y-1.5">
                   <div className="flex items-center gap-2 mb-1">
@@ -1028,7 +1028,7 @@ export default function ProjectHero({
 
           {/* COLUMNA DERECHA - Contenido */}
           <div className="relative flex items-center justify-center p-6 md:p-10 lg:p-12">
-            <div className="space-y-4 md:space-y-5 w-full max-w-lg">
+            <div className="space-y-4 md:space-y-5 w-full max-w-lg 3xl:max-w-xl 4xl:max-w-2xl">
               {/* Título */}
               <div className="space-y-1">
                 <h2 className="font-incognito text-lg md:text-xl lg:text-2xl font-bold text-primary">
@@ -1180,7 +1180,7 @@ export default function ProjectHero({
           <div className="relative min-h-fit lg:h-full order-2 lg:order-1">
             <div className="h-full overflow-hidden p-6 md:p-8 lg:p-10 xl:p-12">
               <div className="lg:flex lg:items-center lg:justify-center lg:h-full">
-                <div className="space-y-3 md:space-y-4 w-full max-w-xl">
+                <div className="space-y-3 md:space-y-4 w-full max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl">
                   {/* Título */}
                   <div className="space-y-2">
                     <h2 className="font-incognito text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight">

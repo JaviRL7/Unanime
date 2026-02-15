@@ -101,14 +101,6 @@ export default function ProjectHero({
                 Proyecto {projectNumber}
               </span>
             </div>
-            {/* Badge de "Prototipo en desarrollo" para Inanilux */}
-            {projectId === "inanilux-portfolio" && (
-              <div className="px-2 py-0.5 md:px-3 md:py-1 bg-yellow-500/10 border border-yellow-500/30 rounded-lg backdrop-blur-sm">
-                <span className="text-yellow-600 dark:text-yellow-400 text-[8px] md:text-[10px] font-mono font-semibold uppercase tracking-wider">
-                  Prototipo en desarrollo
-                </span>
-              </div>
-            )}
 
             {/* Action Buttons */}
             <div className="bg-background/30 inline-flex items-center gap-2 rounded-full px-2 py-1 backdrop-blur-md">

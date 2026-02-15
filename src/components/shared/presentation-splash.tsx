@@ -199,7 +199,7 @@ export const PresentationSplash = () => {
               </a>
 
               <a
-                href="/cv.pdf"
+                href="/data/CV Javier Rodriguez 2026 portfolio.pdf"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="group flex items-center justify-center size-10 md:size-11 rounded-full border-2 border-primary/20 bg-primary/5 transition-all hover:border-primary/60 hover:bg-primary/10 hover:scale-110"

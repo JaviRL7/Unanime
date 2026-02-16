@@ -243,14 +243,14 @@ export default function ProjectDetailRow({
 
         {/* RIGHT COLUMN - Content Side */}
         <div className="relative lg:h-full">
-          <div className="overflow-hidden p-4 md:p-6 lg:p-10 xl:p-12 lg:h-full">
+          <div className="overflow-hidden p-4 md:p-6 lg:p-10 xl:p-12 3xl:p-16 4xl:p-20 lg:h-full">
             <div className="lg:flex lg:items-center lg:justify-center lg:h-full">
             {isGalleryLayout || isStructuredLayout ? (
               /* Sección de Galería para Doña Araña */
-              <div className="space-y-1.5 md:space-y-2 lg:space-y-2.5 w-full">
+              <div className="space-y-1.5 md:space-y-2 lg:space-y-2.5 3xl:space-y-4 4xl:space-y-5 w-full">
                 {/* Header */}
                 <div className="border-l border-primary pl-1.5">
-                  <h3 className="font-incognito text-xs md:text-sm lg:text-base font-bold">
+                  <h3 className="font-incognito text-xs md:text-sm lg:text-base 3xl:text-xl 4xl:text-2xl font-bold">
                     {title}
                   </h3>
                 </div>
@@ -301,7 +301,7 @@ export default function ProjectDetailRow({
               </div>
             ) : isCartLayout ? (
               /* Sistema de Ventas Online */
-              <div className="space-y-1.5 md:space-y-2 lg:space-y-2.5">
+              <div className="space-y-1.5 md:space-y-2 lg:space-y-2.5 3xl:space-y-4 4xl:space-y-5">
                 {/* Header */}
                 <div className="border-l border-primary pl-1.5">
                   <h3 className="font-incognito text-[10px] md:text-xs lg:text-sm 3xl:text-lg 4xl:text-xl font-bold">
@@ -355,7 +355,7 @@ export default function ProjectDetailRow({
               </div>
             ) : (
               /* Diseño original para otros proyectos */
-              <div className="space-y-1.5 md:space-y-2 lg:space-y-2.5 w-full">
+              <div className="space-y-1.5 md:space-y-2 lg:space-y-2.5 3xl:space-y-4 4xl:space-y-5 w-full">
                 {/* Date & Status */}
                 <div className="flex flex-wrap items-center gap-1">
                   <time className="text-muted-foreground font-mono text-[8px] md:text-[9px]">

@@ -428,21 +428,21 @@ export default function ProjectHero({
                       {/* Desafíos */}
                       <div className="space-y-4">
                         <div>
-                          <h4 className="text-xs md:text-sm font-bold text-primary mb-1">Relaciones Temporales</h4>
+                          <h4 className="text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold text-primary mb-1">Relaciones Temporales</h4>
                           <p className="text-[10px] md:text-xs text-foreground/70 leading-relaxed">
                             Capturar <span className="font-semibold text-foreground">cuándo</span> cada jugador formó parte de cada plantilla, gestionando contratos, sustituciones y fechas de expiración.
                           </p>
                         </div>
 
                         <div>
-                          <h4 className="text-xs md:text-sm font-bold text-primary mb-1">Integridad por Partida</h4>
+                          <h4 className="text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold text-primary mb-1">Integridad por Partida</h4>
                           <p className="text-[10px] md:text-xs text-foreground/70 leading-relaxed">
                             Cada partida mantiene <span className="font-semibold text-foreground">20 relaciones activas</span>: 10 jugadores con estadísticas y 10 foreign keys para bans de campeones.
                           </p>
                         </div>
 
                         <div>
-                          <h4 className="text-xs md:text-sm font-bold text-primary mb-1">SQL Avanzado</h4>
+                          <h4 className="text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold text-primary mb-1">SQL Avanzado</h4>
                           <p className="text-[10px] md:text-xs text-foreground/70 leading-relaxed">
                             Queries con <span className="font-semibold text-foreground">subconsultas y joins optimizados</span> para rankings en tiempo real y métricas competitivas.
                           </p>
@@ -503,11 +503,11 @@ export default function ProjectHero({
                         {/* Columna 1: Primeros 2 objetivos */}
                         <div className="space-y-1.5 text-center">
                           <div>
-                            <div className="text-xs md:text-sm font-bold text-foreground">Conexión emocional</div>
+                            <div className="text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold text-foreground">Conexión emocional</div>
                             <div className="text-[9px] md:text-[10px] text-muted-foreground italic">Crear vínculos con el público</div>
                           </div>
                           <div>
-                            <div className="text-xs md:text-sm font-bold text-foreground">Estudio del público</div>
+                            <div className="text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold text-foreground">Estudio del público</div>
                             <div className="text-[9px] md:text-[10px] text-muted-foreground italic">Conocer gustos y necesidades</div>
                           </div>
                         </div>
@@ -515,11 +515,11 @@ export default function ProjectHero({
                         {/* Columna 2: Últimos 2 objetivos */}
                         <div className="space-y-1.5 text-center">
                           <div>
-                            <div className="text-xs md:text-sm font-bold text-foreground">Atención a los detalles</div>
+                            <div className="text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold text-foreground">Atención a los detalles</div>
                             <div className="text-[9px] md:text-[10px] text-muted-foreground italic">Cuidar cada elemento</div>
                           </div>
                           <div>
-                            <div className="text-xs md:text-sm font-bold text-foreground">Diseños originales</div>
+                            <div className="text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold text-foreground">Diseños originales</div>
                             <div className="text-[9px] md:text-[10px] text-muted-foreground italic">Identidad única</div>
                           </div>
                         </div>
@@ -743,9 +743,9 @@ export default function ProjectHero({
                 <div className="space-y-1 md:space-y-1.5">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="font-mono text-base md:text-lg font-bold text-primary">01</span>
-                    <h3 className="font-incognito text-xs md:text-sm font-bold">Identidad Visual</h3>
+                    <h3 className="font-incognito text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold">Identidad Visual</h3>
                   </div>
-                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] leading-relaxed text-foreground/70">
+                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm leading-relaxed text-foreground/70">
                     <p className="font-mono">
                       <span className="font-bold text-primary">Estilo:</span> Anime · Colorido · Infantil · Cálido
                     </p>
@@ -764,9 +764,9 @@ export default function ProjectHero({
                 <div className="space-y-1 md:space-y-1.5">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="font-mono text-base md:text-lg font-bold text-primary">02</span>
-                    <h3 className="font-incognito text-xs md:text-sm font-bold">Enfoque de Contenido</h3>
+                    <h3 className="font-incognito text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold">Enfoque de Contenido</h3>
                   </div>
-                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] leading-relaxed text-foreground/70">
+                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm leading-relaxed text-foreground/70">
                     <p>
                       Contenido <span className="font-bold text-primary">accesible</span> para audiencia joven/familiar con <span className="font-semibold text-foreground">comunicación natural</span>.
                     </p>
@@ -782,9 +782,9 @@ export default function ProjectHero({
                 <div className="space-y-1 md:space-y-1.5">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="font-mono text-base md:text-lg font-bold text-primary">03</span>
-                    <h3 className="font-incognito text-xs md:text-sm font-bold">Métricas y Alcance</h3>
+                    <h3 className="font-incognito text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold">Métricas y Alcance</h3>
                   </div>
-                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] leading-relaxed text-foreground/70">
+                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm leading-relaxed text-foreground/70">
                     <p>
                       Análisis de <span className="font-bold text-primary">redes</span> con datos de <span className="font-semibold text-foreground">seguidores y engagement</span> visual.
                     </p>
@@ -805,9 +805,9 @@ export default function ProjectHero({
                 <div className="space-y-1 md:space-y-1.5">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="font-mono text-base md:text-lg font-bold text-primary">04</span>
-                    <h3 className="font-incognito text-xs md:text-sm font-bold">Panel de Publicaciones</h3>
+                    <h3 className="font-incognito text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold">Panel de Publicaciones</h3>
                   </div>
-                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] leading-relaxed text-foreground/70">
+                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm leading-relaxed text-foreground/70">
                     <p>
                       <span className="font-bold text-primary">Calendario</span> de contenido con acceso directo a <span className="font-semibold text-foreground">plataformas</span>.
                     </p>
@@ -823,9 +823,9 @@ export default function ProjectHero({
                 <div className="space-y-1 md:space-y-1.5">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="font-mono text-base md:text-lg font-bold text-primary">05</span>
-                    <h3 className="font-incognito text-xs md:text-sm font-bold">Experiencia de Usuario</h3>
+                    <h3 className="font-incognito text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold">Experiencia de Usuario</h3>
                   </div>
-                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] leading-relaxed text-foreground/70">
+                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm leading-relaxed text-foreground/70">
                     <p>
                       Flujo <span className="font-bold text-primary">natural y emocional</span> transmitiendo su <span className="font-semibold text-foreground">mundo visual</span>.
                     </p>
@@ -841,9 +841,9 @@ export default function ProjectHero({
                 <div className="space-y-1 md:space-y-1.5">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="font-mono text-base md:text-lg font-bold text-primary">06</span>
-                    <h3 className="font-incognito text-xs md:text-sm font-bold">Propósito Final</h3>
+                    <h3 className="font-incognito text-xs md:text-sm 3xl:text-base 4xl:text-lg font-bold">Propósito Final</h3>
                   </div>
-                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] leading-relaxed text-foreground/70">
+                  <div className="space-y-0.5 md:space-y-1 text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm leading-relaxed text-foreground/70">
                     <p>
                       <span className="font-bold text-primary">Carta de presentación</span> visual para <span className="font-semibold text-foreground">empresas y colaboradores</span>.
                     </p>
@@ -1167,21 +1167,21 @@ export default function ProjectHero({
                   <div className="text-base md:text-lg lg:text-xl font-bold text-primary font-mono">
                     <AnimatedCounter end={93.3} decimals={1} />K
                   </div>
-                  <div className="text-[8px] md:text-[9px] lg:text-[10px] text-muted-foreground uppercase tracking-wider">TikTok</div>
+                  <div className="text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm text-muted-foreground uppercase tracking-wider">TikTok</div>
                 </div>
                 <div className="h-8 w-px bg-border/50" />
                 <div className="text-center">
                   <div className="text-base md:text-lg lg:text-xl font-bold text-primary font-mono">
                     <AnimatedCounter end={34.6} decimals={1} />K
                   </div>
-                  <div className="text-[8px] md:text-[9px] lg:text-[10px] text-muted-foreground uppercase tracking-wider">Instagram</div>
+                  <div className="text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm text-muted-foreground uppercase tracking-wider">Instagram</div>
                 </div>
                 <div className="h-8 w-px bg-border/50" />
                 <div className="text-center">
                   <div className="text-base md:text-lg lg:text-xl font-bold text-primary font-mono">
                     <AnimatedCounter end={4.05} decimals={2} />K
                   </div>
-                  <div className="text-[8px] md:text-[9px] lg:text-[10px] text-muted-foreground uppercase tracking-wider">YouTube</div>
+                  <div className="text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm text-muted-foreground uppercase tracking-wider">YouTube</div>
                 </div>
               </div>
 

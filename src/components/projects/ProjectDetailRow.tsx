@@ -177,8 +177,8 @@ export default function ProjectDetailRow({
           </div>
 
           {/* Image Container */}
-          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-10 md:p-14 lg:p-20 xl:p-24">
-            <div className="group/image relative w-full max-w-lg 3xl:max-w-xl 4xl:max-w-2xl">
+          <div className="relative inset-0 z-10 flex h-full items-center justify-center p-10 md:p-14 lg:p-20 xl:p-24 3xl:p-16 4xl:p-20">
+            <div className="group/image relative w-full max-w-lg 3xl:max-w-2xl 4xl:max-w-3xl">
               {/* Frame corners */}
               <div className="border-foreground/20 absolute -top-1 -left-1 h-4 w-4 lg:h-5 lg:w-5 lg:-top-1.5 lg:-left-1.5 border-t border-l transition-all group-hover:lg:-top-2 group-hover:lg:-left-2" />
               <div className="border-foreground/20 absolute -top-1 -right-1 h-4 w-4 lg:h-5 lg:w-5 lg:-top-1.5 lg:-right-1.5 border-t border-r transition-all group-hover:lg:-top-2 group-hover:lg:-right-2" />
@@ -249,14 +249,14 @@ export default function ProjectDetailRow({
               /* Sección de Galería para Doña Araña */
               <div className="space-y-1.5 md:space-y-2 lg:space-y-2.5 3xl:space-y-4 4xl:space-y-5 w-full">
                 {/* Header */}
-                <div className="border-l border-primary pl-1.5">
+                <div className="border-l border-primary pl-1.5 3xl:pl-3 4xl:pl-4">
                   <h3 className="font-incognito text-xs md:text-sm lg:text-base 3xl:text-xl 4xl:text-2xl font-bold">
                     {title}
                   </h3>
                 </div>
 
                 {/* Descripción del sistema */}
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 3xl:space-y-1.5 4xl:space-y-2">
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
                     <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">
@@ -267,7 +267,7 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Objetivos */}
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 3xl:space-y-1.5 4xl:space-y-2">
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
                     <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">
@@ -303,14 +303,14 @@ export default function ProjectDetailRow({
               /* Sistema de Ventas Online */
               <div className="space-y-1.5 md:space-y-2 lg:space-y-2.5 3xl:space-y-4 4xl:space-y-5">
                 {/* Header */}
-                <div className="border-l border-primary pl-1.5">
+                <div className="border-l border-primary pl-1.5 3xl:pl-3 4xl:pl-4">
                   <h3 className="font-incognito text-[10px] md:text-xs lg:text-sm 3xl:text-lg 4xl:text-xl font-bold">
                     {title}
                   </h3>
                 </div>
 
                 {/* Descripción del sistema */}
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 3xl:space-y-1.5 4xl:space-y-2">
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
                     <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">
@@ -321,7 +321,7 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Objetivos */}
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 3xl:space-y-1.5 4xl:space-y-2">
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
                     <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">

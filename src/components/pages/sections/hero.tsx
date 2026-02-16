@@ -204,12 +204,6 @@ const Hero = () => {
                         href={`#proyecto-${item.id}`}
                         className="block relative group"
                       >
-                        {/* Corner decorations */}
-                        <div className="absolute -top-1 -left-1 h-4 w-4 border-t-2 border-l-2 border-primary/50 z-10" />
-                        <div className="absolute -top-1 -right-1 h-4 w-4 border-t-2 border-r-2 border-primary/50 z-10" />
-                        <div className="absolute -bottom-1 -left-1 h-4 w-4 border-b-2 border-l-2 border-primary/50 z-10" />
-                        <div className="absolute -bottom-1 -right-1 h-4 w-4 border-b-2 border-r-2 border-primary/50 z-10" />
-
                         {/* Image */}
                         <div className="relative aspect-[16/10] overflow-hidden border border-border">
                           {item.id === 5 && (

@@ -230,7 +230,7 @@ export const projects: Project[] = [
   {
     id: "extra-tfg",
     hero: {
-      title: "Extra mi TFG",
+      title: "Trabajo de Fin de Grado",
       date: "2024",
       status: "completed",
       description:

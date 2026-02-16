@@ -26,7 +26,7 @@ import { LOGO_SVG } from "@/data/projects";
 import type { ProjectHeroProps } from "@/types/projects";
 import CountUp from "react-countup";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { ThemeToggleButton2 } from "@/components/theme-toggle";
 
@@ -66,17 +66,30 @@ export default function ProjectHero({
   const { resolvedTheme, setTheme } = useTheme();
 
   // Proyectos que muestran el bloque con grid de líneas
-  const isGridBlock = projectId === "linkedin-stats" || projectId === "color-palette" || projectId === "extra-tfg" || projectId === "tfg-arquitectura";
+  const isGridBlock = projectId === "linkedin-stats" || projectId === "color-palette" || projectId === "tfg-arquitectura";
   const isInaniluxPortfolio = projectId === "inanilux-portfolio";
   const isDesignProcess = projectId === "design-process";
+  const isExtraTFG = projectId === "extra-tfg";
 
   // Diapositiva especial para diagrama ERD
   const isDiagramaERD = projectId === "tfg-diagrama";
 
   // Si no hay título y no es un bloque especial, no renderizar hero
-  if (!title && !isGridBlock && !isInaniluxPortfolio && !isDesignProcess) {
+  if (!title && !isGridBlock && !isInaniluxPortfolio && !isDesignProcess && !isExtraTFG) {
     return null;
   }
+
+  // Estado para el slideshow de imágenes del TFG
+  const [currentTFGImage, setCurrentTFGImage] = useState(0);
+  const tfgImages = ["/projects/b1.jpeg", "/projects/c4.jpeg", "/projects/c6.jpeg", "/projects/c8.jpeg"];
+
+  useEffect(() => {
+    if (!isExtraTFG) return;
+    const interval = setInterval(() => {
+      setCurrentTFGImage((prev) => (prev + 1) % tfgImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isExtraTFG, tfgImages.length]);
 
   // Renderizado especial para bloques con grid
   if (isGridBlock) {
@@ -928,6 +941,130 @@ export default function ProjectHero({
               <p className="text-[9px] md:text-[10px] text-muted-foreground italic">
                 &ldquo;<span className="font-bold text-primary">Portfolio</span> como experiencia visual: del <span className="font-semibold text-foreground">arte Pokémon</span> al <span className="font-bold text-primary">impacto digital</span>&rdquo;
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
+          DESPLÁZATE
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+            <path d="M12 8v8"></path>
+            <path d="m8 12 4 4 4-4"></path>
+          </svg>
+        </div>
+      </section>
+    );
+  }
+
+  // Renderizado especial para Extra TFG (slideshow de imágenes)
+  if (isExtraTFG) {
+    return (
+      <section
+        id={`proyecto-${projectNumber}`}
+        className="group relative flex min-h-screen lg:h-screen w-full flex-col overflow-y-auto lg:overflow-hidden border-b lg:snap-start lg:snap-always bg-background"
+      >
+        {/* Decorative Corner Borders */}
+        <div className="hidden lg:block absolute top-4 left-4 h-12 w-12 border-t-2 border-l-2 border-primary/40 z-30" />
+        <div className="hidden lg:block absolute top-4 right-4 h-12 w-12 border-t-2 border-r-2 border-primary/40 z-30" />
+        <div className="hidden lg:block absolute bottom-4 left-4 h-12 w-12 border-b-2 border-l-2 border-primary/40 z-30" />
+        <div className="hidden lg:block absolute bottom-4 right-4 h-12 w-12 border-b-2 border-r-2 border-primary/40 z-30" />
+
+        <div className="flex flex-1 flex-col lg:flex-row">
+          {/* Image Slideshow Side */}
+          <div className="relative flex-1 flex items-center justify-center p-6 md:p-10 lg:p-16">
+            {/* Cross lines background */}
+            <div className="absolute inset-0" aria-hidden="true">
+              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-border/30 -translate-y-1/2"></div>
+              <div className="absolute left-1/2 top-0 h-full w-0.5 bg-border/30 -translate-x-1/2"></div>
+            </div>
+
+            <div className="relative z-10 w-full max-w-2xl 3xl:max-w-3xl 4xl:max-w-4xl">
+              {/* Frame corners */}
+              <div className="border-foreground/20 absolute -top-2 -left-2 h-6 w-6 lg:h-8 lg:w-8 border-t-2 border-l-2 transition-all duration-300 group-hover:-top-3 group-hover:-left-3" />
+              <div className="border-foreground/20 absolute -top-2 -right-2 h-6 w-6 lg:h-8 lg:w-8 border-t-2 border-r-2 transition-all duration-300 group-hover:-top-3 group-hover:-right-3" />
+              <div className="border-foreground/20 absolute -bottom-2 -left-2 h-6 w-6 lg:h-8 lg:w-8 border-b-2 border-l-2 transition-all duration-300 group-hover:-bottom-3 group-hover:-left-3" />
+              <div className="border-foreground/20 absolute -bottom-2 -right-2 h-6 w-6 lg:h-8 lg:w-8 border-b-2 border-r-2 transition-all duration-300 group-hover:-bottom-3 group-hover:-right-3" />
+
+              {/* Image Container with slideshow */}
+              <div className="relative overflow-hidden border-2 border-border aspect-video bg-background">
+                {tfgImages.map((img, index) => (
+                  <img
+                    key={img}
+                    src={img}
+                    alt={`Trabajo de Fin de Grado - Vista ${index + 1}`}
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                      index === currentTFGImage ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                ))}
+                {/* Slide indicators */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                  {tfgImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentTFGImage(index)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        index === currentTFGImage ? 'w-6 bg-primary' : 'w-1.5 bg-white/50 hover:bg-white/80'
+                      }`}
+                      aria-label={`Ir a imagen ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Content Side */}
+          <div className="relative flex flex-col justify-center p-6 md:p-10 lg:p-16 lg:w-2/5">
+            <div className="mb-3 flex flex-wrap items-center gap-2">
+              <span className="text-muted-foreground font-mono text-xs uppercase">
+                Proyecto {projectNumber}
+              </span>
+              <div className="bg-border h-3 w-px" aria-hidden="true" />
+              <time className="text-muted-foreground font-mono text-xs">
+                {date}
+              </time>
+            </div>
+
+            <div className="mb-4">
+              <h3 className="font-incognito text-2xl md:text-3xl lg:text-4xl font-bold">{title}</h3>
+              <div className="flex items-center gap-1.5 mt-3">
+                <div className="h-0.5 bg-primary w-12" />
+                <div className="h-0.5 bg-primary/60 w-6" />
+                <div className="h-0.5 bg-primary/30 w-3" />
+              </div>
+            </div>
+
+            <p
+              className="text-muted-foreground mb-6 text-sm md:text-base leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+
+            <div className="flex flex-wrap gap-2">
+              {githubUrl && (
+                <Button
+                  asChild
+                  variant="default"
+                  size="sm"
+                  className="group/btn relative border font-medium"
+                >
+                  <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver código en GitHub"
+                  >
+                    <Github className="mr-2 h-4 w-4" aria-hidden="true" />
+                    Ver Código
+                    <ArrowUpRight
+                      className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </Button>
+              )}
             </div>
           </div>
         </div>

@@ -260,7 +260,10 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
           {/* Texto inferior */}
           <div className="text-center mt-6 px-4">
             <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto">
-              En mi portfolio podéis encontrar todos mis otros proyectos más pequeños. Si tenéis alguna duda estaré más que encantado de resolvérosla.
+              Gracias por llegar hasta aquí. Si tenéis alguna duda estaré más que encantado de resolvérosla.
+            </p>
+            <p className="text-xs md:text-sm text-primary/60 mt-2 font-mono italic max-w-2xl mx-auto">
+              &ldquo;El diseño es lo que nos distingue de las máquinas&rdquo;
             </p>
             <p className="text-xs md:text-sm text-primary/80 mt-3 font-mono italic">
               (Consejo! Usa el botón de email del footer...)

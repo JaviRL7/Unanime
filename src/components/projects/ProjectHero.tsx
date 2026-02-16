@@ -66,7 +66,7 @@ export default function ProjectHero({
   const { resolvedTheme, setTheme } = useTheme();
 
   // Proyectos que muestran el bloque con grid de líneas
-  const isGridBlock = projectId === "linkedin-stats" || projectId === "color-palette" || projectId === "tfg-arquitectura";
+  const isGridBlock = projectId === "linkedin-stats" || projectId === "color-palette" || projectId === "tfg-arquitectura" || projectId === "tfg-arquitectura-2";
   const isInaniluxPortfolio = projectId === "inanilux-portfolio";
   const isDesignProcess = projectId === "design-process";
   const isExtraTFG = projectId === "extra-tfg";
@@ -415,6 +415,90 @@ export default function ProjectHero({
                   <div className="absolute bottom-0 right-0 h-3 w-3 border-b-2 border-r-2 border-primary/50" />
                   <p className="text-sm md:text-base text-center text-muted-foreground italic">
                     &ldquo;Traducir la <span className="font-bold text-primary">complejidad competitiva</span> en una <span className="font-semibold text-foreground">estructura consultable</span> en tiempo real&rdquo;
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Contenido para Desafíos Técnicos Arena (TFG) - Segunda diapositiva */}
+          {projectId === "tfg-arquitectura-2" && (
+            <div className="relative z-10 h-full w-full flex items-center justify-center p-6 md:p-10 lg:p-16">
+              {/* Scroll Indicator - Centered bottom */}
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 hidden md:flex items-center justify-center text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="M12 8v8"></path>
+                  <path d="m8 12 4 4 4-4"></path>
+                </svg>
+              </div>
+
+              <div className="w-full max-w-5xl 3xl:max-w-6xl 4xl:max-w-7xl">
+                {/* Header */}
+                <div className="text-center mb-8 md:mb-10">
+                  <h2 className="font-incognito text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-2">
+                    Desafíos Técnicos
+                  </h2>
+                  <p className="text-foreground/70 text-sm md:text-base">
+                    Arena — Complejidad detrás del sistema
+                  </p>
+                  <div className="flex items-center justify-center gap-1.5 mt-3">
+                    <div className="h-0.5 bg-primary w-12" />
+                    <div className="h-0.5 bg-primary/60 w-6" />
+                    <div className="h-0.5 bg-primary/30 w-3" />
+                  </div>
+                </div>
+
+                {/* Grid de desafíos */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                  {/* Desafío 1: Relaciones Temporales */}
+                  <div className="border border-border p-5 lg:p-6 bg-background/50">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="h-0.5 w-4 bg-primary" />
+                      <h3 className="text-sm md:text-base font-bold text-primary uppercase tracking-wider">
+                        Relaciones Temporales
+                      </h3>
+                    </div>
+                    <p className="text-xs md:text-sm text-foreground/70 leading-relaxed">
+                      Capturar no solo qué jugadores pertenecen a un equipo, sino <span className="font-bold text-primary">cuándo</span> formaron parte de cada plantilla, gestionando <span className="font-semibold text-foreground">contratos</span>, <span className="font-semibold text-foreground">sustituciones</span> y fechas de expiración.
+                    </p>
+                  </div>
+
+                  {/* Desafío 2: Relaciones por Partida */}
+                  <div className="border border-border p-5 lg:p-6 bg-background/50">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="h-0.5 w-4 bg-primary" />
+                      <h3 className="text-sm md:text-base font-bold text-primary uppercase tracking-wider">
+                        20 Relaciones/Partida
+                      </h3>
+                    </div>
+                    <p className="text-xs md:text-sm text-foreground/70 leading-relaxed">
+                      Cada partida mantiene <span className="font-bold text-primary">20 relaciones activas</span>: 10 jugadores con <span className="font-semibold text-foreground">estadísticas individuales</span> y 10 foreign keys para gestionar los <span className="font-semibold text-foreground">bans de campeones</span>.
+                    </p>
+                  </div>
+
+                  {/* Desafío 3: Queries SQL */}
+                  <div className="border border-border p-5 lg:p-6 bg-background/50">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="h-0.5 w-4 bg-primary" />
+                      <h3 className="text-sm md:text-base font-bold text-primary uppercase tracking-wider">
+                        SQL Avanzado
+                      </h3>
+                    </div>
+                    <p className="text-xs md:text-sm text-foreground/70 leading-relaxed">
+                      La base de datos soporta <span className="font-bold text-primary">queries complejas</span> con subconsultas y joins optimizados para calcular <span className="font-semibold text-foreground">rankings en tiempo real</span> y métricas competitivas.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Quote destacado centrado */}
+                <div className="relative py-4 px-6 max-w-3xl mx-auto">
+                  <div className="absolute top-0 left-0 h-3 w-3 border-t-2 border-l-2 border-primary/50" />
+                  <div className="absolute top-0 right-0 h-3 w-3 border-t-2 border-r-2 border-primary/50" />
+                  <div className="absolute bottom-0 left-0 h-3 w-3 border-b-2 border-l-2 border-primary/50" />
+                  <div className="absolute bottom-0 right-0 h-3 w-3 border-b-2 border-r-2 border-primary/50" />
+                  <p className="text-sm md:text-base text-center text-muted-foreground italic">
+                    &ldquo;<span className="font-bold text-primary">14 entidades</span>, <span className="font-bold text-primary">100+ métodos</span> — Transformando <span className="font-semibold text-foreground">complejidad</span> en <span className="font-bold text-primary">consultas eficientes</span>&rdquo;
                   </p>
                 </div>
               </div>
@@ -823,7 +907,7 @@ export default function ProjectHero({
           />
         </div>
 
-        {/* Project Label & Actions - Top right */}
+        {/* Project Label - Top right corner */}
         {projectNumber && (
           <div className="absolute right-2 md:right-3 top-2 md:top-3 z-30 hidden lg:flex lg:flex-col lg:items-end lg:gap-1.5 max-w-[180px]">
             <div className="bg-primary/10 border border-primary/20 px-2 py-px backdrop-blur-sm">
@@ -834,15 +918,51 @@ export default function ProjectHero({
 
             {/* Action Buttons */}
             <div className="bg-background/30 inline-flex items-center gap-2 rounded-full px-2 py-1 backdrop-blur-md">
+              {/* GitHub */}
               <a
                 href="https://github.com/JaviRL7"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-primary transition-colors"
+                rel="noreferrer noopener"
+                className="text-foreground/60 hover:text-foreground text-sm transition-colors duration-200 hover:scale-110"
                 aria-label="GitHub"
               >
-                <Github className="size-4" />
+                <svg viewBox="0 0 24 24" className="size-4">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    fill="currentColor"
+                  />
+                </svg>
               </a>
+
+              <div className="bg-border h-4 w-px" />
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/javier-rodriguez-lopez-4795a8180/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+
+              <div className="bg-border h-4 w-px" />
+
+              {/* Theme Toggle */}
+              <button
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+                className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
+                aria-label="Cambiar tema"
+              >
+                {resolvedTheme === "dark" ? (
+                  <Sun className="size-4" />
+                ) : (
+                  <Moon className="size-4" />
+                )}
+              </button>
             </div>
           </div>
         )}

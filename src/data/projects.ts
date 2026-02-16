@@ -243,7 +243,7 @@ export const projects: Project[] = [
     details: [],
   },
 
-  // Proyecto 4.1 - Arquitectura de Base de Datos (Explicación)
+  // Proyecto 4.1 - Arquitectura de Base de Datos (Visión General)
   {
     id: "tfg-arquitectura",
     hero: {
@@ -259,7 +259,23 @@ export const projects: Project[] = [
     details: [],
   },
 
-  // Proyecto 4.2 - Diagrama ERD
+  // Proyecto 4.2 - Desafíos Técnicos Arena
+  {
+    id: "tfg-arquitectura-2",
+    hero: {
+      title: "Desafíos Técnicos",
+      date: "2024",
+      status: "completed",
+      description: "",
+      mediaType: "image",
+      mediaSrc: undefined,
+      badges: [],
+      githubUrl: "https://github.com/JaviRL7/Arena",
+    },
+    details: [],
+  },
+
+  // Proyecto 4.3 - Diagrama ERD
   {
     id: "tfg-diagrama",
     hero: {

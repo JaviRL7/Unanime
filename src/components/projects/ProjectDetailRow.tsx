@@ -259,22 +259,22 @@ export default function ProjectDetailRow({
                 <div className="space-y-0.5">
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
-                    <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm">
+                    <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">
                       {systemTitle}
                     </h4>
                   </div>
-                  <p className="text-foreground/70 text-[8px] leading-relaxed pl-2 md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm" dangerouslySetInnerHTML={{ __html: systemDescription }} />
+                  <p className="text-foreground/70 text-[8px] leading-relaxed pl-2 md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base" dangerouslySetInnerHTML={{ __html: systemDescription }} />
                 </div>
 
                 {/* Objetivos */}
                 <div className="space-y-0.5">
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
-                    <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm">
+                    <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">
                       Objetivos
                     </h4>
                   </div>
-                  <ul className="text-foreground/70 text-[8px] leading-relaxed pl-2 space-y-1 md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm">
+                  <ul className="text-foreground/70 text-[8px] leading-relaxed pl-2 space-y-1 md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">
                     {features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-1.5">
                         <span className="text-primary font-bold">—</span>
@@ -286,7 +286,7 @@ export default function ProjectDetailRow({
 
                 {/* Footer con línea */}
                 <div className="pt-2 lg:pt-3 border-t mt-2">
-                  <p className="text-muted-foreground text-[8px] font-mono italic md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm pr-6 md:pr-10 lg:pr-12 break-words hyphens-auto leading-relaxed" dangerouslySetInnerHTML={{ __html: `&ldquo;${quote}&rdquo;` }} />
+                  <p className="text-muted-foreground text-[8px] font-mono italic md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base pr-6 md:pr-10 lg:pr-12 break-words hyphens-auto leading-relaxed" dangerouslySetInnerHTML={{ __html: `&ldquo;${quote}&rdquo;` }} />
                 </div>
 
                 {/* Slanted lines decorativas */}
@@ -304,7 +304,7 @@ export default function ProjectDetailRow({
               <div className="space-y-1.5 md:space-y-2 lg:space-y-2.5">
                 {/* Header */}
                 <div className="border-l border-primary pl-1.5">
-                  <h3 className="font-incognito text-[10px] md:text-xs lg:text-sm 3xl:text-base 4xl:text-lg font-bold">
+                  <h3 className="font-incognito text-[10px] md:text-xs lg:text-sm 3xl:text-lg 4xl:text-xl font-bold">
                     {title}
                   </h3>
                 </div>
@@ -313,22 +313,22 @@ export default function ProjectDetailRow({
                 <div className="space-y-0.5">
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
-                    <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm">
+                    <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">
                       {systemTitle}
                     </h4>
                   </div>
-                  <p className="text-foreground/70 text-[8px] leading-relaxed pl-2 md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm" dangerouslySetInnerHTML={{ __html: systemDescription }} />
+                  <p className="text-foreground/70 text-[8px] leading-relaxed pl-2 md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base" dangerouslySetInnerHTML={{ __html: systemDescription }} />
                 </div>
 
                 {/* Objetivos */}
                 <div className="space-y-0.5">
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
-                    <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm">
+                    <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">
                       Objetivos
                     </h4>
                   </div>
-                  <ul className="text-foreground/70 text-[8px] leading-relaxed pl-2 space-y-1 md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm">
+                  <ul className="text-foreground/70 text-[8px] leading-relaxed pl-2 space-y-1 md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base">
                     {features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-1.5">
                         <span className="text-primary font-bold">—</span>
@@ -340,7 +340,7 @@ export default function ProjectDetailRow({
 
                 {/* Footer con línea */}
                 <div className="pt-2 lg:pt-3 border-t mt-2">
-                  <p className="text-muted-foreground text-[8px] font-mono italic md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm pr-8 md:pr-12 lg:pr-16 break-words hyphens-auto leading-relaxed" dangerouslySetInnerHTML={{ __html: `&ldquo;${quote}&rdquo;` }} />
+                  <p className="text-muted-foreground text-[8px] font-mono italic md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base pr-8 md:pr-12 lg:pr-16 break-words hyphens-auto leading-relaxed" dangerouslySetInnerHTML={{ __html: `&ldquo;${quote}&rdquo;` }} />
                 </div>
 
                 {/* Slanted lines decorativas */}
@@ -396,7 +396,7 @@ export default function ProjectDetailRow({
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-xs 4xl:text-sm leading-relaxed">
+                <p className="text-muted-foreground text-[8px] md:text-[9px] lg:text-[10px] 3xl:text-sm 4xl:text-base leading-relaxed">
                   {description}
                 </p>
 

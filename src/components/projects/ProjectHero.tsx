@@ -66,7 +66,7 @@ export default function ProjectHero({
   const { resolvedTheme, setTheme } = useTheme();
 
   // Proyectos que muestran el bloque con grid de líneas
-  const isGridBlock = projectId === "linkedin-stats" || projectId === "color-palette" || projectId === "tfg-arquitectura" || projectId === "tfg-arquitectura-2";
+  const isGridBlock = projectId === "linkedin-stats" || projectId === "color-palette" || projectId === "tfg-arquitectura";
   const isInaniluxPortfolio = projectId === "inanilux-portfolio";
   const isDesignProcess = projectId === "design-process";
   const isExtraTFG = projectId === "extra-tfg";
@@ -339,10 +339,10 @@ export default function ProjectHero({
           </div>
           )}
 
-          {/* Contenido para Arquitectura de Base de Datos (TFG) */}
+          {/* Contenido para Arquitectura de Base de Datos (TFG) - Arena */}
           {projectId === "tfg-arquitectura" && (
-            <div className="relative z-10 h-full w-full flex items-center justify-center p-6 md:p-10 lg:p-16">
-              {/* Scroll Indicator - Centered bottom */}
+            <div className="relative z-10 h-full w-full">
+              {/* Scroll Indicator */}
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 hidden md:flex items-center justify-center text-muted-foreground">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
                   <rect width="18" height="18" x="3" y="3" rx="2"></rect>
@@ -351,155 +351,116 @@ export default function ProjectHero({
                 </svg>
               </div>
 
-              <div className="w-full max-w-5xl 3xl:max-w-6xl 4xl:max-w-7xl">
-                {/* Header centrado */}
-                <div className="text-center mb-8 md:mb-10">
-                  <h2 className="font-incognito text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-2">
-                    Arena
-                  </h2>
-                  <p className="text-foreground/70 text-sm md:text-base">
-                    Plataforma de gestión competitiva League of Legends
-                  </p>
-                  <div className="flex items-center justify-center gap-1.5 mt-3">
-                    <div className="h-0.5 bg-primary w-12" />
-                    <div className="h-0.5 bg-primary/60 w-6" />
-                    <div className="h-0.5 bg-primary/30 w-3" />
-                  </div>
-                </div>
+              <div className="h-full w-full grid grid-cols-1 lg:grid-cols-2">
+                {/* Columna izquierda - Info general */}
+                <div className="relative min-h-fit lg:h-full flex items-center">
+                  <div className="w-full p-6 md:p-8 lg:p-10 xl:p-12">
+                    <div className="space-y-4 md:space-y-5 max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl mx-auto lg:mx-0">
+                      {/* Título */}
+                      <div>
+                        <h2 className="font-incognito text-xl md:text-2xl lg:text-3xl font-bold text-primary">Arena</h2>
+                        <p className="text-foreground/70 text-xs md:text-sm mt-1">Plataforma de gestión competitiva League of Legends</p>
+                        <div className="flex items-center gap-1.5 mt-2">
+                          <div className="h-0.5 bg-primary w-10" />
+                          <div className="h-0.5 bg-primary/60 w-5" />
+                          <div className="h-0.5 bg-primary/30 w-2.5" />
+                        </div>
+                      </div>
 
-                {/* Grid principal: 4 métricas + descripción */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
-                  <div className="border border-border p-4 lg:p-5 bg-background/50 text-center">
-                    <div className="text-2xl lg:text-3xl xl:text-4xl font-bold text-primary font-mono">14</div>
-                    <div className="text-[10px] lg:text-xs text-muted-foreground uppercase tracking-wider mt-1">Modelos</div>
-                  </div>
-                  <div className="border border-border p-4 lg:p-5 bg-background/50 text-center">
-                    <div className="text-2xl lg:text-3xl xl:text-4xl font-bold text-primary font-mono">100+</div>
-                    <div className="text-[10px] lg:text-xs text-muted-foreground uppercase tracking-wider mt-1">Métodos</div>
-                  </div>
-                  <div className="border border-border p-4 lg:p-5 bg-background/50 text-center">
-                    <div className="text-2xl lg:text-3xl xl:text-4xl font-bold text-primary font-mono">20</div>
-                    <div className="text-[10px] lg:text-xs text-muted-foreground uppercase tracking-wider mt-1">Relaciones/Partida</div>
-                  </div>
-                  <div className="border border-border p-4 lg:p-5 bg-background/50 text-center">
-                    <div className="text-2xl lg:text-3xl xl:text-4xl font-bold text-primary font-mono">4</div>
-                    <div className="text-[10px] lg:text-xs text-muted-foreground uppercase tracking-wider mt-1">Capas</div>
-                  </div>
-                </div>
+                      {/* Descripción */}
+                      <p className="text-xs md:text-sm text-foreground/70 leading-relaxed">
+                        Sistema que traduce la <span className="font-bold text-primary">complejidad de esports</span> en una <span className="font-semibold text-foreground">estructura de datos coherente</span>. Organizado en <span className="font-bold text-primary">14 modelos Eloquent</span> interconectados con más de <span className="font-bold text-primary">100 métodos</span> personalizados.
+                      </p>
 
-                {/* Arquitectura en 4 capas - horizontal */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
-                  <div className="border-l-2 border-primary/50 pl-3 py-2">
-                    <div className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-1">Núcleo</div>
-                    <div className="text-[10px] md:text-xs text-foreground/70">Usuarios, equipos, jugadores</div>
-                  </div>
-                  <div className="border-l-2 border-primary/50 pl-3 py-2">
-                    <div className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-1">Competiciones</div>
-                    <div className="text-[10px] md:text-xs text-foreground/70">Ligas, series, partidas</div>
-                  </div>
-                  <div className="border-l-2 border-primary/50 pl-3 py-2">
-                    <div className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-1">Estadísticas</div>
-                    <div className="text-[10px] md:text-xs text-foreground/70">KDA, rankings, métricas</div>
-                  </div>
-                  <div className="border-l-2 border-primary/50 pl-3 py-2">
-                    <div className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-1">Adicional</div>
-                    <div className="text-[10px] md:text-xs text-foreground/70">Transferencias, predicciones</div>
-                  </div>
-                </div>
+                      {/* Métricas en grid 2x2 */}
+                      <div className="grid grid-cols-2 gap-2 md:gap-3">
+                        <div className="border border-border p-3 bg-background/50 text-center">
+                          <div className="text-lg md:text-xl lg:text-2xl font-bold text-primary font-mono">14</div>
+                          <div className="text-[9px] md:text-[10px] text-muted-foreground uppercase tracking-wider">Modelos</div>
+                        </div>
+                        <div className="border border-border p-3 bg-background/50 text-center">
+                          <div className="text-lg md:text-xl lg:text-2xl font-bold text-primary font-mono">100+</div>
+                          <div className="text-[9px] md:text-[10px] text-muted-foreground uppercase tracking-wider">Métodos</div>
+                        </div>
+                        <div className="border border-border p-3 bg-background/50 text-center">
+                          <div className="text-lg md:text-xl lg:text-2xl font-bold text-primary font-mono">20</div>
+                          <div className="text-[9px] md:text-[10px] text-muted-foreground uppercase tracking-wider">Relaciones/Partida</div>
+                        </div>
+                        <div className="border border-border p-3 bg-background/50 text-center">
+                          <div className="text-lg md:text-xl lg:text-2xl font-bold text-primary font-mono">4</div>
+                          <div className="text-[9px] md:text-[10px] text-muted-foreground uppercase tracking-wider">Capas</div>
+                        </div>
+                      </div>
 
-                {/* Quote destacado centrado */}
-                <div className="relative py-4 px-6 max-w-2xl mx-auto">
-                  <div className="absolute top-0 left-0 h-3 w-3 border-t-2 border-l-2 border-primary/50" />
-                  <div className="absolute top-0 right-0 h-3 w-3 border-t-2 border-r-2 border-primary/50" />
-                  <div className="absolute bottom-0 left-0 h-3 w-3 border-b-2 border-l-2 border-primary/50" />
-                  <div className="absolute bottom-0 right-0 h-3 w-3 border-b-2 border-r-2 border-primary/50" />
-                  <p className="text-sm md:text-base text-center text-muted-foreground italic">
-                    &ldquo;Traducir la <span className="font-bold text-primary">complejidad competitiva</span> en una <span className="font-semibold text-foreground">estructura consultable</span> en tiempo real&rdquo;
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Contenido para Desafíos Técnicos Arena (TFG) - Segunda diapositiva */}
-          {projectId === "tfg-arquitectura-2" && (
-            <div className="relative z-10 h-full w-full flex items-center justify-center p-6 md:p-10 lg:p-16">
-              {/* Scroll Indicator - Centered bottom */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 hidden md:flex items-center justify-center text-muted-foreground">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
-                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-                  <path d="M12 8v8"></path>
-                  <path d="m8 12 4 4 4-4"></path>
-                </svg>
-              </div>
-
-              <div className="w-full max-w-5xl 3xl:max-w-6xl 4xl:max-w-7xl">
-                {/* Header */}
-                <div className="text-center mb-8 md:mb-10">
-                  <h2 className="font-incognito text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-2">
-                    Desafíos Técnicos
-                  </h2>
-                  <p className="text-foreground/70 text-sm md:text-base">
-                    Arena — Complejidad detrás del sistema
-                  </p>
-                  <div className="flex items-center justify-center gap-1.5 mt-3">
-                    <div className="h-0.5 bg-primary w-12" />
-                    <div className="h-0.5 bg-primary/60 w-6" />
-                    <div className="h-0.5 bg-primary/30 w-3" />
-                  </div>
-                </div>
-
-                {/* Grid de desafíos */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                  {/* Desafío 1: Relaciones Temporales */}
-                  <div className="border border-border p-5 lg:p-6 bg-background/50">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="h-0.5 w-4 bg-primary" />
-                      <h3 className="text-sm md:text-base font-bold text-primary uppercase tracking-wider">
-                        Relaciones Temporales
-                      </h3>
+                      {/* Arquitectura en 4 capas */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="border-l-2 border-primary/50 pl-2 py-1">
+                          <div className="text-[10px] md:text-xs font-bold text-primary uppercase">Núcleo</div>
+                          <div className="text-[9px] md:text-[10px] text-foreground/60">Usuarios, equipos, jugadores</div>
+                        </div>
+                        <div className="border-l-2 border-primary/50 pl-2 py-1">
+                          <div className="text-[10px] md:text-xs font-bold text-primary uppercase">Competiciones</div>
+                          <div className="text-[9px] md:text-[10px] text-foreground/60">Ligas, series, partidas</div>
+                        </div>
+                        <div className="border-l-2 border-primary/50 pl-2 py-1">
+                          <div className="text-[10px] md:text-xs font-bold text-primary uppercase">Estadísticas</div>
+                          <div className="text-[9px] md:text-[10px] text-foreground/60">KDA, rankings, métricas</div>
+                        </div>
+                        <div className="border-l-2 border-primary/50 pl-2 py-1">
+                          <div className="text-[10px] md:text-xs font-bold text-primary uppercase">Adicional</div>
+                          <div className="text-[9px] md:text-[10px] text-foreground/60">Transferencias, predicciones</div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-xs md:text-sm text-foreground/70 leading-relaxed">
-                      Capturar no solo qué jugadores pertenecen a un equipo, sino <span className="font-bold text-primary">cuándo</span> formaron parte de cada plantilla, gestionando <span className="font-semibold text-foreground">contratos</span>, <span className="font-semibold text-foreground">sustituciones</span> y fechas de expiración.
-                    </p>
-                  </div>
-
-                  {/* Desafío 2: Relaciones por Partida */}
-                  <div className="border border-border p-5 lg:p-6 bg-background/50">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="h-0.5 w-4 bg-primary" />
-                      <h3 className="text-sm md:text-base font-bold text-primary uppercase tracking-wider">
-                        20 Relaciones/Partida
-                      </h3>
-                    </div>
-                    <p className="text-xs md:text-sm text-foreground/70 leading-relaxed">
-                      Cada partida mantiene <span className="font-bold text-primary">20 relaciones activas</span>: 10 jugadores con <span className="font-semibold text-foreground">estadísticas individuales</span> y 10 foreign keys para gestionar los <span className="font-semibold text-foreground">bans de campeones</span>.
-                    </p>
-                  </div>
-
-                  {/* Desafío 3: Queries SQL */}
-                  <div className="border border-border p-5 lg:p-6 bg-background/50">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="h-0.5 w-4 bg-primary" />
-                      <h3 className="text-sm md:text-base font-bold text-primary uppercase tracking-wider">
-                        SQL Avanzado
-                      </h3>
-                    </div>
-                    <p className="text-xs md:text-sm text-foreground/70 leading-relaxed">
-                      La base de datos soporta <span className="font-bold text-primary">queries complejas</span> con subconsultas y joins optimizados para calcular <span className="font-semibold text-foreground">rankings en tiempo real</span> y métricas competitivas.
-                    </p>
                   </div>
                 </div>
 
-                {/* Quote destacado centrado */}
-                <div className="relative py-4 px-6 max-w-3xl mx-auto">
-                  <div className="absolute top-0 left-0 h-3 w-3 border-t-2 border-l-2 border-primary/50" />
-                  <div className="absolute top-0 right-0 h-3 w-3 border-t-2 border-r-2 border-primary/50" />
-                  <div className="absolute bottom-0 left-0 h-3 w-3 border-b-2 border-l-2 border-primary/50" />
-                  <div className="absolute bottom-0 right-0 h-3 w-3 border-b-2 border-r-2 border-primary/50" />
-                  <p className="text-sm md:text-base text-center text-muted-foreground italic">
-                    &ldquo;<span className="font-bold text-primary">14 entidades</span>, <span className="font-bold text-primary">100+ métodos</span> — Transformando <span className="font-semibold text-foreground">complejidad</span> en <span className="font-bold text-primary">consultas eficientes</span>&rdquo;
-                  </p>
+                {/* Columna derecha - Desafíos técnicos */}
+                <div className="relative min-h-fit lg:h-full flex items-center border-t lg:border-t-0 lg:border-l border-border/30">
+                  <div className="w-full p-6 md:p-8 lg:p-10 xl:p-12">
+                    <div className="space-y-4 md:space-y-5 max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl mx-auto lg:mx-0">
+                      {/* Título sección */}
+                      <div className="flex items-center gap-2">
+                        <div className="h-0.5 w-4 bg-primary" />
+                        <h3 className="text-sm md:text-base font-bold text-foreground uppercase tracking-wider">Desafíos Técnicos</h3>
+                      </div>
+
+                      {/* Desafíos */}
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="text-xs md:text-sm font-bold text-primary mb-1">Relaciones Temporales</h4>
+                          <p className="text-[10px] md:text-xs text-foreground/70 leading-relaxed">
+                            Capturar <span className="font-semibold text-foreground">cuándo</span> cada jugador formó parte de cada plantilla, gestionando contratos, sustituciones y fechas de expiración.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h4 className="text-xs md:text-sm font-bold text-primary mb-1">Integridad por Partida</h4>
+                          <p className="text-[10px] md:text-xs text-foreground/70 leading-relaxed">
+                            Cada partida mantiene <span className="font-semibold text-foreground">20 relaciones activas</span>: 10 jugadores con estadísticas y 10 foreign keys para bans de campeones.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h4 className="text-xs md:text-sm font-bold text-primary mb-1">SQL Avanzado</h4>
+                          <p className="text-[10px] md:text-xs text-foreground/70 leading-relaxed">
+                            Queries con <span className="font-semibold text-foreground">subconsultas y joins optimizados</span> para rankings en tiempo real y métricas competitivas.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Quote */}
+                      <div className="relative py-3 px-4 mt-2">
+                        <div className="absolute top-0 left-0 h-2.5 w-2.5 border-t border-l border-primary/50" />
+                        <div className="absolute top-0 right-0 h-2.5 w-2.5 border-t border-r border-primary/50" />
+                        <div className="absolute bottom-0 left-0 h-2.5 w-2.5 border-b border-l border-primary/50" />
+                        <div className="absolute bottom-0 right-0 h-2.5 w-2.5 border-b border-r border-primary/50" />
+                        <p className="text-[10px] md:text-xs text-muted-foreground italic text-center">
+                          &ldquo;<span className="font-bold text-primary">Complejidad competitiva</span> traducida en <span className="font-semibold text-foreground">estructura consultable</span>&rdquo;
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

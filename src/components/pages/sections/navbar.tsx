@@ -9,29 +9,33 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { useIsSoundEnabled } from "@/store/use-sound-enabled";
+import { useTranslation } from "@/i18n";
+import { LocaleToggle } from "../../locale-toggle";
 
-const NAV_LINKS = [
-  { id: "home", label: "Inicio" },
-  { id: "about", label: "Acerca de" },
-  { id: "projects", label: "Proyectos" },
-  { id: "stats", label: "Estadísticas" },
-  { id: "contact", label: "Contacto" },
-] as const;
-
-type NavId = (typeof NAV_LINKS)[number]["id"];
+const NAV_IDS = ["home", "about", "projects", "stats", "contact"] as const;
+type NavId = (typeof NAV_IDS)[number];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<NavId>("home");
   const { isSoundEnabled, toggleSoundEnabled } = useIsSoundEnabled();
   const { resolvedTheme, setTheme } = useTheme();
+  const { t } = useTranslation();
+
+  const NAV_LINKS = [
+    { id: "home" as const, label: t.nav.home },
+    { id: "about" as const, label: t.nav.about },
+    { id: "projects" as const, label: t.nav.projects },
+    { id: "stats" as const, label: t.nav.stats },
+    { id: "contact" as const, label: t.nav.contact },
+  ];
 
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const activeTabRef = useRef<HTMLAnchorElement | null>(null);
 
   // Update active tab from URL hash
   useEffect(() => {
-    const ids = NAV_LINKS.map((x) => x.id);
+    const ids = [...NAV_IDS];
     const setFromHash = () => {
       const hash =
         (typeof window !== "undefined" && window.location.hash) || "";
@@ -162,7 +166,7 @@ const Navbar = () => {
             <button
               onClick={() => toggleSoundEnabled()}
               className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
-              aria-label={isSoundEnabled ? "Silenciar sonidos" : "Habilitar sonidos"}
+              aria-label={isSoundEnabled ? t.nav.muteSounds : t.nav.enableSounds}
             >
               {isSoundEnabled ? (
                 <Volume2Icon className="size-5" />
@@ -173,13 +177,18 @@ const Navbar = () => {
 
             <div className="bg-border h-4 w-px" />
 
+            {/* Locale Toggle */}
+            <LocaleToggle className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110" />
+
+            <div className="bg-border h-4 w-px" />
+
             {/* Theme Toggle */}
             <button
               onClick={() =>
                 setTheme(resolvedTheme === "dark" ? "light" : "dark")
               }
               className="transition-transform duration-200 hover:scale-110"
-              aria-label="Cambiar tema"
+              aria-label={t.nav.changeTheme}
             >
               <ThemeToggleButton2 className="size-5" theme={resolvedTheme} />
             </button>
@@ -189,7 +198,7 @@ const Navbar = () => {
           <button
             className="hover:bg-foreground/5 inline-flex size-9 items-center justify-center rounded-md border transition-colors md:hidden"
             onClick={() => setOpen((s) => !s)}
-            aria-label="Abrir menú"
+            aria-label={t.nav.openMenu}
           >
             <AnimatePresence mode="wait" initial={false}>
               {open ? (
@@ -281,7 +290,7 @@ const Navbar = () => {
 
               <div className="bg-border my-1 h-px" />
 
-              <div className="grid grid-cols-3 gap-2 px-2 py-1">
+              <div className="grid grid-cols-4 gap-2 px-2 py-1">
                 <a
                   href="https://github.com/"
                   target="_blank"
@@ -312,9 +321,11 @@ const Navbar = () => {
                     <VolumeXIcon className="text-foreground/60 group-hover:text-foreground size-5 transition-colors" />
                   )}
                   <span className="text-foreground/60 group-hover:text-foreground text-[10px] font-medium">
-                    {isSoundEnabled ? "Sonido" : "Silenciado"}
+                    {isSoundEnabled ? t.nav.sound : t.nav.muted}
                   </span>
                 </button>
+
+                <LocaleToggle className="hover:bg-foreground/5 group flex flex-col items-center gap-1.5 rounded-lg py-2 transition-colors text-foreground/60 group-hover:text-foreground" />
 
                 <button
                   onClick={() =>
@@ -327,7 +338,7 @@ const Navbar = () => {
                     theme={resolvedTheme}
                   />
                   <span className="text-foreground/60 group-hover:text-foreground text-[10px] font-medium">
-                    Tema
+                    {t.nav.theme}
                   </span>
                 </button>
               </div>

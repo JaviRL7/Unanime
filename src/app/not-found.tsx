@@ -8,8 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Home } from "lucide-react";
 import { motion, Variants } from "motion/react";
 import { BackgroundNoise } from "@/components/shared/backgrounds";
-
-const TYPEWRITER_MESSAGES = ["Page Not Found", "Got Lost?", "How...?"];
+import { useTranslation } from "@/i18n";
 
 const DesktopNavigationPanel = ({
   side,
@@ -59,6 +58,7 @@ const MobileNavigation = ({
   onBack: () => void;
   onHome: () => void;
 }) => {
+  const { t } = useTranslation();
   const buttonVariants: Variants = {
     initial: { opacity: 0, y: 50 },
     animate: (i: number) => ({
@@ -92,10 +92,10 @@ const MobileNavigation = ({
               variant="outline"
               onClick={onBack}
               className="group relative h-12 w-full overflow-hidden  border-dotted font-mono text-base shadow-lg"
-              aria-label="Go back to previous page"
+              aria-label={t.notFound.goBack}
             >
               <ArrowLeft className="mr-2 size-5 transition-transform group-hover:-translate-x-1" />
-              <span>Go Back</span>
+              <span>{t.notFound.goBack}</span>
             </Button>
           </motion.div>
 
@@ -110,10 +110,10 @@ const MobileNavigation = ({
               size={"sm"}
               onClick={onHome}
               className="group relative h-12 w-full border-dotted border-2 overflow-hidden font-mono text-base"
-              aria-label="Go to home page "
+              aria-label={t.notFound.goHome}
             >
               <Home className="mr-2 size-5" />
-              <span>Go Home</span>
+              <span>{t.notFound.goHome}</span>
             </Button>
           </motion.div>
         </div>
@@ -126,7 +126,7 @@ const MobileNavigation = ({
         className="mt-4 text-center"
       >
         <p className="text-muted-foreground/60 font-mono text-xs">
-          Error Code: <span className="text-red-500">404</span> • Page Not Found
+          {t.notFound.errorCode} <span className="text-red-500">404</span> • {t.notFound.pageNotFound}
         </p>
       </motion.div>
     </div>
@@ -135,6 +135,7 @@ const MobileNavigation = ({
 
 const NotFound = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleGoBack = () => router.back();
   const handleGoHome = () => router.push("/");
@@ -155,7 +156,7 @@ const NotFound = () => {
             }}
           >
             <div className="size-2 animate-pulse rounded-full bg-red-500 shadow-lg shadow-red-500/50" />
-            <span className="tracking-wider">ERROR 404</span>
+            <span className="tracking-wider">{t.notFound.error404}</span>
           </motion.div>
         </div>
       </nav>
@@ -193,7 +194,7 @@ const NotFound = () => {
           >
             <span className="font-bold text-red-500">404:</span>{" "}
             <Typewriter
-              text={TYPEWRITER_MESSAGES}
+              text={t.notFound.messages}
               speed={70}
               waitTime={2000}
               deleteSpeed={50}
@@ -216,14 +217,14 @@ const NotFound = () => {
       <DesktopNavigationPanel
         side="left"
         onClick={handleGoBack}
-        label="Go Back"
+        label={t.notFound.goBack}
         icon={<ArrowLeft className="size-4" />}
       />
 
       <DesktopNavigationPanel
         side="right"
         onClick={handleGoHome}
-        label="Go Home"
+        label={t.notFound.goHome}
         icon={<ArrowRight className="size-4" />}
       />
 

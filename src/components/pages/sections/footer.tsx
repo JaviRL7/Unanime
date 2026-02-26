@@ -3,12 +3,15 @@
 import { Github, Heart, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { motion } from "motion/react";
 import { siteConfig } from "@/config/site";
+import { useTranslation } from "@/i18n";
 
 interface FooterProps {
   onEmailClick: () => void;
 }
 
 const Footer = ({ onEmailClick }: FooterProps) => {
+  const { t } = useTranslation();
+
   const socialLinks = [
     {
       icon: Github,
@@ -30,7 +33,7 @@ const Footer = ({ onEmailClick }: FooterProps) => {
     },
     {
       icon: Mail,
-      href: `mailto:${siteConfig.email}?subject=${encodeURIComponent("Nos ha gustado tu portfolio")}&body=${encodeURIComponent("Hola Javi,\n\nNos ha gustado tu portfolio y queremos una entrevista.\n\nSaludos")}`,
+      href: `mailto:${siteConfig.email}?subject=${encodeURIComponent(t.footerEmail.subject)}&body=${encodeURIComponent(t.footerEmail.body)}`,
       label: "Email",
       isEmail: true,
     },
@@ -83,7 +86,7 @@ const Footer = ({ onEmailClick }: FooterProps) => {
             </div>
             <div className="text-center space-y-1">
               <h3 className="font-incognito text-xl md:text-2xl lg:text-3xl font-bold">Javier Rodríguez López</h3>
-              <p className="text-muted-foreground text-sm md:text-base lg:text-lg">Desarrollador Full Stack</p>
+              <p className="text-muted-foreground text-sm md:text-base lg:text-lg">{t.footer.fullStackDev}</p>
             </div>
           </motion.div>
 
@@ -138,7 +141,7 @@ const Footer = ({ onEmailClick }: FooterProps) => {
               className="flex items-center gap-1.5 text-muted-foreground text-xs md:text-sm"
             >
               <span>© {new Date().getFullYear()} Javier Rodríguez López.</span>
-              <span className="hidden md:inline">Todos los derechos reservados.</span>
+              <span className="hidden md:inline">{t.footer.allRights}</span>
             </motion.div>
 
             <motion.div
@@ -148,9 +151,9 @@ const Footer = ({ onEmailClick }: FooterProps) => {
               transition={{ delay: 0.4 }}
               className="flex items-center gap-1.5 text-muted-foreground text-xs md:text-sm"
             >
-              <span>Hecho con</span>
+              <span>{t.footer.madeWith}</span>
               <Heart className={`h-3.5 w-3.5 md:h-4 md:w-4 fill-red-400 text-red-400 animate-pulse`} />
-              <span>en Next.js 15 + TypeScript</span>
+              <span>{t.footer.inNextjs}</span>
             </motion.div>
 
             <motion.a
@@ -163,7 +166,7 @@ const Footer = ({ onEmailClick }: FooterProps) => {
               whileTap={{ scale: 0.95 }}
               className="rounded-md border-2 border-primary/20 bg-primary/5 px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-semibold transition-all hover:border-primary/60 hover:bg-primary/10"
             >
-              Volver arriba
+              {t.footer.backToTop}
             </motion.a>
           </div>
         </div>

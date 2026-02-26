@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import Script from "next/script";
 import env from "@/config/env";
 import RobotBubble from "@/components/shared/RobotBubble";
+import { HtmlLangSync } from "@/components/html-lang-sync";
 
 
 export const metadata: Metadata = {
@@ -47,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body
         className={cn(
           "mx-auto font-sans antialiased",
@@ -58,6 +59,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
+          <HtmlLangSync />
           <MotionConfigWrapper>
             <RobotBubble />
             {children}

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { X, Paperclip, Link2, Smile, Image as ImageIcon, MoreHorizontal } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "@/i18n";
 
 interface EmailModalProps {
   isOpen: boolean;
@@ -10,9 +11,10 @@ interface EmailModalProps {
 }
 
 export function EmailModal({ isOpen, onClose }: EmailModalProps) {
+  const { t } = useTranslation();
   const [to, setTo] = useState("jrlsanlucar11@gmail.com");
-  const [subject, setSubject] = useState("Contratación inminente");
-  const [message, setMessage] = useState("Nos ha encantado tu presentación Javi, queremos que formes parte de nuestro equipo.");
+  const [subject, setSubject] = useState(t.emailModal.defaultSubject);
+  const [message, setMessage] = useState(t.emailModal.defaultMessage);
   const [showCcBcc, setShowCcBcc] = useState(false);
 
   const handleSend = () => {
@@ -59,11 +61,11 @@ export function EmailModal({ isOpen, onClose }: EmailModalProps) {
             <div className="rounded-lg shadow-2xl bg-background border flex flex-col max-h-[calc(100vh-2rem)]">
               {/* Header */}
               <div className="flex justify-between items-center px-4 py-3 bg-muted/30 border-b rounded-t-lg">
-                <h2 className="font-medium text-foreground">Mensaje nuevo</h2>
+                <h2 className="font-medium text-foreground">{t.emailModal.newMessage}</h2>
                 <button
                   onClick={onClose}
                   className="text-muted-foreground hover:text-foreground transition-colors p-1 rounded hover:bg-muted/50"
-                  aria-label="Cerrar"
+                  aria-label={t.emailModal.close}
                 >
                   <X className="size-5" />
                 </button>
@@ -71,20 +73,20 @@ export function EmailModal({ isOpen, onClose }: EmailModalProps) {
 
               {/* To field */}
               <div className="px-4 py-2 border-b flex items-center gap-2">
-                <span className="text-muted-foreground text-sm min-w-[40px]">Para</span>
+                <span className="text-muted-foreground text-sm min-w-[40px]">{t.emailModal.to}</span>
                 <input
                   type="email"
                   value={to}
                   onChange={(e) => setTo(e.target.value)}
                   className="flex-1 border-none outline-none bg-transparent text-foreground text-sm"
-                  placeholder="Destinatario"
+                  placeholder={t.emailModal.recipient}
                   disabled
                 />
                 <button
                   onClick={() => setShowCcBcc(!showCcBcc)}
                   className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Cc Cco
+                  {t.emailModal.ccBcc}
                 </button>
               </div>
 
@@ -92,19 +94,19 @@ export function EmailModal({ isOpen, onClose }: EmailModalProps) {
               {showCcBcc && (
                 <>
                   <div className="px-4 py-2 border-b flex items-center gap-2">
-                    <span className="text-muted-foreground text-sm min-w-[40px]">Cc</span>
+                    <span className="text-muted-foreground text-sm min-w-[40px]">{t.emailModal.cc}</span>
                     <input
                       type="email"
                       className="flex-1 border-none outline-none bg-transparent text-foreground text-sm"
-                      placeholder="Cc"
+                      placeholder={t.emailModal.cc}
                     />
                   </div>
                   <div className="px-4 py-2 border-b flex items-center gap-2">
-                    <span className="text-muted-foreground text-sm min-w-[40px]">Cco</span>
+                    <span className="text-muted-foreground text-sm min-w-[40px]">{t.emailModal.bcc}</span>
                     <input
                       type="email"
                       className="flex-1 border-none outline-none bg-transparent text-foreground text-sm"
-                      placeholder="Cco"
+                      placeholder={t.emailModal.bcc}
                     />
                   </div>
                 </>
@@ -117,7 +119,7 @@ export function EmailModal({ isOpen, onClose }: EmailModalProps) {
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
                   className="w-full border-none outline-none bg-transparent text-foreground text-sm"
-                  placeholder="Asunto"
+                  placeholder={t.emailModal.subject}
                 />
               </div>
 
@@ -126,7 +128,7 @@ export function EmailModal({ isOpen, onClose }: EmailModalProps) {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className="flex-1 p-4 outline-none resize-none bg-transparent text-foreground text-sm min-h-[280px]"
-                placeholder="Escribe tu mensaje..."
+                placeholder={t.emailModal.writePlaceholder}
               />
 
               {/* Footer */}
@@ -135,22 +137,22 @@ export function EmailModal({ isOpen, onClose }: EmailModalProps) {
                   onClick={handleSend}
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-md font-medium transition-colors"
                 >
-                  Enviar
+                  {t.emailModal.send}
                 </button>
                 <div className="flex items-center gap-3 text-muted-foreground">
-                  <button className="hover:text-foreground transition-colors" title="Adjuntar archivo">
+                  <button className="hover:text-foreground transition-colors" title={t.emailModal.attachFile}>
                     <Paperclip className="size-5" />
                   </button>
-                  <button className="hover:text-foreground transition-colors" title="Insertar enlace">
+                  <button className="hover:text-foreground transition-colors" title={t.emailModal.insertLink}>
                     <Link2 className="size-5" />
                   </button>
-                  <button className="hover:text-foreground transition-colors" title="Insertar emoji">
+                  <button className="hover:text-foreground transition-colors" title={t.emailModal.insertEmoji}>
                     <Smile className="size-5" />
                   </button>
-                  <button className="hover:text-foreground transition-colors" title="Insertar imagen">
+                  <button className="hover:text-foreground transition-colors" title={t.emailModal.insertImage}>
                     <ImageIcon className="size-5" />
                   </button>
-                  <button className="hover:text-foreground transition-colors" title="Más opciones">
+                  <button className="hover:text-foreground transition-colors" title={t.emailModal.moreOptions}>
                     <MoreHorizontal className="size-5" />
                   </button>
                 </div>

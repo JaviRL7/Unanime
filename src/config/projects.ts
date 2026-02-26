@@ -48,10 +48,12 @@ export const PROJECTS_WITH_SPECIAL_LAYOUTS: readonly string[] = [
 
 /**
  * Get project label for display
+ * @param projectId - The project identifier
+ * @param projectWord - Translated word for "Project" (default "Proyecto")
  */
-export function getProjectLabel(projectId: string): string {
+export function getProjectLabel(projectId: string, projectWord: string = "Proyecto"): string {
   const projectNumber = PROJECT_NUMBER_MAP[projectId];
   if (!projectNumber) return "";
 
-  return `Proyecto ${projectNumber}`;
+  return `${projectWord} ${projectNumber}`;
 }

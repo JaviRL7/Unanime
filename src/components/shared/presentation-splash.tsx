@@ -2,8 +2,11 @@
 import { motion } from "motion/react";
 import { GraduationCap, Briefcase } from "lucide-react";
 import { LOGO_SVG } from "@/data/projects";
+import { useTranslation } from "@/i18n";
 
 export const PresentationSplash = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="relative flex min-h-screen lg:h-screen overflow-y-auto lg:overflow-hidden border-b lg:snap-start lg:snap-always bg-background">
       {/* Decorative Corner Borders - All 4 corners */}
@@ -88,13 +91,13 @@ export const PresentationSplash = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-center gap-2 mb-3">
                   <GraduationCap className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-                  <h3 className="text-xs md:text-sm font-semibold">Formación</h3>
+                  <h3 className="text-xs md:text-sm font-semibold">{t.presentation.education}</h3>
                 </div>
                 <div className="space-y-2">
                   {/* DAW */}
                   <div className="border-l-2 border-primary/30 pl-2">
                     <p className="text-[10px] md:text-xs font-semibold text-foreground/95">
-                      <span className="text-primary">Desarrollo de Aplicaciones Web</span>
+                      <span className="text-primary">{t.presentation.daw}</span>
                     </p>
                     <p className="text-[9px] md:text-[10px] text-foreground/80">
                       IES Doñana
@@ -104,17 +107,17 @@ export const PresentationSplash = () => {
                   {/* Universidad */}
                   <div className="border-l-2 border-primary/30 pl-2">
                     <p className="text-[10px] md:text-xs font-semibold text-foreground/95">
-                      Universidad de <span className="text-primary">Cádiz</span>
+                      {t.presentation.university} <span className="text-primary">{t.presentation.cadiz}</span>
                     </p>
                   </div>
 
                   {/* Inglés */}
                   <div className="border-l-2 border-primary/30 pl-2">
                     <p className="text-[10px] md:text-xs font-semibold text-foreground/95">
-                      <span className="text-primary">Inglés B2</span>
+                      <span className="text-primary">{t.presentation.englishB2}</span>
                     </p>
                     <p className="text-[9px] md:text-[10px] text-foreground/80">
-                      Certificación oficial
+                      {t.presentation.officialCert}
                     </p>
                   </div>
                 </div>
@@ -124,26 +127,26 @@ export const PresentationSplash = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-center gap-2 mb-3">
                   <Briefcase className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-                  <h3 className="text-xs md:text-sm font-semibold">Experiencia</h3>
+                  <h3 className="text-xs md:text-sm font-semibold">{t.presentation.experience}</h3>
                 </div>
                 <div className="space-y-2">
                   {/* Unanime Tech */}
                   <div className="border-l-2 border-primary/30 pl-2">
                     <p className="text-[10px] md:text-xs font-semibold text-foreground/95">
-                      <span className="text-primary">Desarrollador Web Full Stack</span>
+                      <span className="text-primary">{t.presentation.fullStackDev}</span>
                     </p>
                     <p className="text-[9px] md:text-[10px] text-foreground/80">
                       Unanime Tech
                     </p>
                     <p className="text-[9px] md:text-[10px] text-foreground/60">
-                      Nov 2025 - Actualidad
+                      {t.presentation.currentJob}
                     </p>
                   </div>
 
                   {/* Doña Araña */}
                   <div className="border-l-2 border-primary/30 pl-2">
                     <p className="text-[10px] md:text-xs font-semibold text-foreground/95">
-                      Encargado <span className="text-primary">Comunicaciones</span> y <span className="text-primary">E-Commerce</span>
+                      {t.presentation.commManager} <span className="text-primary">{t.presentation.communications}</span> y <span className="text-primary">{t.presentation.ecommerce}</span>
                     </p>
                     <p className="text-[9px] md:text-[10px] text-foreground/80">
                       Doña Araña
@@ -156,7 +159,7 @@ export const PresentationSplash = () => {
                   {/* Prácticas */}
                   <div className="border-l-2 border-primary/30 pl-2">
                     <p className="text-[10px] md:text-xs font-semibold text-foreground/95">
-                      Prácticas Departamento de <span className="text-primary">Infraestructura</span>
+                      {t.presentation.internship} <span className="text-primary">{t.presentation.infrastructure}</span>
                     </p>
                     <p className="text-[9px] md:text-[10px] text-foreground/80">
                       Sanlúcar de Barrameda
@@ -203,7 +206,7 @@ export const PresentationSplash = () => {
                 target="_blank"
                 rel="noreferrer noopener"
                 className="group flex items-center justify-center size-10 md:size-11 rounded-full border-2 border-primary/20 bg-primary/5 transition-all hover:border-primary/60 hover:bg-primary/10 hover:scale-110"
-                aria-label="Descargar CV"
+                aria-label={t.presentation.downloadCV}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5 md:size-5 text-primary">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -220,7 +223,7 @@ export const PresentationSplash = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex text-muted-foreground">
-        DESPLÁZATE
+        {t.presentation.scroll}
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4 animate-pulse" aria-hidden="true">
           <rect width="18" height="18" x="3" y="3" rx="2"></rect>
           <path d="M12 8v8"></path>

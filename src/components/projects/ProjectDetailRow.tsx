@@ -28,6 +28,8 @@ import { LOGO_SVG } from "@/data/projects";
 import { useTheme } from "next-themes";
 import { ThemeToggleButton2 } from "@/components/theme-toggle";
 import { PROJECTS_WITH_SPECIAL_LAYOUTS, getProjectLabel } from "@/config/projects";
+import { useTranslation } from "@/i18n";
+import { LocaleToggle } from "@/components/locale-toggle";
 
 export default function ProjectDetailRow({
   detail,
@@ -36,6 +38,7 @@ export default function ProjectDetailRow({
   showActionButtons = true,
 }: ProjectDetailRowProps) {
   const { resolvedTheme, setTheme } = useTheme();
+  const { t } = useTranslation();
   
   const {
     date,
@@ -61,7 +64,7 @@ export default function ProjectDetailRow({
   const isStructuredLayout = projectId === "more-features";
 
   // Get project label using centralized config
-  const projectLabel = getProjectLabel(projectId);
+  const projectLabel = getProjectLabel(projectId, t.projectLabels.project);
 
   return (
     <section className={cn(
@@ -126,11 +129,16 @@ export default function ProjectDetailRow({
 
               <div className="bg-border h-4 w-px" />
 
+              {/* Locale Toggle */}
+              <LocaleToggle className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110" />
+
+              <div className="bg-border h-4 w-px" />
+
               {/* Theme Toggle */}
               <button
                 onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
                 className="transition-transform duration-200 hover:scale-110"
-                aria-label="Cambiar tema"
+                aria-label={t.nav.changeTheme}
               >
                 <ThemeToggleButton2 className="size-4" theme={resolvedTheme} />
               </button>
@@ -146,7 +154,7 @@ export default function ProjectDetailRow({
                   }
                 }}
                 className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
-                aria-label="Volver arriba"
+                aria-label={t.projectLabels.backToTop}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4">
                   <path d="M12 19V5M5 12l7-7 7 7"/>
@@ -271,7 +279,7 @@ export default function ProjectDetailRow({
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
                     <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-lg 4xl:text-xl">
-                      Objetivos
+                      {t.projectLabels.objectives}
                     </h4>
                   </div>
                   <ul className="text-foreground/70 text-[8px] leading-relaxed pl-2 space-y-1 md:text-[9px] lg:text-[10px] 3xl:text-lg 4xl:text-xl">
@@ -325,7 +333,7 @@ export default function ProjectDetailRow({
                   <div className="flex items-center gap-0.5">
                     <div className="h-0.5 w-1 bg-primary" />
                     <h4 className="font-mono text-[8px] font-semibold uppercase tracking-wider md:text-[9px] lg:text-[10px] 3xl:text-lg 4xl:text-xl">
-                      Objetivos
+                      {t.projectLabels.objectives}
                     </h4>
                   </div>
                   <ul className="text-foreground/70 text-[8px] leading-relaxed pl-2 space-y-1 md:text-[9px] lg:text-[10px] 3xl:text-lg 4xl:text-xl">
@@ -372,7 +380,7 @@ export default function ProjectDetailRow({
                       )}
                     />
                     <span className="text-muted-foreground font-mono text-[8px] md:text-[9px] uppercase">
-                      {status === "completed" ? "completado" : "en desarrollo"}
+                      {status === "completed" ? t.projectLabels.completed : t.projectLabels.inDevelopment}
                     </span>
                   </div>
                 </div>
@@ -425,7 +433,7 @@ export default function ProjectDetailRow({
                       onClick={() => window.open(githubUrl, "_blank")}
                     >
                       <Github className="h-2 w-2 md:h-2.5 md:w-2.5" />
-                      Ver Código
+                      {t.projectLabels.viewCode}
                       <ArrowUpRight className="h-1.5 w-1.5 md:h-2 md:w-2 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                     </button>
                   )}
@@ -435,7 +443,7 @@ export default function ProjectDetailRow({
                       className="border-foreground text-foreground hover:bg-foreground hover:text-background group/btn inline-flex items-center gap-0.5 rounded-md border px-2 py-0.5 text-[9px] md:text-[10px] font-medium transition-colors"
                       onClick={() => window.open(demoUrl, "_blank")}
                     >
-                      Demo en Vivo
+                      {t.projectLabels.liveDemo}
                       <ArrowUpRight className="h-1.5 w-1.5 md:h-2 md:w-2 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                     </button>
                   )}

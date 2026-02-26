@@ -11,6 +11,9 @@
  */
 
 import type { Project } from "@/types/projects";
+import type { Locale } from "@/store/use-locale";
+import { projectsEs } from "@/i18n/projects-es";
+import { projectsEn } from "@/i18n/projects-en";
 
 export const projects: Project[] = [
   // 🔥 PROYECTO DESTACADO - E-Commerce Doña Araña
@@ -325,6 +328,45 @@ export const projects: Project[] = [
   },
 
 ];
+
+/**
+ * Returns projects with localized text merged in.
+ * Structural data (mediaSrc, badges, urls) stays the same;
+ * translatable text (title, date, description, features, quotes) comes from dictionaries.
+ */
+export function getLocalizedProjects(locale: Locale): Project[] {
+  const dict = locale === "es" ? projectsEs : projectsEn;
+
+  return projects.map((project) => {
+    const t = dict[project.id];
+    if (!t) return project;
+
+    return {
+      ...project,
+      hero: {
+        ...project.hero,
+        title: t.hero.title,
+        date: t.hero.date,
+        description: t.hero.description,
+      },
+      details: project.details.map((detail, i) => {
+        const dt = t.details?.[i];
+        if (!dt) return detail;
+        return {
+          ...detail,
+          date: dt.date,
+          title: dt.title,
+          subtitle: dt.subtitle,
+          description: dt.description,
+          systemTitle: dt.systemTitle,
+          systemDescription: dt.systemDescription,
+          features: dt.features,
+          quote: dt.quote,
+        };
+      }),
+    };
+  });
+}
 
 /**
  * Logo SVG for featured project hero

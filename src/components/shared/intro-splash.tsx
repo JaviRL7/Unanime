@@ -3,9 +3,12 @@ import { motion } from "motion/react";
 import BackgroundAnimation from "@/components/ui/background-gradient";
 import { useTheme } from "next-themes";
 import { AnimatedLogo } from "../ui/animated-logo";
+import { useTranslation } from "@/i18n";
+import { LocaleSelector } from "@/components/locale-toggle";
 
 export const IntroSplash = () => {
   const { resolvedTheme } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <motion.div
@@ -14,10 +17,20 @@ export const IntroSplash = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-   
+
       <BackgroundAnimation
         color={resolvedTheme === "light" ? "blue" : "ember"}
       />
+
+      {/* Locale Selector - Top right */}
+      <motion.div
+        className="absolute top-6 right-6 z-50"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
+        <LocaleSelector className="border border-white/20" />
+      </motion.div>
 
 
       <motion.div
@@ -62,7 +75,7 @@ export const IntroSplash = () => {
 
 
       <motion.div className="pointer-events-none absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center justify-center gap-3 text-lg font-semibold text-white @max-md:hidden">
-        Desplázate hacia abajo
+        {t.introSplash.scrollDown}
         <motion.div className="flex h-16 w-10 justify-center rounded-xl border-2 border-white/40 bg-white/20 backdrop-blur-2xl">
           <motion.div
             className="mx-auto w-1.5 rounded-xl bg-white/80 backdrop-blur-2xl"

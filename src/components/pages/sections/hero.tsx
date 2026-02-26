@@ -5,16 +5,20 @@ import { useTheme } from "next-themes";
 import { ThemeToggleButton2 } from "@/components/theme-toggle";
 import { AnimatedLogo } from "@/components/ui/animated-logo";
 import { useState, useEffect } from "react";
+import { useTranslation } from "@/i18n";
+import { LocaleToggle } from "@/components/locale-toggle";
 
 const Hero = () => {
   const { resolvedTheme, setTheme } = useTheme();
+  const { t } = useTranslation();
 
+  const projectWord = t.projectLabels.project;
   const projects = [
-    { id: 1, src: "/projects/a1.jfif", alt: "Proyecto 1", title: "Proyecto 1", subtitle: "Lo estético" },
-    { id: 2, src: "/projects/c1.png", alt: "Proyecto 2", title: "Proyecto 2", subtitle: "Lo funcional" },
-    { id: 3, src: "/projects/v1.png", alt: "Proyecto 3", title: "Proyecto 3", subtitle: "El sueño" },
-    { id: 4, src: "/projects/b1.jpeg", alt: "Proyecto 4", title: "Extra mi TFG", subtitle: "Lo aprendido" },
-    { id: 5, src: "/projects/h1.PNG", alt: "Proyecto Próximo", title: "Proyecto Próximo", subtitle: "Lo planeado" },
+    { id: 1, src: "/projects/a1.jfif", alt: `${projectWord} 1`, title: `${projectWord} 1`, subtitle: t.hero.projectSubtitles[1] },
+    { id: 2, src: "/projects/c1.png", alt: `${projectWord} 2`, title: `${projectWord} 2`, subtitle: t.hero.projectSubtitles[2] },
+    { id: 3, src: "/projects/v1.png", alt: `${projectWord} 3`, title: `${projectWord} 3`, subtitle: t.hero.projectSubtitles[3] },
+    { id: 4, src: "/projects/b1.jpeg", alt: `${projectWord} 4`, title: t.hero.projectTitles[4], subtitle: t.hero.projectSubtitles[4] },
+    { id: 5, src: "/projects/h1.PNG", alt: t.hero.projectTitles[5], title: t.hero.projectTitles[5], subtitle: t.hero.projectSubtitles[5] },
   ];
 
   // Start from the middle set for infinite loop
@@ -56,16 +60,17 @@ const Hero = () => {
       <div className="absolute bottom-4 left-4 h-12 w-12 border-b-2 border-l-2 border-primary/40" />
       <div className="absolute bottom-4 right-4 h-12 w-12 border-b-2 border-r-2 border-primary/40" />
 
-      {/* Mobile Navigation - Only theme toggle with text */}
-      <div className="absolute top-0 left-0 right-0 z-50 flex md:hidden items-center justify-center px-4 pt-6 pb-3">
+      {/* Mobile Navigation - Theme toggle with text */}
+      <div className="absolute top-0 left-0 right-0 z-50 flex md:hidden items-center justify-center gap-2 px-4 pt-6 pb-3">
+        <LocaleToggle className="bg-background/30 inline-flex items-center rounded-full px-3 py-1.5 backdrop-blur-md transition-all hover:bg-background/50 text-foreground/80" />
         <button
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
           className="bg-background/30 inline-flex items-center gap-2 rounded-full px-3 py-1.5 backdrop-blur-md transition-all hover:bg-background/50"
-          aria-label="Cambiar tema"
+          aria-label={t.nav.changeTheme}
         >
           <ThemeToggleButton2 className="size-4" theme={resolvedTheme} />
           <span className="text-foreground/80 text-xs font-medium">
-            {resolvedTheme === "dark" ? "Modo claro" : "Modo oscuro"}
+            {resolvedTheme === "dark" ? t.nav.lightMode : t.nav.darkMode}
           </span>
         </button>
       </div>
@@ -81,27 +86,17 @@ const Hero = () => {
 
         {/* Navigation Links - Center */}
         <div className="font-incognito flex absolute left-1/2 -translate-x-1/2 items-center gap-1 rounded-full px-1 py-1 bg-background/30 backdrop-blur-md">
-          <a href="#proyecto-1" className="relative rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-primary/10">
-            Proyecto 1
-          </a>
-          <a href="#proyecto-2" className="relative rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-primary/10">
-            Proyecto 2
-          </a>
-          <a href="#proyecto-3" className="relative rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-primary/10">
-            Proyecto 3
-          </a>
-          <a href="#proyecto-4" className="relative rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-primary/10">
-            Proyecto 4
-          </a>
-          <a href="#proyecto-5" className="relative rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-primary/10">
-            Proyecto 5
-          </a>
+          {[1, 2, 3, 4, 5].map((n) => (
+            <a key={n} href={`#proyecto-${n}`} className="relative rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-primary/10">
+              {projectWord} {n}
+            </a>
+          ))}
           <a href="#contacto" className="relative rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-primary/10">
-            Contacto
+            {t.nav.contact}
           </a>
         </div>
 
-        {/* Right Actions - GitHub, LinkedIn & Theme */}
+        {/* Right Actions - GitHub, LinkedIn, Locale & Theme */}
         <div className="inline-flex items-center gap-2">
           <div className="bg-background/30 inline-flex items-center gap-2 rounded-full px-2 py-1 backdrop-blur-md">
             <a
@@ -131,10 +126,12 @@ const Hero = () => {
               </svg>
             </a>
             <div className="bg-border h-4 w-px" />
+            <LocaleToggle className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110" />
+            <div className="bg-border h-4 w-px" />
             <button
               onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
               className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
-              aria-label="Cambiar tema"
+              aria-label={t.nav.changeTheme}
             >
               <ThemeToggleButton2 className="size-4" theme={resolvedTheme} />
             </button>
@@ -158,13 +155,13 @@ const Hero = () => {
           >
             <div className="text-foreground/90 text-center space-y-2 md:space-y-3">
               <div>
-                Mis{" "}
-                <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.2em]">Proyectos</span>
-                {" "}explicados con
+                {t.hero.myProjects}{" "}
+                <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.2em]">{t.hero.projects}</span>
+                {" "}{t.hero.explainedWith}
               </div>
               <div className="flex justify-center">
                 <span className="relative inline-block">
-                  <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.2em]">Diseño</span>
+                  <span className="font-incognito font-semibold text-[#8cc2ff] text-[1.2em]">{t.hero.design}</span>
                   <div className="mt-1.5 flex items-center justify-center gap-1.5">
                     <div className="bg-primary h-0.5 md:h-1" style={{ width: '28px' }} aria-hidden="true"></div>
                     <div className="bg-primary/60 h-0.5 md:h-1" style={{ width: '14px' }} aria-hidden="true"></div>
@@ -211,7 +208,7 @@ const Hero = () => {
                               <svg className="w-10 h-10 text-yellow-500 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                               </svg>
-                              <span className="text-white font-semibold text-sm">EN CONSTRUCCIÓN</span>
+                              <span className="text-white font-semibold text-sm">{t.hero.underConstruction}</span>
                             </div>
                           )}
                           <img
@@ -229,7 +226,7 @@ const Hero = () => {
                             {item.subtitle}
                           </p>
                           <div className="mt-2 inline-flex items-center gap-1 text-primary text-xs font-medium">
-                            Ver proyecto
+                            {t.hero.viewProject}
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                               <path d="M7 7h10v10"></path>
                               <path d="M7 17 17 7"></path>
@@ -256,7 +253,7 @@ const Hero = () => {
                         ? 'w-6 bg-primary'
                         : 'w-2 bg-primary/30'
                     }`}
-                    aria-label={`Ir al proyecto ${index + 1}`}
+                    aria-label={`{t.hero.goToProject} ${index + 1}`}
                   />
                 ))}
               </div>
@@ -300,10 +297,10 @@ const Hero = () => {
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                                     </svg>
                                     <div className="text-center space-y-0.5">
-                                      <div className="text-foreground/80 text-xs font-semibold">EN CONSTRUCCIÓN</div>
+                                      <div className="text-foreground/80 text-xs font-semibold">{t.hero.underConstruction}</div>
                                     </div>
                                     <a href="#proyecto-5" className="group/btn relative inline-flex items-center gap-1.5 border bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 mt-1">
-                                      Ir al proyecto
+                                      {t.hero.goToProject}
                                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">
                                         <path d="M7 7h10v10"></path>
                                         <path d="M7 17 17 7"></path>
@@ -317,7 +314,7 @@ const Hero = () => {
                               {item.id !== 5 && (
                                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover/image:opacity-100">
                                   <a href={`#proyecto-${item.id}`} className="group/btn relative inline-flex items-center gap-1.5 border bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90">
-                                    Ir al proyecto
+                                    {t.hero.goToProject}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">
                                       <path d="M7 7h10v10"></path>
                                       <path d="M7 17 17 7"></path>
@@ -363,7 +360,7 @@ const Hero = () => {
                         ? 'w-8 bg-primary'
                         : 'w-2 bg-primary/30 hover:bg-primary/50'
                     }`}
-                    aria-label={`Ir al proyecto ${index + 1}`}
+                    aria-label={`{t.hero.goToProject} ${index + 1}`}
                   />
                 ))}
               </div>

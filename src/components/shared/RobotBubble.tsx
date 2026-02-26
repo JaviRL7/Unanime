@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Linkedin, X } from "lucide-react";
 import SpeechBubble from "../ui/speech-bubble";
+import { useTranslation } from "@/i18n";
 
 /**
  * RobotBubble Component
@@ -19,6 +20,7 @@ import SpeechBubble from "../ui/speech-bubble";
 export default function RobotBubble() {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Show robot after 5 seconds
@@ -86,7 +88,7 @@ export default function RobotBubble() {
             className="max-w-[280px] min-w-[250px]"
           >
             <p className="mb-3 text-sm md:text-base font-bold text-center">
-              ¿Me vais a contratar?
+              {t.robot.hireMe}
             </p>
 
             <div className="flex gap-2">
@@ -105,7 +107,7 @@ export default function RobotBubble() {
               <button
                 onClick={handleDismiss}
                 className="flex size-9 items-center justify-center rounded-md bg-red-500 font-bold text-white transition-all duration-200 hover:bg-red-600 hover:scale-105 active:scale-95"
-                aria-label="Cerrar"
+                aria-label={t.robot.close}
                 tabIndex={0}
               >
                 <X className="size-5" aria-hidden="true" />

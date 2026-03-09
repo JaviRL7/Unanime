@@ -194,27 +194,4 @@ export const projectsEn: Record<string, {
     },
   },
 
-  "inanilux-portfolio": {
-    hero: {
-      title: "Portfolio for Inanilux",
-      date: "In development",
-      description: "Custom portfolio prototype for Pokémon-focused artistic content creator",
-    },
-  },
-
-  "design-process": {
-    hero: {
-      title: "Design Process",
-      date: "Creative",
-      description: "Methodology and workflow in projects",
-    },
-  },
-
-  "color-palette": {
-    hero: {
-      title: "Color Palette",
-      date: "Design",
-      description: "Analysis of the design's chromatic palette",
-    },
-  },
 };

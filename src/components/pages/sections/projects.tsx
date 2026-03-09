@@ -37,7 +37,6 @@ const Projects = ({ onEmailClick }: ProjectsProps) => {
                 projectIndex + 1 === 2 ? "proyecto-2" :
                 project.id === "local-noise" ? "proyecto-3" :
                 project.id === "extra-tfg" ? "proyecto-4" :
-                project.id === "inanilux-portfolio" ? "proyecto-5" :
                 undefined
               }
             >

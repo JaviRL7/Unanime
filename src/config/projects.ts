@@ -15,9 +15,6 @@ export const PROJECT_IDS = {
   MORE_FEATURES: "more-features",
   LOCAL_NOISE: "local-noise",
   EXTRA_TFG: "extra-tfg",
-  INANILUX_PORTFOLIO: "inanilux-portfolio",
-  COLOR_PALETTE: "color-palette",
-  DESIGN_PROCESS: "design-process",
 } as const;
 
 /**
@@ -32,9 +29,6 @@ export const PROJECT_NUMBER_MAP: Record<string, number> = {
   [PROJECT_IDS.EXTRA_TFG]: 4,
   "tfg-arquitectura": 4,
   "tfg-diagrama": 4,
-  [PROJECT_IDS.INANILUX_PORTFOLIO]: 5,
-  [PROJECT_IDS.COLOR_PALETTE]: 5,
-  [PROJECT_IDS.DESIGN_PROCESS]: 5,
 };
 
 /**

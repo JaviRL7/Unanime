@@ -279,54 +279,6 @@ export const projects: Project[] = [
     details: [],
   },
 
-  // Proyecto 5 - Portfolio para Inanilux
-  {
-    id: "inanilux-portfolio",
-    hero: {
-      title: "Portfolio para Inanilux",
-      date: "En desarrollo",
-      status: "in-progress",
-      description: "Prototipo de portfolio personalizado para creadora de contenido artístico centrado en Pokémon",
-      mediaType: "image",
-      mediaSrc: undefined,
-      badges: [
-        { text: "Prototipo", color: "border-yellow-500/50 bg-yellow-500/10 text-yellow-500" },
-        { text: "En desarrollo", color: "border-blue-500/50 bg-blue-500/10 text-blue-500" },
-      ],
-    },
-    details: [],
-  },
-
-  // Proyecto 6 - Proceso de Diseño
-  {
-    id: "design-process",
-    hero: {
-      title: "Proceso de Diseño",
-      date: "Creativo",
-      status: "in-progress",
-      description: "Metodología y flujo de trabajo en proyectos",
-      mediaType: "image",
-      mediaSrc: undefined,
-      badges: [],
-    },
-    details: [],
-  },
-
-  // Proyecto 7 - Paleta de Colores
-  {
-    id: "color-palette",
-    hero: {
-      title: "Paleta de Colores",
-      date: "Diseño",
-      status: "in-progress",
-      description: "Análisis de paleta cromática del diseño",
-      mediaType: "image",
-      mediaSrc: "/projects/i1.png",
-      badges: [],
-    },
-    details: [],
-  },
-
 ];
 
 /**

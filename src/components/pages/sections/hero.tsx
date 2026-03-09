@@ -18,7 +18,6 @@ const Hero = () => {
     { id: 2, src: "/projects/c1.png", alt: `${projectWord} 2`, title: `${projectWord} 2`, subtitle: t.hero.projectSubtitles[2] },
     { id: 3, src: "/projects/v1.png", alt: `${projectWord} 3`, title: `${projectWord} 3`, subtitle: t.hero.projectSubtitles[3] },
     { id: 4, src: "/projects/b1.jpeg", alt: `${projectWord} 4`, title: t.hero.projectTitles[4], subtitle: t.hero.projectSubtitles[4] },
-    { id: 5, src: "/projects/h1.PNG", alt: t.hero.projectTitles[5], title: t.hero.projectTitles[5], subtitle: t.hero.projectSubtitles[5] },
   ];
 
   // Start from the middle set for infinite loop
@@ -86,7 +85,7 @@ const Hero = () => {
 
         {/* Navigation Links - Center */}
         <div className="font-incognito flex absolute left-1/2 -translate-x-1/2 items-center gap-1 rounded-full px-1 py-1 bg-background/30 backdrop-blur-md">
-          {[1, 2, 3, 4, 5].map((n) => (
+          {[1, 2, 3, 4].map((n) => (
             <a key={n} href={`#proyecto-${n}`} className="relative rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 opacity-70 hover:opacity-100 hover:bg-primary/10">
               {projectWord} {n}
             </a>
@@ -203,14 +202,6 @@ const Hero = () => {
                       >
                         {/* Image */}
                         <div className="relative aspect-[16/10] overflow-hidden border border-border">
-                          {item.id === 5 && (
-                            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/70">
-                              <svg className="w-10 h-10 text-yellow-500 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                              </svg>
-                              <span className="text-white font-semibold text-sm">{t.hero.underConstruction}</span>
-                            </div>
-                          )}
                           <img
                             src={item.src}
                             alt={item.alt}
@@ -288,40 +279,16 @@ const Hero = () => {
 
                           <div className="bg-background relative overflow-hidden border-2">
                             <div className="relative aspect-[16/10] overflow-hidden">
-                              {/* Glitch effect for project 5 */}
-                              {item.id === 5 && (
-                                <div className="absolute inset-0 z-30 pointer-events-none opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
-                                  <div className="absolute inset-0 backdrop-blur-[1px] bg-black/60" />
-                                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-auto">
-                                    <svg className="w-8 h-8 text-foreground/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                    </svg>
-                                    <div className="text-center space-y-0.5">
-                                      <div className="text-foreground/80 text-xs font-semibold">{t.hero.underConstruction}</div>
-                                    </div>
-                                    <a href="#proyecto-5" className="group/btn relative inline-flex items-center gap-1.5 border bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 mt-1">
-                                      {t.hero.goToProject}
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">
-                                        <path d="M7 7h10v10"></path>
-                                        <path d="M7 17 17 7"></path>
-                                      </svg>
-                                    </a>
-                                  </div>
-                                </div>
-                              )}
-
                               {/* Hover overlay */}
-                              {item.id !== 5 && (
-                                <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover/image:opacity-100">
-                                  <a href={`#proyecto-${item.id}`} className="group/btn relative inline-flex items-center gap-1.5 border bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90">
-                                    {t.hero.goToProject}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">
-                                      <path d="M7 7h10v10"></path>
-                                      <path d="M7 17 17 7"></path>
-                                    </svg>
-                                  </a>
-                                </div>
-                              )}
+                              <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover/image:opacity-100">
+                                <a href={`#proyecto-${item.id}`} className="group/btn relative inline-flex items-center gap-1.5 border bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90">
+                                  {t.hero.goToProject}
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                  </svg>
+                                </a>
+                              </div>
 
                               <img
                                 src={item.src}

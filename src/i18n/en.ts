@@ -31,11 +31,9 @@ export const en: Dictionary = {
       2: "The functional",
       3: "The dream",
       4: "The learning",
-      5: "The planned",
     },
     projectTitles: {
       4: "My Final Thesis",
-      5: "Next Project",
     },
   },
   presentation: {

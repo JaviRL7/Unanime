@@ -117,4 +117,20 @@ export interface Dictionary {
     subject: string;
     body: string;
   };
+  skills: {
+    title: string;
+    techStack: string;
+    frontend: string;
+    backend: string;
+    other: string;
+    capabilities: string;
+    customerService: string;
+    customerServicePoints: string[];
+    itGeneral: string;
+    itGeneralPoints: string[];
+    multimedia: string;
+    multimediaPoints: string[];
+    realProjects: string;
+    scroll: string;
+  };
 }

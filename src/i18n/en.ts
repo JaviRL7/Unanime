@@ -126,4 +126,32 @@ export const en: Dictionary = {
     subject: "We liked your portfolio",
     body: "Hi Javi,\n\nWe liked your portfolio and we want an interview.\n\nBest regards",
   },
+  skills: {
+    title: "Skills",
+    techStack: "Tech Stack",
+    frontend: "Frontend",
+    backend: "Backend",
+    other: "Tools",
+    capabilities: "Capabilities",
+    customerService: "Customer Service",
+    customerServicePoints: [
+      "Direct in-person customer support in **Spanish and English**.",
+      "**Autonomous** management of an **e-commerce**: order handling, incidents and post-sale communication.",
+      "Experience in **high-demand** environments across both retail and **marketing agency** settings.",
+    ],
+    itGeneral: "General IT & Software Development",
+    itGeneralPoints: [
+      "Custom **accounting software** development for an **e-commerce**, covering invoicing, inventory and expense tracking.",
+      "Development at **Unanime Tech** of a **CRM** focused on **lead management (LRM)**, from design to production deployment.",
+      "Proficient in **operating systems**, networking, office tools and **development environments**.",
+    ],
+    multimedia: "Multimedia Editing & Content",
+    multimediaPoints: [
+      "Work at **Unanime Creativos**, a marketing agency, alongside a **creative and editing team**.",
+      "Digital content production for **real brands**: graphic design with **Canvas** and **Adobe Photoshop**.",
+      "**Video editing** for social media, campaigns and promotional content.",
+    ],
+    realProjects: "Real professional environment experience",
+    scroll: "SCROLL",
+  },
 };

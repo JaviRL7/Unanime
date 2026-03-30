@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { BackgroundNoise } from "../shared/backgrounds";
 import { PresentationSplash } from "../shared/presentation-splash";
+import { SkillsSplash } from "../shared/skills-splash";
 import { IntroSplash } from "../shared/intro-splash";
 import Hero from "./sections/hero";
 import Projects from "./sections/projects";
@@ -26,6 +27,9 @@ const PortfolioPage = () => {
             <div className="md:border-r md:border-l">
               <div className="min-h-screen lg:snap-start lg:snap-always">
                 <PresentationSplash />
+              </div>
+              <div className="min-h-screen lg:snap-start lg:snap-always">
+                <SkillsSplash />
               </div>
               <div className="min-h-screen lg:snap-start lg:snap-always">
                 <Hero />

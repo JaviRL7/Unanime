@@ -126,4 +126,32 @@ export const es: Dictionary = {
     subject: "Nos ha gustado tu portfolio",
     body: "Hola Javi,\n\nNos ha gustado tu portfolio y queremos una entrevista.\n\nSaludos",
   },
+  skills: {
+    title: "Habilidades",
+    techStack: "Stack Tecnológico",
+    frontend: "Frontend",
+    backend: "Backend",
+    other: "Herramientas",
+    capabilities: "Capacidades",
+    customerService: "Atención al Cliente",
+    customerServicePoints: [
+      "Atención presencial directa al cliente en **español e inglés**.",
+      "Gestión **autónoma** de un **e-commerce**: respuesta a pedidos, incidencias y comunicación posventa.",
+      "Experiencia en entornos de **alta demanda** tanto comerciales como en **agencia de marketing**.",
+    ],
+    itGeneral: "Informática General y Desarrollo de Software",
+    itGeneralPoints: [
+      "Desarrollo de **software de contabilidad** a medida para un **e-commerce**, cubriendo facturación, inventario y control de gastos.",
+      "Desarrollo en **Unanime Tech** de un **CRM** enfocado en **gestión de leads (LRM)**, desde el diseño hasta la puesta en producción.",
+      "Dominio de **sistemas operativos**, redes, ofimática y **entornos de desarrollo** profesionales.",
+    ],
+    multimedia: "Edición y Contenido Multimedia",
+    multimediaPoints: [
+      "Trabajo en **Unanime Creativos**, agencia de marketing, junto a un **equipo creativo y de edición**.",
+      "Producción de contenido digital para **marcas reales**: diseño gráfico con **Canvas** y **Adobe Photoshop**.",
+      "**Edición de vídeo** para redes sociales, campañas y contenido promocional.",
+    ],
+    realProjects: "Experiencia en entorno profesional real",
+    scroll: "DESPLÁZATE",
+  },
 };
